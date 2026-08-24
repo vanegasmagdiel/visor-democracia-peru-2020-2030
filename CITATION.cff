@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+title: "Visor Integrado de Democracia del Perú 2020–2030"
+message: "Si utiliza este software, cite la versión archivada y su DOI de Zenodo."
+type: software
+authors:
+  - family-names: "Torres Vanegas"
+    given-names: "Magdiel"
+    orcid: "https://orcid.org/0000-0002-7913-214X"
+    affiliation: "Universidad Nacional de Trujillo, Escuela de Posgrado – Unidad de Posgrado en Ciencias Económicas; Estudios Axial, Perú"
+    website: "https://vanegas-magdiel.estudiosaxial.com/"
+version: "2.0.0"
+date-released: "2026-08-19"
+repository-code: "https://github.com/vanegasmagdiel/visor-democracia-peru-2020-2030"
+url: "https://vanegasmagdiel.github.io/visor-democracia-peru-2020-2030/"
+license: "MIT"
+keywords:
+  - Democracy Index
+  - Peru
+  - democratic backsliding
+  - scenario analysis
+  - Shiny for Python
+  - data visualization
+  - reproducible research
+abstract: >
+  Reproducible integrated viewer combining longitudinal Democracy Index data
+  for Peru, Latin America and the world (2020–2025) with three
+  evidence-conditioned scenarios for Peru to 2030. Code is released under MIT;
+  documentation and original narrative content use CC BY 4.0, while third-party
+  inputs retain their original terms.

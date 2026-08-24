@@ -1,0 +1,53 @@
+{
+  "types": {
+    "resourceTypeGeneral": "Software",
+    "resourceType": "Research software and data viewer"
+  },
+  "titles": [{"title": "Visor Integrado de Democracia del Perú 2020–2030"}],
+  "creators": [
+    {
+      "name": "Torres Vanegas, Magdiel",
+      "givenName": "Magdiel",
+      "familyName": "Torres Vanegas",
+      "nameIdentifiers": [
+        {
+          "nameIdentifier": "https://orcid.org/0000-0002-7913-214X",
+          "nameIdentifierScheme": "ORCID",
+          "schemeUri": "https://orcid.org"
+        }
+      ],
+      "affiliation": [
+        {"name": "Universidad Nacional de Trujillo, Escuela de Posgrado – Unidad de Posgrado en Ciencias Económicas"},
+        {"name": "Estudios Axial, Perú"}
+      ]
+    }
+  ],
+  "publisher": "Zenodo",
+  "publicationYear": 2026,
+  "version": "2.0.0",
+  "language": "es",
+  "url": "https://github.com/vanegasmagdiel/visor-democracia-peru-2020-2030",
+  "rightsList": [
+    {
+      "rights": "MIT License",
+      "rightsIdentifier": "MIT",
+      "rightsIdentifierScheme": "SPDX",
+      "schemeUri": "https://spdx.org/licenses/",
+      "rightsUri": "https://spdx.org/licenses/MIT.html"
+    }
+  ],
+  "subjects": [
+    {"subject": "Democracy Index"},
+    {"subject": "Peru"},
+    {"subject": "democratic backsliding"},
+    {"subject": "prospective scenarios"},
+    {"subject": "reproducible research"},
+    {"subject": "research software"}
+  ],
+  "descriptions": [
+    {
+      "descriptionType": "Abstract",
+      "description": "Portable reproducible viewer integrating Peru Democracy Index trends for 2020–2025 with three evidence-conditioned scenarios to 2030. Code is licensed under MIT; documentation and original narrative content under CC BY 4.0; third-party inputs retain their original terms."
+    }
+  ]
+}

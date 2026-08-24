@@ -1,0 +1,7 @@
+formula_id,component,formula,interpretation
+M1,2025 categorical anchor,"sum_i x_i,2025 / 5 = Peru overall 2025 = 5.88",Peru category sub-pillars absent from supplied EIU summary; constrained latent calibration.
+M2,2026 election shock,"x_i,2026 = clip(x_i,2025 + e_i,s, 0, 10)",Scenario-specific one-off adjustment conditioned on post-election evidence.
+M3,2027-2030 structural path,"x_i,t = clip(x_i,t-1 + g_i,s * d_t, 0, 10); d={1.0,0.9,0.8,0.7}",Damped scenario rate avoids indefinite linear extrapolation.
+M4,Overall score,"D_t = mean_i(x_i,t)",Consistent with five-category averaging logic used by EIU; rounded for display.
+M5,Regime threshold,<=4 authoritarian; >4 to <=6 hybrid; >6 to <=8 flawed; >8 full,Classification rule retained from original project.
+M6,Sensitivity band,"10,000 Monte Carlo paths; sigma_i = clip(0.25*sd(annual category deltas 2020-24),0.04,0.20)","Sensitivity envelope p10-p90, not a forecast confidence interval."

@@ -1,0 +1,97 @@
+{
+  "@context": "https://w3id.org/ro/crate/1.1/context",
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {"@id": "./"},
+      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"}
+    },
+    {
+      "@id": "./",
+      "@type": ["Dataset", "SoftwareSourceCode"],
+      "name": "Visor Integrado de Democracia del Perú 2020–2030",
+      "description": "Visor reproducible de la serie democrática 2020–2025 y tres escenarios prospectivos para el Perú al 2030.",
+      "version": "2.0.0",
+      "datePublished": "2026-08-19",
+      "license": {"@id": "https://spdx.org/licenses/MIT.html"},
+      "author": {"@id": "https://orcid.org/0000-0002-7913-214X"},
+      "copyrightHolder": {"@id": "https://orcid.org/0000-0002-7913-214X"},
+      "codeRepository": "https://github.com/vanegasmagdiel/visor-democracia-peru-2020-2030",
+      "url": "https://vanegasmagdiel.github.io/visor-democracia-peru-2020-2030/",
+      "hasPart": [
+        {"@id": "app.py"},
+        {"@id": "docs/index.html"},
+        {"@id": "docs/METODOLOGIA.md"},
+        {"@id": "data/overall_multilevel_2020_2025.csv"},
+        {"@id": "data/scenario_trajectories_2025_2030.csv"},
+        {"@id": "data/base_integral_democracia_2020_2030_v2.xlsx"},
+        {"@id": "LICENSE_POLICY.md"}
+      ]
+    },
+    {
+      "@id": "https://orcid.org/0000-0002-7913-214X",
+      "@type": "Person",
+      "name": "Magdiel Torres Vanegas",
+      "url": "https://vanegas-magdiel.estudiosaxial.com/",
+      "affiliation": [
+        {"@id": "#unt-epg"},
+        {"@id": "https://estudiosaxial.com/"}
+      ]
+    },
+    {
+      "@id": "#unt-epg",
+      "@type": "Organization",
+      "name": "Universidad Nacional de Trujillo, Escuela de Posgrado – Unidad de Posgrado en Ciencias Económicas"
+    },
+    {
+      "@id": "https://estudiosaxial.com/",
+      "@type": "Organization",
+      "name": "Estudios Axial"
+    },
+    {
+      "@id": "app.py",
+      "@type": "File",
+      "encodingFormat": "text/x-python",
+      "license": {"@id": "https://spdx.org/licenses/MIT.html"}
+    },
+    {
+      "@id": "docs/index.html",
+      "@type": "File",
+      "encodingFormat": "text/html",
+      "license": [
+        {"@id": "https://spdx.org/licenses/MIT.html"},
+        {"@id": "https://creativecommons.org/licenses/by/4.0/"}
+      ]
+    },
+    {
+      "@id": "docs/METODOLOGIA.md",
+      "@type": "File",
+      "encodingFormat": "text/markdown",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"}
+    },
+    {
+      "@id": "data/overall_multilevel_2020_2025.csv",
+      "@type": "File",
+      "encodingFormat": "text/csv",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"}
+    },
+    {
+      "@id": "data/scenario_trajectories_2025_2030.csv",
+      "@type": "File",
+      "encodingFormat": "text/csv",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"}
+    },
+    {
+      "@id": "data/base_integral_democracia_2020_2030_v2.xlsx",
+      "@type": "File",
+      "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"}
+    },
+    {
+      "@id": "LICENSE_POLICY.md",
+      "@type": "File",
+      "encodingFormat": "text/markdown"
+    }
+  ]
+}

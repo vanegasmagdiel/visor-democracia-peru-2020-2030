@@ -1,0 +1,25 @@
+{
+  "title": "Visor Integrado de Democracia del Perú 2020–2030",
+  "upload_type": "software",
+  "description": "Aplicación reproducible en Python y Shiny que integra la serie observada 2020–2025 y tres escenarios prospectivos condicionados por evidencia para el Perú al 2030. El código se distribuye bajo MIT; la documentación y narrativa original bajo CC BY 4.0; los insumos de terceros conservan sus condiciones originales y no se redistribuye el informe de The Economist Intelligence Unit.",
+  "creators": [
+    {
+      "name": "Torres Vanegas, Magdiel",
+      "orcid": "0000-0002-7913-214X",
+      "affiliation": "Universidad Nacional de Trujillo, Escuela de Posgrado – Unidad de Posgrado en Ciencias Económicas; Estudios Axial, Perú"
+    }
+  ],
+  "keywords": [
+    "Democracy Index",
+    "Peru",
+    "democratic backsliding",
+    "prospective scenarios",
+    "reproducible research",
+    "Shiny for Python",
+    "data visualization"
+  ],
+  "license": "mit",
+  "version": "2.0.0",
+  "language": "spa",
+  "access_right": "open"
+}
