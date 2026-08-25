@@ -12,8 +12,8 @@
     "RELEASE_MANIFEST.json",
     "SHA256SUMS.txt"
   ],
-  "file_count": 73,
-  "total_bytes": 6612041,
+  "file_count": 72,
+  "total_bytes": 6610744,
   "files": [
     {
       "path": ".gitattributes",
@@ -21,14 +21,9 @@
       "sha256": "f58bf46ced8e7c9c9b4ea0ef4cbe0b52774f1e7b316ae09c95063a83dfa98409"
     },
     {
-      "path": ".github/workflows/candidate-bootstrap.yml",
-      "bytes": 1607,
-      "sha256": "a901826870f660231236cbe6102dd059294b6f2757a5f5a21a31e53fed33d279"
-    },
-    {
       "path": ".github/workflows/tests.yml",
-      "bytes": 480,
-      "sha256": "71fdf8c27fb0c665c93fa342a7b9e151dff419ca05c661d4b947a1791638b472"
+      "bytes": 778,
+      "sha256": "60d71f8a1676c18a6cc589f27712653d032b7444c979845731c0bad8d9c75921"
     },
     {
       "path": ".gitignore",
@@ -187,8 +182,8 @@
     },
     {
       "path": "data/scenario_summary_2030.csv",
-      "bytes": 2117,
-      "sha256": "0c537b6caa33ec3f89205a076f807d931e5d91f78429b7fb1b20bbd43c8f65ba"
+      "bytes": 2129,
+      "sha256": "808e2004ecc0458299c5cadc5fd8d4fedeeebcd22c4e79f72607d6e98d8f95b3"
     },
     {
       "path": "data/scenario_trajectories_2025_2030.csv",
