@@ -16,7 +16,7 @@ jobs:
         run: |
           cat .candidate_patch.part* > .candidate_v2_1.patch
           git apply --index --binary .candidate_v2_1.patch
-          git rm .candidate_patch.part* .github/workflows/candidate-bootstrap.yml
+          git rm .candidate_patch.part*
           rm .candidate_v2_1.patch
       - uses: actions/setup-python@v5
         with:

@@ -1,22 +1,3 @@
-diff --git a/.github/workflows/tests.yml b/.github/workflows/tests.yml
-index a9ec3f908968b336785f855d9a3a1f846749a787..5feb25ecc7dbe19632ea5a0f4c0ded68f1a9453b 100644
---- a/.github/workflows/tests.yml
-+++ b/.github/workflows/tests.yml
-@@ -11,7 +11,13 @@ jobs:
-         with:
-           python-version: '3.12'
-       - run: pip install -r requirements.txt pytest
-+      - run: python scripts/rebuild_scenarios.py
-+      - run: python scripts/build_data_dictionary.py
-+      - run: python scripts/sync_public_data.py
-+      - run: python scripts/build_static_viewer.py
-       - run: python -m compileall -q app.py scripts tests
-       - run: python scripts/preflight_check.py
--      - run: python scripts/build_release_manifest.py --check
-       - run: pytest -q
-+      - run: python scripts/secret_scan.py
-+      - run: git diff --exit-code -- data docs app.py
-+      - run: python scripts/build_release_manifest.py --check
 diff --git a/.zenodo.json b/.zenodo.json
 index c622db11bb3c068900cd3400f00f7cdae2af72b6..1348a34b703f8a6a03493011f758b2b1cb7d580e 100644
 --- a/.zenodo.json
@@ -1600,4 +1581,18 @@ zo{Am=CPdUWJN*<Bo?5cJGn*S=8M4WSlbnbOX1RQQv3nEa+GRTeU=3Q(EfA{Hx48&1
 zv7=mPa)1O$h~+I>W>A~#ci!pQ-Q~U2GuGH}VCe6lKpZ-)IwrwxqW4{1QMYV#apa;}
 zBb0qcLpe$k5Lh-yB3`x1`N!_30ds)gh|nuj3r`&5Ixd)tRa@k*!wyHm2s|_cgdcw$
 z0iIbYfmp2lu<%q9y?mCEIhIBgh%mgZ<|KxCu<VTWU}&pd`Q2f`IcHl0*f>tm=|rlC
-z`6M(ml$zGUbA0fdrd_OB7cNE--y?PWwzRBZVAF{VR
+z`6M(ml$zGUbA0fdrd_OB7cNE--y?PWwzRBZVAF{VRSR4#A$!~i-f@%`#uzLlBFbjx
+zG6#HL<Fn0QAXxAZV>iEJY&s9vVqnG}kg97z<bra79Uwa`H2)vE-ZH4Jpy?JS1b4UK
+z?(P~q1b26Lf(H!{BxrDl;O_43ZU?vE?rz^E&wK0ro~nC)?K-FC3_Zg1>h85>ONzG+
+zRncO4;~M1*Tw27BBlOFv><B<_m1+I{WXt(fNT-eiB%3_pdz4%`@T61^@4tTB|BuQ6
+zV1eiTV}U0-)LWtkz>B^X0Y^hNEx&mF%>hTp)f!|HQU^64j!jx}PUeL;;*l^!B00oM
+z4-!Bnh`AB_zJ{{CS4RsZ;7fr7eDTUZTKUeu4vX48A${<3>s82s<Z+KmnbrIqPk3n4
+zSQ0^a9nMO?=XFW1v`NDI*|Io9sS1x7dl=Voo&UG@qZWH5d<WSFA1<KA_j%b82}3M~
+zFJ<F%YDSQx0XcI&L6h==><=EzBrTdjn3-UPY*8A2iMyS+6PiC^?dkY7!I)cn%}d!=
+zk^<Uu?F{waec^``j(_hcIv<nYi4V@-Qf`6LCf07mJn-Kl({j;tcEREVRMIap1g)1R
+zbd@hX+&)MI!a9ABG_A%obSLjTAy#$ok*}IfX=nm)LzQ8X)9ij;Ou5)+ufTi2&&M&!
+zp#w36Gf4;#QzYOw_z_vvkcR8qfgeK;dxSGjt)YnINc+<<a<Sa~&_QLD0Uu@W(&8Mm
+z)+X~65Q0pQC||5Me7JqU$hwF}nglA%zqZ&v{G%~}jU~<ygu9Ziks6mjBYL14c(`;A
+z`-|hxsl;Y3>{r2Y_`Y6Sh}<d~9Bfr9H6R}0$qWK+=6SCWVFm=EoW}$RgqC3M*o#Xp
+z7C69KNd|!f%x*g+U`n6<tICps&i*l~1;r>w-!ErugTV;gnmScOwm^tjum)q6+eZH`
+z?%4|`0>q{>PR}xY%c*m7l&=3+D

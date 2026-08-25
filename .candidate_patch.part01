@@ -1,18 +1,4 @@
-SR4#A$!~i-f@%`#uzLlBFbjx
-zG6#HL<Fn0QAXxAZV>iEJY&s9vVqnG}kg97z<bra79Uwa`H2)vE-ZH4Jpy?JS1b4UK
-z?(P~q1b26Lf(H!{BxrDl;O_43ZU?vE?rz^E&wK0ro~nC)?K-FC3_Zg1>h85>ONzG+
-zRncO4;~M1*Tw27BBlOFv><B<_m1+I{WXt(fNT-eiB%3_pdz4%`@T61^@4tTB|BuQ6
-zV1eiTV}U0-)LWtkz>B^X0Y^hNEx&mF%>hTp)f!|HQU^64j!jx}PUeL;;*l^!B00oM
-z4-!Bnh`AB_zJ{{CS4RsZ;7fr7eDTUZTKUeu4vX48A${<3>s82s<Z+KmnbrIqPk3n4
-zSQ0^a9nMO?=XFW1v`NDI*|Io9sS1x7dl=Voo&UG@qZWH5d<WSFA1<KA_j%b82}3M~
-zFJ<F%YDSQx0XcI&L6h==><=EzBrTdjn3-UPY*8A2iMyS+6PiC^?dkY7!I)cn%}d!=
-zk^<Uu?F{waec^``j(_hcIv<nYi4V@-Qf`6LCf07mJn-Kl({j;tcEREVRMIap1g)1R
-zbd@hX+&)MI!a9ABG_A%obSLjTAy#$ok*}IfX=nm)LzQ8X)9ij;Ou5)+ufTi2&&M&!
-zp#w36Gf4;#QzYOw_z_vvkcR8qfgeK;dxSGjt)YnINc+<<a<Sa~&_QLD0Uu@W(&8Mm
-z)+X~65Q0pQC||5Me7JqU$hwF}nglA%zqZ&v{G%~}jU~<ygu9Ziks6mjBYL14c(`;A
-z`-|hxsl;Y3>{r2Y_`Y6Sh}<d~9Bfr9H6R}0$qWK+=6SCWVFm=EoW}$RgqC3M*o#Xp
-z7C69KNd|!f%x*g+U`n6<tICps&i*l~1;r>w-!ErugTV;gnmScOwm^tjum)q6+eZH`
-z?%4|`0>q{>PR}xY%c*m7l&=3+D4yIS$CmScUMEd?JrEj*4P>iP_FraB$^LM2b9h*j
+4yIS$CmScUMEd?JrEj*4P>iP_FraB$^LM2b9h*j
 zS`-Q2T&HN%u)qGz+L$e-29Z>rzGLH6zRPe1<_^cK)m`YnR0?UY_6<^X*@uo>uxs7~
 ziEk|Iy%Mw`ezo)alaq?}h~>u#Sb+9Eph!nX2J(<3ms*i@sw6uVn?a1iaGnr%7#wmR
 zrZy|nDASb)#*2v3Yb}+ESEcSB{tv%8+cgCnpsOKug#mdr;kMbF3xCX;{nSpQioLpx
@@ -1450,4 +1436,6 @@ index 0000000000000000000000000000000000000000..471ea83bcbdfb27c70cf554a2b8fa5d0
 @@ -0,0 +1,31 @@
 +scenario_id,scenario_name,category_full,category_es,parameter,central,plausible_low,plausible_high,evidence_basis,signal,translation_rule,decision_author,decision_date,parameter_status
 +recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,Electoral process and pluralism,Proceso electoral y pluralismo,shock_2026,0.12,0.06,0.18,E01;E02;E03,positive,"Implementación y legitimación electoral elevan moderadamente el componente; rango acotado por persistencia de polarización.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
-+recuperacion_institucional,Recuperació
++recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,Electoral process and pluralism,Proceso electoral y pluralismo,annual_structural_rate,0.04,0.01,0.07,E01;E02,positive,"Cumplimiento gradual de recomendaciones; efecto anual pequeño y decreciente.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,Functioning of government,Funcionamiento del gobierno,shock_2026,0.12,0.04,0.20,E01;E05;E08,positive,"Acuerdos de gobernabilidad producen mejora inicial limitada por fragmentación institucional.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,Functioning of government,Funcionamiento del gobierno,annual_structural_rate,0.10,0.04,0.16,E01;E05;E08,positive,"Coalición estable y capacidad de implementación sostienen una mejora grad

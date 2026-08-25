@@ -1,18 +1,4 @@
-4w+Uxi*bM
-z|9!ar(F)IgvZ>y*R6JbIj5(TK*rqV^TgwLVdneurMa$dfHL$@I`S%UlzHg8#xWXpk
-zrJ{+(f6oCDd@DLUhu$2#lElmD%yhEb(NC=aVN~{rYMAw9#D1|qI9&t{WWB`}HTM#D
-zk$Qx^1B|Mcf;|jhxeLn@D*!fKpt4zX`x0S57c?K-Zj*?*Qe|LN$M^rZgdj#E3}Up^
-zr%|TFR7{-_LN(-e@g``X3lf3V<2`7`+Y{I9p7A0%jNNZu)VitrTW;%=u>#OPgkIaj
-z@iv_ab6DB9g<FHC%nv-I-w09iN0WRu6<kuccMJ1U8bbrr2y&ms3X?-C@xLDMt4Wc=
-zz%*YraehqSuvWWvOj!8?oECr1N!y^2n_xqZ+XJQzc1l&`-AJ#7Ub%peN6ZV&RWU?F
-zQKwV0znEQUaW}kj;MFW4>|sFcDHB6Kf(^NIocGX{UfiEJxU->K$~YKAc9ppsvWr=T
-zOsR!u(x07U!9s9`lg#aT55R>3y^`?=<jutVH8-Gff5KUxx&|kkm0M>7dx#Pnotq_H
-zsL7Iz`T4Yn)6Mm^-;`XvBY1?tqJ487Is13igt2elops${**{ZN(Y4Pi{1xJmvHTJb
-zS$j+MXJ}vZ+zI5MxC7!2bsj(ZmjY%an_+!A1s4T~V(Ta_<EmK%XcjaAgOh_l9}JSY
-z<ZrWx6DH!9GrJ=Xl13xI$AdC-%*`}Cxbm(<n8D&d%dAhi(smlS`{MK>3cQ^LB#6vi
-z<fv*{x-`_3r)OR9oI~aeckdu0x8vAKBEn_TC*9wxasdBc6%vNZ<<rE~g)!P(V29VU
-zK41S>*}};KEZU#VMYJW(sRWZ0QrOkOI8qFOlI(e8Br-s8HHUcv;dGd?eaHY9_7u@F
-zT2t;B2T<`82))jS<8a7ypQUwdkakeqFbvt0A!{Z!`>Kw9x&h>`v;kAQV&;M&>JZbw
+>Kw9x&h>`v;kAQV&;M&>JZbw
 zD+w3N$#U)O^psqQ&SF7su!*afc-;W<4-WvuQW~<&x&8sMtY_!yZ07WvyRicm*~ooE
 z0d+m9^k=%xyPGz52yxcV$6vuj6sU5j5cy|OmRFgY`McLtyFyM`Ph{*B6&k7@qP)JL
 z`@mC7qB~<71-KA)(Eda!tDhya=aJl#AsPtKo1&^nh4VrrRT|2;R#67j<D)i^wn;gh
@@ -1547,4 +1533,24 @@ index 7c0e62b2e8f5d2e8e92bd49c36a569fcf276f884..e41fb880c4da70ddee155b243b799158
 -      "version": "2.0.0",
 -      "datePublished": "2026-08-19",
 +      "version": "2.1.0-rc.1",
-+      "datePubli
++      "datePublished": "2026-08-25",
++      "identifier": "https://doi.org/10.5281/zenodo.22080540",
+       "license": {"@id": "https://spdx.org/licenses/MIT.html"},
+       "author": {"@id": "https://orcid.org/0000-0002-7913-214X"},
+       "copyrightHolder": {"@id": "https://orcid.org/0000-0002-7913-214X"},
+@@ -25,6 +26,8 @@
+         {"@id": "docs/METODOLOGIA.md"},
+         {"@id": "data/overall_multilevel_2020_2025.csv"},
+         {"@id": "data/scenario_trajectories_2025_2030.csv"},
++        {"@id": "data/peru_2025_anchor_ensemble.csv"},
++        {"@id": "data/parameter_elicitation_matrix.csv"},
+         {"@id": "data/base_integral_democracia_2020_2030_v2.xlsx"},
+         {"@id": "LICENSE_POLICY.md"}
+       ]
+@@ -76,6 +79,18 @@
+       "encodingFormat": "text/csv",
+       "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"}
+     },
++    {
++      "@id": "data/peru_2025_anchor_ensemble.csv",
++      "@type": "File"
