@@ -11,7 +11,13 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install -r requirements.txt pytest
+      - run: python scripts/rebuild_scenarios.py
+      - run: python scripts/build_data_dictionary.py
+      - run: python scripts/sync_public_data.py
+      - run: python scripts/build_static_viewer.py
       - run: python -m compileall -q app.py scripts tests
       - run: python scripts/preflight_check.py
-      - run: python scripts/build_release_manifest.py --check
       - run: pytest -q
+      - run: python scripts/secret_scan.py
+      - run: git diff --exit-code -- data docs app.py
+      - run: python scripts/build_release_manifest.py --check
