@@ -15,10 +15,23 @@ REQ = [
     'LICENSE_POLICY.md',
     'data/LICENSE.md',
     'data/overall_multilevel_2020_2025.csv',
+    'data/data_status_registry.csv',
+    'data/model_config_v2_1.json',
+    'data/peru_2025_anchor_ensemble.csv',
+    'data/peru_2025_anchor_summary.csv',
+    'data/parameter_elicitation_matrix.csv',
+    'data/scenario_sensitivity_by_category.csv',
     'data/base_integral_democracia_2020_2030_v2.xlsx',
     'docs/index.html',
     'docs/.nojekyll',
     'scripts/build_release_manifest.py',
+    'scripts/build_data_dictionary.py',
+    'scripts/sync_public_data.py',
+    'scripts/secret_scan.py',
+    'scripts/publish_release.ps1',
+    'PUBLICAR_VISOR_V2_1_0.bat',
+    'docs/DECISION_LOG.md',
+    'docs/AUDIT_CLOSURE_PHASES_1_7.md',
 ]
 
 
@@ -35,6 +48,9 @@ def test_identity_metadata():
     assert codemeta['author'][0]['@id'].endswith(ORCID)
     assert codemeta['codeRepository'] == REPOSITORY
     assert datacite['creators'][0]['nameIdentifiers'][0]['nameIdentifier'].endswith(ORCID)
+    assert zenodo['version'].startswith('2.1.0')
+    assert codemeta['version'].startswith('2.1.0')
+    assert datacite['version'].startswith('2.1.0')
 
 
 def test_layered_license_policy():
@@ -50,6 +66,23 @@ def test_layered_license_policy():
 
 def test_github_pages_marker():
     assert (BASE/'docs/.nojekyll').is_file()
+
+
+def test_candidate_publisher_cannot_silently_release():
+    publisher = (BASE/'scripts/publish_release.ps1').read_text(encoding='utf-8')
+    assert '[switch]$PublishRelease' in publisher
+    assert 'PUBLICAR v$Version' in publisher
+    assert 'release candidate|candidato' in publisher
+    assert 'No se creo tag, GitHub Release ni DOI' in publisher
+
+
+def test_osf_sync_whitelist_excludes_primary_object():
+    publisher = (BASE/'scripts/publish_release.ps1').read_text(encoding='utf-8')
+    osf_policy = (BASE/'docs/OSF_COMPLEMENT.md').read_text(encoding='utf-8')
+    assert 'docs\\METODOLOGIA.md' in publisher
+    assert 'data\\parameter_elicitation_matrix.csv' in publisher
+    assert 'ZIP completo del release' in osf_policy
+    assert 'Sync-OsfFile' in publisher
 
 
 def test_release_inventory_is_current():

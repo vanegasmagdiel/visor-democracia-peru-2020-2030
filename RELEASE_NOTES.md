@@ -1,31 +1,40 @@
-# Release notes — v2.0.0 (2026-08-19)
+# Release candidate notes — v2.1.0-rc.1 (2026-08-25)
 
-## Release scientific scope
+## Status
 
-This release fuses the historical infographic/viewer and the prior 2030 prospective viewer into one portable research package.
+This is a **scientific review candidate**, not the final Zenodo release. It is
+published on a review branch and draft pull request so that the immutable
+`v2.0.0` record and DOI remain unchanged while phases 8–11 are pending.
 
-### Data update
-- Historical layer extended through 2025.
-- Peru 2025 overall Democracy Index: 5.88, hybrid regime; rank 76 in a secondary cross-country replication of EIU rankings.
-- Latin America and the Caribbean 2025: 5.71; world: 5.19.
-- Peru 2025 sub-pillar values are explicitly tagged as a latent calibration, not as official EIU values.
+## Scientific corrections completed in phases 1–7
 
-### Prospective update
-- Previous scenario set reduced to three auditable scenarios: institutional recovery, hybrid continuity, restrictive/securitised drift.
-- 2026 shocks conditioned on post-election evidence through 2026-08-17, including JNE, OAS and the EU EOM final report, plus newswire and academic/expert evidence.
-- Monte Carlo sensitivity envelope: 10,000 simulations/scenario, deterministic seed 20260819; p10–p90 is sensitivity, not event probability.
+- Separates the secondary-reported Peru 2025 aggregate (`5.88`) from the
+  unpublished dimensional composition.
+- Replaces the single dimensional calibration with a 10,000-member latent
+  anchor ensemble constrained to an exact mean of `5.88`.
+- Documents every 2026 shock and structural-rate judgement with central and
+  plausible bounds, source identifiers, a translation rule, author and date.
+- Removes numeric evidence weights. Evidence priority is categorical and is
+  not used as a computational coefficient.
+- Propagates anchor, parameter, structural-scale and correlated-residual
+  uncertainty through three scenarios using common random numbers.
+- Labels p10–p90 as a sensitivity envelope, not a confidence interval and not
+  a probability that a scenario will occur.
+- Aligns data-status labels across CSV, XLSX, application, static viewer,
+  metadata and documentation.
 
-### Portable/repository-grade delivery
-- Shiny for Python application (`app.py`).
-- Self-contained Plotly static viewer (`docs/index.html`).
-- CSV analytical layer + master XLSX.
-- Dockerfile / docker-compose.
-- CITATION.cff, CodeMeta, Zenodo metadata, DataCite metadata and RO-Crate metadata.
-- Tests, preflight, reproducibility script, checksums and release manifest.
+## Reproducibility and dissemination
 
-### Release metadata and licensing
-- Author ORCID: `0000-0002-7913-214X`.
-- Affiliation normalized from the author's public academic profile.
-- GitHub repository and GitHub Pages URLs propagated across citation, CodeMeta, DataCite and RO-Crate metadata.
-- Layered licensing: MIT for original code; CC BY 4.0 for original documentation and curated/derived contributions; third-party inputs retain their original terms.
-- Added `docs/.nojekyll` for direct GitHub Pages publication from `/docs`.
+- Rebuild command: `python scripts/rebuild_scenarios.py`.
+- Static GitHub Pages viewer: `python scripts/build_static_viewer.py`.
+- Automated preflight, tests, secret scan and deterministic SHA-256 inventory.
+- OSF complement limited to protocol, decision log and non-executable review
+  materials; the archived software/data object remains in GitHub–Zenodo.
+
+## Publication gate
+
+Do not create tag `v2.1.0`, a GitHub Release or a new Zenodo version until the
+phase-8 PRISMA corpus has been incorporated and phases 9–11 have received an
+explicit GO. The final release must be built from the accepted main-branch
+commit and receive a fresh version DOI under concept DOI
+`10.5281/zenodo.22080540`.

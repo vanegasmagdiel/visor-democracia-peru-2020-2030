@@ -13,7 +13,8 @@ La reutilización debe:
 
 1. citar la versión y el DOI de Zenodo;
 2. conservar los campos de fuente y procedencia;
-3. diferenciar valores observados, calibrados y simulados;
+3. diferenciar valores observados en fuente oficial, agregados reportados
+   secundariamente, anclas latentes y valores simulados;
 4. no presentar los valores categoriales del Perú 2025 como subpilares
    oficiales de EIU;
 5. verificar los términos de las fuentes subyacentes para el uso previsto.

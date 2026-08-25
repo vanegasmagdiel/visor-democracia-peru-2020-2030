@@ -1,7 +1,7 @@
 [project]
 name = "visor-democracia-peru"
-version = "2.0.0"
-description = "Visor integrado 2020-2030 del Democracy Index para Peru"
+version = "2.1.0rc1"
+description = "Visor integrado 2020-2030 con ancla latente y sensibilidad conjunta"
 requires-python = ">=3.11"
 dependencies = [
   "shiny>=1.4,<2",

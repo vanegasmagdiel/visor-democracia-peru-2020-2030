@@ -12,8 +12,9 @@
       "@type": ["Dataset", "SoftwareSourceCode"],
       "name": "Visor Integrado de Democracia del Perú 2020–2030",
       "description": "Visor reproducible de la serie democrática 2020–2025 y tres escenarios prospectivos para el Perú al 2030.",
-      "version": "2.0.0",
-      "datePublished": "2026-08-19",
+      "version": "2.1.0-rc.1",
+      "datePublished": "2026-08-25",
+      "identifier": "https://doi.org/10.5281/zenodo.22080540",
       "license": {"@id": "https://spdx.org/licenses/MIT.html"},
       "author": {"@id": "https://orcid.org/0000-0002-7913-214X"},
       "copyrightHolder": {"@id": "https://orcid.org/0000-0002-7913-214X"},
@@ -25,6 +26,8 @@
         {"@id": "docs/METODOLOGIA.md"},
         {"@id": "data/overall_multilevel_2020_2025.csv"},
         {"@id": "data/scenario_trajectories_2025_2030.csv"},
+        {"@id": "data/peru_2025_anchor_ensemble.csv"},
+        {"@id": "data/parameter_elicitation_matrix.csv"},
         {"@id": "data/base_integral_democracia_2020_2030_v2.xlsx"},
         {"@id": "LICENSE_POLICY.md"}
       ]
@@ -72,6 +75,18 @@
     },
     {
       "@id": "data/overall_multilevel_2020_2025.csv",
+      "@type": "File",
+      "encodingFormat": "text/csv",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"}
+    },
+    {
+      "@id": "data/peru_2025_anchor_ensemble.csv",
+      "@type": "File",
+      "encodingFormat": "text/csv",
+      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"}
+    },
+    {
+      "@id": "data/parameter_elicitation_matrix.csv",
       "@type": "File",
       "encodingFormat": "text/csv",
       "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"}

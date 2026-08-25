@@ -1,85 +1,125 @@
-# Visor Integrado de Democracia del Perú 2020–2030 — v2.0.0
+# Visor Integrado de Democracia del Perú 2020–2030 — v2.1.0 candidato
 
-Aplicación reproducible que integra: **(i)** el visor longitudinal 2020–2025 de Perú/América Latina/mundo y **(ii)** un módulo prospectivo 2026–2030 con **tres escenarios** recalibrados después de las elecciones presidenciales peruanas de 2026.
+[![DOI conceptual](https://zenodo.org/badge/DOI/10.5281/zenodo.22080540.svg)](https://doi.org/10.5281/zenodo.22080540)
 
-**Autor:** Magdiel Torres Vanegas  
-**ORCID:** https://orcid.org/0000-0002-7913-214X  
-**Afiliación:** Universidad Nacional de Trujillo, Escuela de Posgrado – Unidad de Posgrado en Ciencias Económicas; Estudios Axial, Perú  
-**Perfil:** https://vanegas-magdiel.estudiosaxial.com/  
-**Repositorio:** https://github.com/vanegasmagdiel/visor-democracia-peru-2020-2030  
-**Visor web:** https://vanegasmagdiel.github.io/visor-democracia-peru-2020-2030/
+Aplicación reproducible que integra la trayectoria agregada del *Democracy
+Index* 2020–2025 y tres escenarios prospectivos exploratorios para el Perú al
+2030. La versión 2.1.0 corrige la trazabilidad del ancla 2025, formaliza los
+juicios de escenario y alinea código, documentación y sensibilidad.
 
-## Qué cambió en v2.0.0
+**Autor:** Magdiel Torres Vanegas
+**ORCID:** https://orcid.org/0000-0002-7913-214X
+**Afiliación:** Universidad Nacional de Trujillo, Escuela de Posgrado – Unidad
+de Posgrado en Ciencias Económicas; Estudios Axial, Perú
+**Perfil:** https://vanegas-magdiel.estudiosaxial.com/
+**Repositorio:** https://github.com/vanegasmagdiel/visor-democracia-peru-2020-2030
+**Visor web estable:** https://vanegasmagdiel.github.io/visor-democracia-peru-2020-2030/
 
-- Incorpora el **Democracy Index 2025**: Perú 5.88 (régimen híbrido), América Latina y el Caribe 5.71 y mundo 5.19.
-- Recalcula brechas, variaciones y comparaciones 2020–2025.
-- Integra ambos visores en una sola aplicación Shiny for Python.
-- Sustituye los seis escenarios previos por tres escenarios parsimoniosos y auditables: recuperación institucional, continuidad híbrida y deriva restrictiva.
-- Condiciona el shock 2026 con evidencia post-electoral (JNE, OEA, UE, Reuters y literatura/analítica especializada).
-- Añade bandas de sensibilidad Monte Carlo (p10–p90), explícitamente **no probabilidades de ocurrencia ni intervalos de confianza**.
-- Incluye `docs/index.html` autocontenido para GitHub Pages/consulta sin servidor y metadatos para Zenodo/OSF/GitHub.
+## Estado de publicación
 
-## Nota crítica de trazabilidad 2025
+- DOI conceptual del proyecto: `10.5281/zenodo.22080540`.
+- DOI de la versión estable v2.0.0: `10.5281/zenodo.22080541`.
+- v2.1.0 permanece como candidato científico mientras se integra la búsqueda
+  bibliográfica de la fase 8 y se cierran los productos editoriales de las fases
+  9–11.
+- No debe crearse una release/DOI v2.1.0 antes de superar esas compuertas.
+- La cuenta OSF no contiene un proyecto preexistente y su interfaz ya no permite
+  crear proyectos nuevos; el complemento OSF queda condicionado a un GUID
+  existente o a la definición posterior de un registro tras la fase 8.
 
-El informe-resumen EIU 2025 suministrado por el usuario publica los agregados regional y global, pero **no incluye una tabla país con los cinco subpilares del Perú**. Por ello:
+## Alcance científico
 
-- **Perú 2025 = 5.88** se registra como valor observado del EIU, verificado mediante una tabla de serie temporal secundaria que replica el índice.
-- Los cinco valores categoriales del Perú 2025 son una **calibración latente del modelo** cuya media es exactamente 5.88. **No deben citarse como subpilares oficiales EIU.**
-- Los subpilares 2025 de América Latina y del mundo sí proceden de la Figura 14 del informe EIU 2025.
+El producto realiza un **análisis longitudinal descriptivo de datos secundarios
+con construcción de escenarios prospectivos exploratorios y análisis de
+sensibilidad**.
 
-## Ejecución local
+El proyecto mide calidad democrática mediante las dimensiones del *Democracy
+Index*. “Funcionamiento del gobierno” no equivale a una medición directa de
+capacidad estatal; esta última solo se emplea como marco interpretativo cuando
+corresponde.
+
+## Capas de datos
+
+1. `official_source_observed`: valores publicados en fuentes oficiales.
+2. `secondary_reported_aggregate`: agregado 2025 del Perú atribuido al EIU y
+   reproducido en una tabla secundaria.
+3. `modeled_latent_central`: centro documentado de la composición dimensional
+   2025.
+4. `modeled_latent_ensemble`: 10 000 composiciones dimensionales admisibles,
+   todas con media 5,88.
+5. `simulated_scenario`: trayectorias condicionales 2026–2030.
+
+Los cinco valores dimensionales del Perú 2025 **no son subpuntajes oficiales
+publicados por EIU**.
+
+## Innovaciones de v2.1.0
+
+- Propaga la incertidumbre de la composición dimensional 2025.
+- Publica la matriz completa evidencia–parámetro–rango–regla de traducción.
+- Sustituye pesos documentales numéricos no utilizados por prioridades
+  categóricas sin uso computacional.
+- Muestrea shocks y tasas mediante rangos triangulares explícitos.
+- Usa la misma ley residual en los tres escenarios y números aleatorios comunes
+  para compararlos.
+- Somete la correlación entre dimensiones a sensibilidad 0,00–0,60.
+- Elimina los multiplicadores de dispersión por escenario y el factor 0,85 no
+  declarado de v2.0.0.
+- Separa clasificación de la trayectoria central y envolvente p10–p90.
+
+## Ejecución
 
 ### Windows
+
 `run_here.bat`
 
 ### PowerShell
+
 `./run_here.ps1`
 
 ### Linux/macOS
+
 `bash run_here.sh`
 
-O manualmente:
+### Reconstrucción científica
 
 ```bash
-python -m venv .venv
-# activar entorno
-pip install -r requirements.txt
-shiny run --reload app.py
+python scripts/rebuild_scenarios.py
+python scripts/build_static_viewer.py
+python scripts/preflight_check.py
+python scripts/build_release_manifest.py --check
+pytest -q
 ```
 
-## Visor estático
+## Archivos principales
 
-Abrir `docs/index.html`. Está generado con Plotly embebido y no requiere backend.
-
-## Estructura
-
-- `app.py`: visor integrado.
-- `data/`: bases auditables CSV + XLSX maestro.
+- `app.py`: aplicación Shiny for Python.
 - `docs/index.html`: visor estático autocontenido.
-- `docs/METODOLOGIA.md`: modelo y supuestos.
-- `docs/PROVENANCE.md`: trazabilidad de fuentes y estatus de datos.
-- `CITATION.cff`, `.zenodo.json`, `codemeta.json`: metadatos de citación/DOI.
-- `scripts/rebuild_scenarios.py`: reproducción de trayectorias y sensibilidad con semilla fija.
-- `scripts/preflight_check.py`: verificación de archivos e invariantes de release.
-- `scripts/build_release_manifest.py`: generación y comprobación reproducible del inventario SHA-256.
-- `tests/`: validaciones de integridad y modelo.
-- `datacite.json`, `ro-crate-metadata.json`: metadatos FAIR/PID complementarios.
-- `LICENSE_POLICY.md`: delimitación de licencias para código, documentación, datos derivados y terceros.
-- `data/LICENSE.md`: condiciones de reutilización de la capa de datos.
+- `data/model_config_v2_1.json`: configuración integral.
+- `data/peru_2025_anchor_ensemble.csv`: conjunto de anclas latentes.
+- `data/peru_2025_anchor_summary.csv`: resumen dimensional.
+- `data/parameter_elicitation_matrix.csv`: trazabilidad de 30 parámetros.
+- `data/scenario_sensitivity_bands.csv`: envolventes agregadas.
+- `data/scenario_sensitivity_by_category.csv`: envolventes dimensionales.
+- `docs/METODOLOGIA.md`: especificación metodológica.
+- `docs/OSF_COMPLEMENT.md`: política para el complemento OSF.
+- `scripts/publish_release.ps1`: publicación transaccional.
+- `PUBLICAR_VISOR_V2_1_0.bat`: lanzador Windows.
 
-## DOI / publicación
+## Interpretación
 
-Recomendación: GitHub como repositorio de desarrollo + GitHub Pages desde `/docs` + Zenodo para congelar releases y emitir DOI. OSF puede usarse para registro/preservación adicional. Véase `docs/DOI_GITHUB_OSF_ZENODO.md`. No se incluye un DOI ficticio.
+Los percentiles p10, p50 y p90 son envolventes de sensibilidad. No son
+intervalos de confianza, probabilidades de ocurrencia ni pronósticos
+electorales. La separación entre escenarios es consecuencia de sus supuestos y
+no demuestra dominancia causal.
 
 ## Licencias
 
 - Código y configuración original: MIT.
 - Documentación y narrativa original: CC BY 4.0.
-- Datos derivados: CC BY 4.0 únicamente sobre la selección, organización, transformación y contenido original del autor; las fuentes subyacentes conservan sus términos.
-- Materiales de terceros: no quedan relicenciados; el PDF de EIU no se redistribuye.
+- Datos derivados: la licencia cubre únicamente la contribución original de
+  selección, organización, transformación y modelado.
+- Fuentes EIU y otros materiales de terceros conservan sus condiciones y no son
+  relicenciados.
 
-Véanse `LICENSE`, `LICENSE_POLICY.md`, `LICENSES/README.md`, `data/LICENSE.md` y `THIRD_PARTY_NOTICES.md`.
-
-## Integridad de la entrega
-
-`SHA256SUMS.txt` y `RELEASE_MANIFEST.json` se regeneran con `python scripts/build_release_manifest.py`. La comprobación no destructiva se ejecuta con `python scripts/build_release_manifest.py --check`.
+Véanse `LICENSE`, `LICENSE_POLICY.md`, `LICENSES/README.md`, `data/LICENSE.md` y
+`THIRD_PARTY_NOTICES.md`.

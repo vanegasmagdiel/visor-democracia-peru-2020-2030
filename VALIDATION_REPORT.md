@@ -1,27 +1,78 @@
-# Validation report — v2.0.0
+# Validation report — v2.1.0-rc.1
 
-**Validation date:** 2026-08-24
+**Validation date:** 2026-08-25
+**Publication status:** review candidate; no final tag or new Zenodo DOI.
 
-## Completed checks
+## Scientific and data controls
 
-- Scenario rebuild script executed successfully with deterministic seed `20260819`.
-- Repository preflight, including metadata, license notices, source data and `docs/.nojekyll`: **PASS**.
-- Python syntax compilation (`app.py`, `scripts/`, `tests/`): **PASS**.
-- Release test suite: **9 passed** (four model tests and five static-integrity tests).
-- JSON parsing for `.zenodo.json`, `codemeta.json`, `datacite.json` and `ro-crate-metadata.json`: **PASS**.
-- YAML parsing for `CITATION.cff`: **PASS**.
-- ORCID, declared affiliation, repository URL and GitHub Pages URL consistency: **PASS**.
-- Layered license policy and third-party notices: **PASS**.
-- Deterministic release manifest and SHA-256 inventory verification: **PASS**.
-- Heuristic scan for embedded local paths, common secret patterns and credentials: **no findings**.
-- Master XLSX created with `artifact_tool`; key dashboard and formula ranges inspected; formula-error scan returned zero matches.
-- Dashboard XLSX was rendered for visual inspection before export.
-- Static viewer is self-contained (embedded Plotly) and references release data files by relative paths.
+- Deterministic rebuild with seed `20260825`: **PASS**.
+- 10,000 latent 2025 dimensional vectors, each with exact mean `5.88`:
+  **PASS**.
+- Separation between `secondary_reported_aggregate`, latent dimensional values
+  and simulated scenarios: **PASS**.
+- Thirty scenario parameters with ordered plausible ranges and complete
+  evidence/translation fields: **PASS**.
+- Evidence register without numeric weights and with
+  `computational_use=false`: **PASS**.
+- Three-scenario ordering, 0–10 bounds and p10 ≤ p50 ≤ p90 invariants: **PASS**.
+- Sensitivity labels explicitly reject confidence-interval and
+  scenario-probability interpretations: **PASS**.
 
-## Environment qualification
+## Product consistency
 
-The build container used for this release did not have `shiny` preinstalled, so a live import/server smoke test was not executed in that container. Runtime dependencies and version bounds are declared in `requirements.txt`, `pyproject.toml`, and `Dockerfile`; Python syntax, preflight, release-inventory and data/model tests passed independently. GitHub Actions will repeat these checks on every push and pull request.
+- Scientific preflight: **PASS**.
+- Python syntax compilation for application, scripts and tests: **PASS**.
+- Test suite after final manifest generation: **15 tests passed**.
+- Shiny live server smoke test on local HTTP endpoint: **PASS**.
+- Static self-contained viewer rebuild: **PASS**.
+- Public download synchronization under `docs/data`: **PASS**.
+- JSON/CFF identity, ORCID, affiliation, repository and version consistency:
+  **PASS**.
+- `.nojekyll`, GitHub Pages source and required publication files: **PASS**.
+- Heuristic credential and machine-path scan: **PASS; no findings**.
 
-## Data-quality invariant
+## XLSX quality assurance
 
-Peru's 2025 overall score (5.88) is treated as observed/secondary-replicated EIU data. Peru's five 2025 category values are explicitly flagged as a modeled latent calibration and must not be cited as official EIU sub-pillar values.
+- Integral workbook rebuilt with `artifact_tool`: **PASS**.
+- Fourteen sheets produced, including dashboard, latent-anchor audit, parameter
+  elicitation, evidence, aggregate/dimensional sensitivity, statuses,
+  methodology and data dictionary.
+- Every sheet rendered at least once for visual review: **PASS**.
+- Dashboard, anchor, parameter and 2030 summary renders manually inspected:
+  **PASS**.
+- Formula-error scan (`#REF!`, `#DIV/0!`, `#VALUE!`, `#NAME?`, `#N/A`):
+  **zero matches**.
+
+## Publication automation
+
+- BAT wrapper resolves the PowerShell publisher by its own directory: **PASS**.
+- PowerShell delimiter/structure audit: **PASS**.
+- Static policy tests confirm explicit `-PublishRelease` switch, exact final
+  confirmation phrase, RC metadata guard and OSF whitelist: **PASS**.
+- ZIP-root discovery is recursive and requires `pyproject.toml`,
+  `docs/index.html` and the v2.1 model configuration, eliminating the prior
+  fixed-path failure.
+- Git identity uses the authenticated GitHub user’s noreply address,
+  eliminating the prior blank-email prompt.
+- Git remote is forced to SSH, eliminating the prior HTTPS OAuth workflow-scope
+  rejection.
+- Native BAT execution must occur on Windows; in the build environment its
+  equivalent gates, model rebuild and tests were executed directly.
+
+## External-platform qualification
+
+- GitHub candidate publication is limited to a branch and draft PR.
+- GitHub Pages remains tied to `main/docs`; the stable page is not replaced by
+  an unreviewed candidate.
+- The authenticated OSF dashboard contained no project and redirected new
+  research-material storage to external repositories. Therefore no OSF write
+  was attempted. The BAT can synchronize only a preexisting OSF project GUID
+  and never uploads the primary ZIP.
+- Zenodo v2.0.0 and DOI `10.5281/zenodo.22080541` remain immutable. The concept
+  DOI is `10.5281/zenodo.22080540`.
+
+## Deferred gate
+
+Phase 8 will add the PRISMA-agent corpus and screening outputs. Phases 9–11 and
+an explicit GO are required before removing the RC label, merging the PR,
+creating tag `v2.1.0`, creating a GitHub Release or minting a new Zenodo DOI.

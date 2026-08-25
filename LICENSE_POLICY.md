@@ -17,7 +17,13 @@ relicencia de contenidos cuyos derechos pertenecen a otra entidad.
 ## Atribución sugerida
 
 Torres Vanegas, M. (2026). *Visor Integrado de Democracia del Perú
-2020–2030* (versión 2.0.0) [Software]. Zenodo. DOI pendiente de acuñación.
+2020–2030* (versión 2.0.0) [Software]. Zenodo.
+https://doi.org/10.5281/zenodo.22080541
+
+DOI conceptual del proyecto: https://doi.org/10.5281/zenodo.22080540
+
+La versión 2.1.0 permanece como candidato hasta completar las fases
+bibliográfica y editorial. Su DOI de versión no debe anticiparse ni inventarse.
 
 ORCID: https://orcid.org/0000-0002-7913-214X
 

@@ -1,29 +1,38 @@
-# Integration map: legacy viewers → v2.0.0
+# Integration map: legacy inputs → v2.1.0-rc.1
 
-## Historical viewer contribution
+## Historical layer
 
-Integrated into the **2020–2025 longitudinal layer**:
-- Peru / Latin America / world overall time series.
-- Five Democracy Index categories.
-- Regime-classification logic.
-- Gap and percentage-change calculations.
-- Source/provenance fields.
+- Peru / Latin America and Caribbean / world overall time series.
+- Five Democracy Index dimensions through the last published dimensional year.
+- Regime classification, score gaps and changes.
+- Source, location and epistemic-status fields.
 
-## Prospective viewer contribution
+## Scientific correction of the 2025 anchor
 
-Integrated into the **2026–2030 scenario layer**:
-- Category-level scenario mechanics.
-- Projection-to-overall aggregation.
-- Regime-classification output.
-- Prospect-analysis narrative and scenario comparison.
+- The aggregate `5.88` remains a secondary-reported value.
+- The unpublished dimensional composition is no longer treated as observed.
+- One central constrained vector and 10,000 latent alternatives are published.
+- Every alternative averages exactly `5.88` and remains inside documented
+  historical-volatility bounds.
 
-## v2.0.0 redesign decisions
+## Prospective layer
 
-- Two separate applications replaced by one Shiny application with distinct historical and prospective tabs.
-- Six legacy prospective variants reduced to three scenario families to improve interpretability and auditability.
-- A one-off 2026 post-election shock is separated from 2027–2030 structural rates.
-- Projection rates are damped through 2030 instead of using indefinite linear extrapolation.
-- Evidence-conditioned coefficients are stored in `data/scenario_coefficients.csv` rather than embedded only in UI logic.
-- Monte Carlo p10–p90 envelopes are treated as sensitivity bands, not occurrence probabilities.
-- Data status fields distinguish observed EIU values, secondary replication and modeled latent anchors.
-- Repository metadata, static viewer, reproducibility script, tests, hashes and DOI-ready metadata were added.
+- Three scenario families: institutional recovery, hybrid continuity and
+  restrictive drift.
+- Separate 2026 shock and 2027–2030 structural-rate mechanisms.
+- Thirty source-linked parameter judgements with central and plausible values.
+- Common-random-number sensitivity with the same residual law in all scenarios.
+- Aggregate and dimensional p10–p90 envelopes.
+
+## v2.1.0-rc.1 redesign decisions
+
+- Removed unused numeric evidence weights.
+- Removed undocumented scenario-specific dispersion multipliers and the prior
+  `0.85` factor.
+- Added a controlled data-status registry and field-level dictionary.
+- Rebuilt the integral XLSX with audit sheets for anchor, parameters, evidence,
+  sensitivity and methodology.
+- Aligned the Shiny application, static GitHub Pages viewer, metadata, tests,
+  checksums and OSF complement policy.
+- Added a transactional Windows publisher whose default mode creates a review
+  branch and draft PR but cannot mint the final DOI accidentally.
