@@ -13,7 +13,7 @@
     "SHA256SUMS.txt"
   ],
   "file_count": 72,
-  "total_bytes": 6610744,
+  "total_bytes": 6611106,
   "files": [
     {
       "path": ".gitattributes",
@@ -62,8 +62,8 @@
     },
     {
       "path": "PUBLICAR_VISOR_V2_1_0.bat",
-      "bytes": 460,
-      "sha256": "ecdf575af2a4e135533ffe65381764913465c2c74eca7ff060fd3969243c18de"
+      "bytes": 822,
+      "sha256": "ff057f9dce9d0f9825e688311ed009e4de163d400d63b251625e9ff11724da86"
     },
     {
       "path": "README.md",
