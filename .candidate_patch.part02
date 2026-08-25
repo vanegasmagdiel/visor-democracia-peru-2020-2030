@@ -1,0 +1,1486 @@
+n institucional y gobernabilidad negociada,Electoral process and pluralism,Proceso electoral y pluralismo,annual_structural_rate,0.04,0.01,0.07,E01;E02,positive,"Cumplimiento gradual de recomendaciones; efecto anual pequeño y decreciente.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,Functioning of government,Funcionamiento del gobierno,shock_2026,0.12,0.04,0.20,E01;E05;E08,positive,"Acuerdos de gobernabilidad producen mejora inicial limitada por fragmentación institucional.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,Functioning of government,Funcionamiento del gobierno,annual_structural_rate,0.10,0.04,0.16,E01;E05;E08,positive,"Coalición estable y capacidad de implementación sostienen una mejora gradual.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,Political participation,Participación política,shock_2026,0.08,0.02,0.14,E01;E07,positive,"Legitimidad y acceso a información inducen una mejora inicial moderada.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,Political participation,Participación política,annual_structural_rate,0.06,0.02,0.10,E01;E07,positive,"Mecanismos de participación se consolidan lentamente.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,Political culture,Cultura política,shock_2026,0.15,0.05,0.25,E06;E08;E09,positive,"Reducción de confrontación y aceptación de reglas permiten una recuperación parcial.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,Political culture,Cultura política,annual_structural_rate,0.10,0.04,0.16,E06;E08,positive,"Recuperación gradual desde una base baja; no supone normalización inmediata.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,Civil liberties,Libertades civiles,shock_2026,0.05,-0.02,0.12,E01;E05,weak_positive,"Controles judiciales compensan parcialmente la presión securitaria.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,Civil liberties,Libertades civiles,annual_structural_rate,0.05,0.01,0.09,E01;E05,positive,"Institucionalización de salvaguardas genera mejora gradual.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++continuidad_hibrida,Continuidad híbrida y estabilización competitiva,Electoral process and pluralism,Proceso electoral y pluralismo,shock_2026,0.08,0.00,0.14,E01;E02;E03,weak_positive,"Aceptación formal del resultado mejora el componente sin reforma estructural.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++continuidad_hibrida,Continuidad híbrida y estabilización competitiva,Electoral process and pluralism,Proceso electoral y pluralismo,annual_structural_rate,0.00,-0.02,0.02,E01;E02,neutral,"Competencia preservada con estabilidad procedimental y bajo cambio anual.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++continuidad_hibrida,Continuidad híbrida y estabilización competitiva,Functioning of government,Funcionamiento del gobierno,shock_2026,-0.06,-0.15,0.03,E04;E05;E08,weak_negative,"Fragmentación y margen electoral estrecho limitan coordinación inicial.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++continuidad_hibrida,Continuidad híbrida y estabilización competitiva,Functioning of government,Funcionamiento del gobierno,annual_structural_rate,0.01,-0.03,0.05,E05;E08,near_neutral,"Ajustes parciales compensan sin resolver debilidades de implementación.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++continuidad_hibrida,Continuidad híbrida y estabilización competitiva,Political participation,Participación política,shock_2026,0.06,-0.01,0.12,E03;E07,weak_positive,"Movilización electoral preserva participación con efecto inicial acotado.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++continuidad_hibrida,Continuidad híbrida y estabilización competitiva,Political participation,Participación política,annual_structural_rate,0.02,-0.02,0.06,E07,near_neutral,"Persistencia participativa sin reformas sostenidas.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++continuidad_hibrida,Continuidad híbrida y estabilización competitiva,Political culture,Cultura política,shock_2026,-0.10,-0.20,0.00,E04;E06;E08,negative,"Polarización y desconfianza contrarrestan la normalización electoral.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++continuidad_hibrida,Continuidad híbrida y estabilización competitiva,Political culture,Cultura política,annual_structural_rate,0.00,-0.05,0.05,E06;E08,neutral,"La baja confianza se estabiliza sin recuperación estructural.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++continuidad_hibrida,Continuidad híbrida y estabilización competitiva,Civil liberties,Libertades civiles,shock_2026,-0.08,-0.16,0.00,E01;E05,weak_negative,"Agenda de seguridad introduce tensión inicial sobre libertades.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++continuidad_hibrida,Continuidad híbrida y estabilización competitiva,Civil liberties,Libertades civiles,annual_structural_rate,-0.01,-0.05,0.03,E01;E05,near_neutral,"Controles parciales evitan una erosión acelerada.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++deriva_restrictiva,Deriva restrictiva y securitización,Electoral process and pluralism,Proceso electoral y pluralismo,shock_2026,-0.08,-0.18,0.02,E01;E02;E03;E06,negative,"Conflicto de legitimidad reduce la calidad electoral sin eliminar la competencia.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++deriva_restrictiva,Deriva restrictiva y securitización,Electoral process and pluralism,Proceso electoral y pluralismo,annual_structural_rate,-0.04,-0.08,0.00,E01;E02;E06,negative,"Erosión gradual de garantías y confianza electoral.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++deriva_restrictiva,Deriva restrictiva y securitización,Functioning of government,Funcionamiento del gobierno,shock_2026,-0.20,-0.32,-0.08,E05;E06;E08;E09,negative,"Securitización y conflicto Ejecutivo-Congreso deterioran coordinación inicial.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++deriva_restrictiva,Deriva restrictiva y securitización,Functioning of government,Funcionamiento del gobierno,annual_structural_rate,-0.13,-0.20,-0.06,E05;E06;E08,negative,"Persistencia de excepcionalidad y debilitamiento de controles reducen desempeño institucional.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++deriva_restrictiva,Deriva restrictiva y securitización,Political participation,Participación política,shock_2026,-0.05,-0.14,0.04,E05;E07;E09,weak_negative,"Restricción y desencanto reducen parcialmente la participación.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++deriva_restrictiva,Deriva restrictiva y securitización,Political participation,Participación política,annual_structural_rate,-0.07,-0.12,-0.02,E05;E07,negative,"Desmovilización y barreras acumulativas sostienen el descenso.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++deriva_restrictiva,Deriva restrictiva y securitización,Political culture,Cultura política,shock_2026,-0.25,-0.40,-0.10,E04;E06;E08;E09,negative,"Polarización intensa y baja legitimidad agravan el punto de partida.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++deriva_restrictiva,Deriva restrictiva y securitización,Political culture,Cultura política,annual_structural_rate,-0.13,-0.21,-0.05,E04;E06;E08,negative,"Persistencia de confrontación deteriora gradualmente la cultura democrática.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++deriva_restrictiva,Deriva restrictiva y securitización,Civil liberties,Libertades civiles,shock_2026,-0.28,-0.42,-0.14,E01;E05;E09,negative,"Medidas securitarias sin salvaguardas generan el mayor impacto inicial.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
++deriva_restrictiva,Deriva restrictiva y securitización,Civil liberties,Libertades civiles,annual_structural_rate,-0.16,-0.24,-0.08,E01;E05;E09,negative,"Normalización de restricciones acumula deterioro anual.",Magdiel Torres Vanegas,2026-08-25,structured_analytical_judgment
+diff --git a/data/post_election_evidence_2026.csv b/data/post_election_evidence_2026.csv
+index 67b19be9c1cb145288b65d65b1a67e9bbb4eeeca..2b2da3b3a05d3ee6e1404a06094c1163f18db6e4 100644
+--- a/data/post_election_evidence_2026.csv
++++ b/data/post_election_evidence_2026.csv
+@@ -1,10 +1,10 @@
+-id,date,type,source,title,signal,model_dimensions,url,weight
+-E01,2026-08-17,international_observation_final,European Union Election Observation Mission,PERU 2026: Final Report - General elections and Presidential run-off,Final post-electoral assessment and recommendations; used as the strongest post-election institutional evidence input.,electoral_integrity;governance;rights,https://www.eeas.europa.eu/eom-peru-2026/peru-2026-final-report-general-elections-and-presidential-run_en,1.0
+-E02,2026-07-08,international_observation,Organization of American States,Segundo Informe de la Misión de Observación Electoral de la OEA en Perú para la Segunda Elección Presidencial 2026,Documents the post-electoral review phase and institutional guarantees/risks after the runoff.,electoral_integrity;legitimacy,https://www.oas.org/es/centro_noticias/comunicado_prensa.asp?sCodigo=D-017%2F26,0.95
+-E03,2026-07-03,official_result,Jurado Nacional de Elecciones,Elecciones Generales 2026 - proclamación y credencial presidencial,Official proclamation of Keiko Fujimori Higuchi as president-elect; resolves the election outcome used in scenario conditioning.,electoral_outcome;legitimacy,https://portal.jne.gob.pe/portal/Pagina/Ver/979/page/Elecciones-Generales-2026,1.0
+-E04,2026-07-03,news_wire,Reuters,Keiko Fujimori declared winner of Peru presidential race,"Runoff result 50.135% vs 49.865%, roughly 50,000-vote margin; highlights deep polarization and fragmented Congress.",polarization;governability;legitimacy,https://www.reuters.com/world/americas/keiko-fujimori-declared-winner-peru-presidential-race-2026-07-03/,0.9
+-E05,2026-07-28,post_inauguration_news,Associated Press,Keiko Fujimori is inaugurated as Peru president following a narrow election victory,Post-inauguration evidence on security agenda and bicameral legislative support constraints/opportunities.,security;governability;rights,https://apnews.com/article/84d08998b1629c95f0383d7b5a7a7f6b,0.8
+-E06,2026-06-24,expert_analysis,European Center for Populism Studies,Prof. Carrión: I Am Very Pessimistic About the Prospects for Peruvian Democracy,"Expert post-runoff diagnosis of representation weakness, institutional distrust, fragmentation and legitimacy erosion.",political_culture;governability;polarization,https://www.populismstudies.org/prof-carrion-i-am-very-pessimistic-about-the-prospects-for-peruvian-democracy/,0.75
+-E07,2026-06-01,working_paper,arXiv / authors,Information and voting: Evidence from Peru's 2026 presidential election,Natural experiment on information effects in a fragmented presidential election; informs participation/information-system sensitivity.,participation;electoral_information,https://arxiv.org/abs/2606.01687,0.75
+-E08,2026-01-01,country_assessment,Bertelsmann Transformation Index,BTI 2026 Peru Country Report,"Structural baseline: weak parties, short-term political calculations and fragile commitment to democratic institutions.",governance;political_culture;rule_of_law,https://bti-project.org/en/reports/country-report/PER,0.7
+-E09,2026-01-01,official_index_report,Economist Intelligence Unit,Democracy Index 2025: Democracy stabilises after eight years of decline,2025 empirical anchor; regional recovery but EIU outlook anticipated a likely right-wing populist Peruvian government and hard-line security policy.,overall;security;regional_context,https://www.eiu.com/n/campaigns/democracy-index-2025/,1.0
++id,date,type,source,title,signal,model_dimensions,url,source_priority,computational_use
++E01,2026-08-17,international_observation_final,European Union Election Observation Mission,PERU 2026: Final Report - General elections and Presidential run-off,Final post-electoral assessment and recommendations; used as the strongest post-election institutional evidence input.,electoral_integrity;governance;rights,https://www.eeas.europa.eu/eom-peru-2026/peru-2026-final-report-general-elections-and-presidential-run_en,primary_observation,false
++E02,2026-07-08,international_observation,Organization of American States,Segundo Informe de la Misión de Observación Electoral de la OEA en Perú para la Segunda Elección Presidencial 2026,Documents the post-electoral review phase and institutional guarantees/risks after the runoff.,electoral_integrity;legitimacy,https://www.oas.org/es/centro_noticias/comunicado_prensa.asp?sCodigo=D-017%2F26,primary_observation,false
++E03,2026-07-03,official_result,Jurado Nacional de Elecciones,Elecciones Generales 2026 - proclamación y credencial presidencial,Official proclamation of Keiko Fujimori Higuchi as president-elect; resolves the election outcome used in scenario conditioning.,electoral_outcome;legitimacy,https://portal.jne.gob.pe/portal/Pagina/Ver/979/page/Elecciones-Generales-2026,primary_official,false
++E04,2026-07-03,news_wire,Reuters,Keiko Fujimori declared winner of Peru presidential race,"Runoff result 50.135% vs 49.865%, roughly 50,000-vote margin; highlights deep polarization and fragmented Congress.",polarization;governability;legitimacy,https://www.reuters.com/world/americas/keiko-fujimori-declared-winner-peru-presidential-race-2026-07-03/,secondary_context,false
++E05,2026-07-28,post_inauguration_news,Associated Press,Keiko Fujimori is inaugurated as Peru president following a narrow election victory,Post-inauguration evidence on security agenda and bicameral legislative support constraints/opportunities.,security;governability;rights,https://apnews.com/article/84d08998b1629c95f0383d7b5a7a7f6b,secondary_context,false
++E06,2026-06-24,expert_analysis,European Center for Populism Studies,Prof. Carrión: I Am Very Pessimistic About the Prospects for Peruvian Democracy,"Expert post-runoff diagnosis of representation weakness, institutional distrust, fragmentation and legitimacy erosion.",political_culture;governability;polarization,https://www.populismstudies.org/prof-carrion-i-am-very-pessimistic-about-the-prospects-for-peruvian-democracy/,expert_context,false
++E07,2026-06-01,working_paper,arXiv / authors,Information and voting: Evidence from Peru's 2026 presidential election,Natural experiment on information effects in a fragmented presidential election; informs participation/information-system sensitivity.,participation;electoral_information,https://arxiv.org/abs/2606.01687,academic_working_paper,false
++E08,2026-01-01,country_assessment,Bertelsmann Transformation Index,BTI 2026 Peru Country Report,"Structural baseline: weak parties, short-term political calculations and fragile commitment to democratic institutions.",governance;political_culture;rule_of_law,https://bti-project.org/en/reports/country-report/PER,institutional_assessment,false
++E09,2026-01-01,official_index_report,Economist Intelligence Unit,Democracy Index 2025: Democracy stabilises after eight years of decline,2025 empirical anchor; regional recovery but EIU outlook anticipated a likely right-wing populist Peruvian government and hard-line security policy.,overall;security;regional_context,https://www.eiu.com/n/campaigns/democracy-index-2025/,primary_index_report,false
+diff --git a/datacite.json b/datacite.json
+index c665fa31b5ff08ba038ee70e0307678b87fd4cb0..98ffa1c8adbdfffcfa39031eb9664e5f65f57ac4 100644
+--- a/datacite.json
++++ b/datacite.json
+@@ -24,7 +24,7 @@
+   ],
+   "publisher": "Zenodo",
+   "publicationYear": 2026,
+-  "version": "2.0.0",
++  "version": "2.1.0-rc.1",
+   "language": "es",
+   "url": "https://github.com/vanegasmagdiel/visor-democracia-peru-2020-2030",
+   "rightsList": [
+@@ -47,7 +47,14 @@
+   "descriptions": [
+     {
+       "descriptionType": "Abstract",
+-      "description": "Portable reproducible viewer integrating Peru Democracy Index trends for 2020–2025 with three evidence-conditioned scenarios to 2030. Code is licensed under MIT; documentation and original narrative content under CC BY 4.0; third-party inputs retain their original terms."
++      "description": "Portable reproducible viewer integrating Peru Democracy Index trends for 2020–2025 with three evidence-informed exploratory scenarios to 2030 and joint propagation of dimensional and parameter uncertainty."
++    }
++  ],
++  "relatedIdentifiers": [
++    {
++      "relatedIdentifier": "10.5281/zenodo.22080540",
++      "relatedIdentifierType": "DOI",
++      "relationType": "IsVersionOf"
+     }
+   ]
+ }
+diff --git a/docs/AUDIT_CLOSURE_PHASES_1_7.md b/docs/AUDIT_CLOSURE_PHASES_1_7.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..776120f29f50ea0f0f64deff3010ee14856054bd
+--- /dev/null
++++ b/docs/AUDIT_CLOSURE_PHASES_1_7.md
+@@ -0,0 +1,32 @@
++# Closure record — phases 1–7
++
++## Completed controls
++
++1. **Claim and scope control:** the product is a descriptive longitudinal
++   analysis with exploratory scenarios; it does not claim causal identification
++   or a direct measure of state capacity.
++2. **2025 anchor control:** aggregate and dimensional epistemic statuses are
++   separated and machine-readable.
++3. **Parameter control:** all scenario inputs are bounded, source-linked and
++   attributable.
++4. **Sensitivity control:** anchor, parameter, structural-scale and correlated
++   residual uncertainty are propagated with a deterministic seed.
++5. **Product consistency:** CSV, XLSX, app, static viewer and metadata use the
++   same model outputs and status vocabulary.
++6. **Licensing and provenance:** original contributions, derived data and
++   third-party rights are separated.
++7. **Publication control:** automated candidate publication is permitted;
++   immutable v2.0.0 and its DOI are not overwritten.
++
++## Deferred controls
++
++- **Phase 8:** structured PRISMA-agent search, deduplication, screening record
++  and final reference corpus supplied by the author.
++- **Phases 9–11:** manuscript integration, editorial conformance and final
++  release/DOI after explicit GO.
++
++## Release gate
++
++`v2.1.0-rc.1` is suitable for scientific review when the rebuild, preflight,
++tests, secret scan and deterministic inventory all pass. It is not a final
++archival release.
+diff --git a/docs/CHANGELOG.md b/docs/CHANGELOG.md
+index 4fab68c209cab0ef848e5dec47275dddd02df784..595020db77083a8a8e49efc724fcaad74122cab0 100644
+--- a/docs/CHANGELOG.md
++++ b/docs/CHANGELOG.md
+@@ -1,5 +1,14 @@
+ # Changelog
+ 
++## 2.1.0-rc.1 — 2026-08-25
++- Reposiciona el análisis en erosión democrática y funcionamiento del gobierno.
++- Convierte el vector dimensional 2025 en un conjunto de 10 000 anclas admisibles.
++- Formaliza 30 parámetros con rangos, evidencia y reglas de traducción.
++- Sustituye pesos documentales no computados por prioridades categóricas.
++- Unifica la ley residual y añade sensibilidad de correlación entre dimensiones.
++- Sincroniza metodología, configuración, tests, visor, metadatos y OSF.
++- Mantiene v2.0.0 y su DOI como objeto inmutable.
++
+ ## 2.0.0 — 2026-08-19
+ - Fusión de visor histórico y prospectivo.
+ - Actualización Democracy Index 2025.
+diff --git a/docs/DECISION_LOG.md b/docs/DECISION_LOG.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..70fb9dbdb85ae73bbbe2b7b5c4a8d78d5d816daf
+--- /dev/null
++++ b/docs/DECISION_LOG.md
+@@ -0,0 +1,12 @@
++# Analytical decision log — phases 1–7
++
++| Date | Decision | Rationale | Consequence |
++|---|---|---|---|
++| 2026-08-25 | Keep Peru 2025 total fixed at 5.88 with status `secondary_reported_aggregate`. | The supplied EIU summary lacks a Peru country table; the value is retained through a secondary cross-country replication. | It may be cited only with that qualification. |
++| 2026-08-25 | Treat the five Peru 2025 components as latent. | No official 2025 Peru dimensional table was available. | Central values and ensemble must never be called official EIU sub-scores. |
++| 2026-08-25 | Build 10,000 zero-sum constrained anchors. | Dimensional uncertainty must propagate while preserving the reported aggregate. | Every sample has exact mean 5.88. |
++| 2026-08-25 | Replace evidence weights with categorical priority. | The former numeric field was not a model coefficient and could suggest false precision. | `computational_use=false` for evidence rows. |
++| 2026-08-25 | Publish bounded structured judgements for 30 parameters. | Qualitative evidence requires an auditable translation step. | Each parameter has central/low/high, evidence IDs, rule, author and date. |
++| 2026-08-25 | Use common random numbers and one residual law. | Scenario comparisons should not be driven by different noise models. | p10–p90 differences primarily reflect scenario assumptions. |
++| 2026-08-25 | Label p10–p90 as sensitivity only. | Inputs are not sampling estimates from a probability design. | No confidence-interval or scenario-probability claim is permitted. |
++| 2026-08-25 | Publish v2.1.0-rc.1 as branch/PR only. | Phase 8 corpus and phases 9–11 remain pending. | No final tag, GitHub Release or new Zenodo DOI before explicit GO. |
+diff --git a/docs/DOI_GITHUB_OSF_ZENODO.md b/docs/DOI_GITHUB_OSF_ZENODO.md
+index 16e16f4180965121ac27435005b369fadf34e751..48cb3a9d5434eaf177f88fd8df3fb187d147be41 100644
+--- a/docs/DOI_GITHUB_OSF_ZENODO.md
++++ b/docs/DOI_GITHUB_OSF_ZENODO.md
+@@ -1,33 +1,53 @@
+-# Publicación, preservación y DOI — ruta recomendada (verificada 2026-08-19)
++# GitHub, GitHub Pages, Zenodo y OSF — política v2.1.0
+ 
+-## Ruta A — recomendada: GitHub + Zenodo
++## Identificadores vigentes
+ 
+-1. Subir esta carpeta a un repositorio GitHub.
+-2. Activar GitHub Pages desde la rama principal y la carpeta `/docs`; `docs/index.html` ya es el punto de entrada estático.
+-3. Conectar la cuenta GitHub con Zenodo y habilitar el repositorio en la integración de software.
+-4. Crear una release GitHub `v2.0.0`. Zenodo puede archivar la release habilitada y generar el registro persistente.
+-5. Zenodo asigna DOI al publicar el depósito. También permite reservar el DOI antes de publicar si se desea incorporarlo a metadatos/figuras.
+-6. Actualizar `CITATION.cff`, `.zenodo.json`, `datacite.json`, `codemeta.json` y README con el DOI emitido.
++- DOI conceptual: https://doi.org/10.5281/zenodo.22080540
++- DOI v2.0.0: https://doi.org/10.5281/zenodo.22080541
++- Repositorio: https://github.com/vanegasmagdiel/visor-democracia-peru-2020-2030
++- GitHub Pages: https://vanegasmagdiel.github.io/visor-democracia-peru-2020-2030/
+ 
+-Documentación oficial:
+-- Zenodo GitHub integration: https://help.zenodo.org/docs/github/
+-- Archive GitHub release: https://help.zenodo.org/docs/github/archive-software/github-upload/
+-- Reserve DOI: https://help.zenodo.org/docs/deposit/describe-records/reserve-doi/
+-- GitHub Pages publishing source: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
++## Estado de v2.1.0
+ 
+-## Ruta B — OSF
++v2.1.0-rc.1 es un candidato científico. Puede publicarse en una rama y en un
++pull request, pero no debe crearse todavía el tag/release final. La release
++final se habilitará cuando:
+ 
+-Para preservación académica, subir la release y metadatos a OSF o crear una **Registration** pública. La documentación vigente de OSF indica que los registros públicos reciben DOI. Mantener sincronizados título, autores, versión, licencia y recursos relacionados.
++1. se integre y congele la búsqueda de la fase 8;
++2. se regeneren figuras, visor y manuscrito;
++3. se supere el control cruzado de las fases 9–11.
+ 
+-Documentación oficial:
+-- OSF Registrations: https://help.osf.io/article/330-welcome-to-registrations
+-- OSF metadata: https://help.osf.io/article/571-add-metadata-to-your-osf-registration
++## Flujo transaccional
+ 
+-## Recomendación de versionado
++`PUBLICAR_VISOR_V2_1_0.bat` llama a `scripts/publish_release.ps1`.
+ 
+-- Repositorio vivo: GitHub (`main`).
+-- Versión citable: GitHub Release `v2.0.0` + Zenodo DOI de versión.
+-- DOI conceptual: usarlo para citar el proyecto a través de versiones cuando Zenodo lo asigne.
+-- Materiales/registro de investigación: OSF, enlazando el DOI de Zenodo cuando corresponda.
++### Modo candidato — uso actual
+ 
+-**Regla:** no escribir ni inventar un DOI antes de que Zenodo/OSF lo emita o lo reserve formalmente.
++1. valida SHA-256 del ZIP;
++2. clona el repositorio;
++3. superpone el paquete;
++4. reconstruye modelo y visor estático;
++5. ejecuta preflight, pruebas y escaneo de secretos;
++6. crea o actualiza una rama candidata;
++7. abre un pull request en borrador;
++8. sincroniza en OSF únicamente materiales complementarios si se suministran
++   `OSF_PROJECT_ID` y `OSF_TOKEN`.
++
++No crea release ni DOI.
++
++### Modo final — reservado para el GO de fases 9–11
++
++Con el parámetro `-PublishRelease`, el script exige confirmación explícita,
++fusiona el PR validado, crea el tag `v2.1.0`, adjunta el ZIP y dispara la
++integración GitHub–Zenodo ya habilitada.
++
++## Zenodo
++
++La integración GitHub–Zenodo está habilitada. Cada GitHub Release estable crea
++un nuevo DOI de versión y conserva el DOI conceptual. Un prerelease o rama no
++debe utilizarse para acuñar un objeto científico definitivo.
++
++## OSF
++
++OSF conserva protocolo, decisiones y materiales no ejecutables. No debe
++duplicar el release completo de Zenodo. Véase `docs/OSF_COMPLEMENT.md`.
+diff --git a/docs/INTEGRATION_MAP.md b/docs/INTEGRATION_MAP.md
+index ac83e6ecc280266e9b6b3f9efbf760b907a77bbd..604ba937513ccd3777a4ad79d7ca4ed2e3d5ea8c 100644
+--- a/docs/INTEGRATION_MAP.md
++++ b/docs/INTEGRATION_MAP.md
+@@ -1,29 +1,38 @@
+-# Integration map: legacy viewers → v2.0.0
+-
+-## Historical viewer contribution
+-
+-Integrated into the **2020–2025 longitudinal layer**:
+-- Peru / Latin America / world overall time series.
+-- Five Democracy Index categories.
+-- Regime-classification logic.
+-- Gap and percentage-change calculations.
+-- Source/provenance fields.
+-
+-## Prospective viewer contribution
+-
+-Integrated into the **2026–2030 scenario layer**:
+-- Category-level scenario mechanics.
+-- Projection-to-overall aggregation.
+-- Regime-classification output.
+-- Prospect-analysis narrative and scenario comparison.
+-
+-## v2.0.0 redesign decisions
+-
+-- Two separate applications replaced by one Shiny application with distinct historical and prospective tabs.
+-- Six legacy prospective variants reduced to three scenario families to improve interpretability and auditability.
+-- A one-off 2026 post-election shock is separated from 2027–2030 structural rates.
+-- Projection rates are damped through 2030 instead of using indefinite linear extrapolation.
+-- Evidence-conditioned coefficients are stored in `data/scenario_coefficients.csv` rather than embedded only in UI logic.
+-- Monte Carlo p10–p90 envelopes are treated as sensitivity bands, not occurrence probabilities.
+-- Data status fields distinguish observed EIU values, secondary replication and modeled latent anchors.
+-- Repository metadata, static viewer, reproducibility script, tests, hashes and DOI-ready metadata were added.
++# Integration map: legacy inputs → v2.1.0-rc.1
++
++## Historical layer
++
++- Peru / Latin America and Caribbean / world overall time series.
++- Five Democracy Index dimensions through the last published dimensional year.
++- Regime classification, score gaps and changes.
++- Source, location and epistemic-status fields.
++
++## Scientific correction of the 2025 anchor
++
++- The aggregate `5.88` remains a secondary-reported value.
++- The unpublished dimensional composition is no longer treated as observed.
++- One central constrained vector and 10,000 latent alternatives are published.
++- Every alternative averages exactly `5.88` and remains inside documented
++  historical-volatility bounds.
++
++## Prospective layer
++
++- Three scenario families: institutional recovery, hybrid continuity and
++  restrictive drift.
++- Separate 2026 shock and 2027–2030 structural-rate mechanisms.
++- Thirty source-linked parameter judgements with central and plausible values.
++- Common-random-number sensitivity with the same residual law in all scenarios.
++- Aggregate and dimensional p10–p90 envelopes.
++
++## v2.1.0-rc.1 redesign decisions
++
++- Removed unused numeric evidence weights.
++- Removed undocumented scenario-specific dispersion multipliers and the prior
++  `0.85` factor.
++- Added a controlled data-status registry and field-level dictionary.
++- Rebuilt the integral XLSX with audit sheets for anchor, parameters, evidence,
++  sensitivity and methodology.
++- Aligned the Shiny application, static GitHub Pages viewer, metadata, tests,
++  checksums and OSF complement policy.
++- Added a transactional Windows publisher whose default mode creates a review
++  branch and draft PR but cannot mint the final DOI accidentally.
+diff --git a/docs/METODOLOGIA.md b/docs/METODOLOGIA.md
+index 383b17c4ccb976ffc6006dcedc0cfe20e3069636..ca04da72fb2c7d4c8e0945bf025309bc095f576a 100644
+--- a/docs/METODOLOGIA.md
++++ b/docs/METODOLOGIA.md
+@@ -1,43 +1,146 @@
+-# Metodología del visor integrado v2.0.0
++# Metodología del visor integrado v2.1.0 — candidato científico
+ 
+-## 1. Arquitectura analítica
++## 1. Alcance y diseño
+ 
+-El visor separa estrictamente **observación**, **calibración** y **escenario**. La capa longitudinal 2020–2025 contiene datos observados, salvo el vector categorial Perú-2025, que es un estado latente calibrado. La capa 2026–2030 es prospectiva y no pretende estimar probabilidades electorales.
++El producto realiza un **análisis longitudinal descriptivo de datos secundarios
++con construcción de escenarios prospectivos exploratorios y análisis de
++sensibilidad**. No estima efectos causales ni probabilidades de ocurrencia de
++los escenarios.
+ 
+-## 2. Actualización 2025
++El componente empírico mide calidad democrática mediante el *Democracy Index*.
++La dimensión *functioning of government* se denomina **funcionamiento del
++gobierno** y no se utiliza como sustituto empírico de la capacidad estatal.
++Esta última solo puede intervenir como marco interpretativo comparado.
+ 
+-El puntaje peruano pasa de 5.69 (2024) a 5.88 (2025): +0.19 puntos. América Latina y el Caribe pasa de 5.61 a 5.71 y el promedio mundial de 5.17 a 5.19. El Perú continúa en régimen híbrido.
++## 2. Estados epistemológicos
+ 
+-La Figura 14 del EIU 2025 reporta para América Latina: proceso electoral 7.14; funcionamiento del gobierno 5.13; participación 5.69; cultura política 4.30; libertades civiles 6.30; total 5.71. Para el mundo: 5.38; 4.60; 5.33; 5.32; 5.32; total 5.19.
++El archivo `data/data_status_registry.csv` define los estados utilizados:
+ 
+-## 3. Calibración categorial Perú 2025
++1. `official_source_observed`: publicado directamente por una fuente oficial;
++2. `secondary_reported_aggregate`: agregado atribuido a la fuente primaria y
++   reproducido secundariamente;
++3. `modeled_latent_central`: asignación central de una composición no publicada;
++4. `modeled_latent_ensemble`: conjunto de composiciones admisibles;
++5. `simulated_scenario`: trayectoria condicionada por supuestos explícitos.
+ 
+-Como el reporte resumido no publica los subpilares nacionales, se usa una calibración restringida a media 5.88. Vector: 8.88; 6.03; 5.07; 3.00; 6.42. Este vector solo es un **ancla interna de modelado**, no un dato oficial EIU.
++El puntaje total del Perú para 2025, 5,88, se registra como
++`secondary_reported_aggregate`. Los cinco valores dimensionales del Perú 2025
++no fueron publicados en el informe-resumen disponible y no deben citarse como
++subpuntajes oficiales del EIU.
+ 
+-## 4. Condicionamiento post-elecciones 2026
++## 3. Serie 2020–2025
+ 
+-La actualización incorpora la proclamación oficial del resultado, observación internacional del proceso y fase post-electoral, evidencia de polarización/fragmentación y literatura sobre información y participación. Se evita convertir valoraciones cualitativas en supuestas probabilidades precisas; en su lugar, se traducen a shocks categoriales explícitos y auditables.
++La capa agregada compara Perú, América Latina y el Caribe y el promedio mundial.
++Para 2025 se emplean 5,88 para Perú, 5,71 para América Latina y el Caribe y 5,19
++para el mundo. El agregado peruano mejora 0,19 puntos frente a 2024 y permanece
++en el intervalo de régimen híbrido.
+ 
+-## 5. Tres escenarios
++La comparación dimensional observada del Perú se cierra en 2024. Los valores
++dimensionales 2025 se usan únicamente dentro del modelo prospectivo.
+ 
+-1. **Recuperación institucional y gobernabilidad negociada**: implementación de recomendaciones, coaliciones estables, fortalecimiento de capacidades y seguridad compatible con controles/garantías.
+-2. **Continuidad híbrida y estabilización competitiva**: competencia electoral preservada, pero reformas insuficientes, fragmentación y confianza baja.
+-3. **Deriva restrictiva y securitización**: excepción securitaria, erosión de controles/libertades y polarización persistente, sin suponer desaparición de elecciones competitivas.
++## 4. Ancla dimensional latente de 2025
+ 
+-## 6. Ecuaciones
++El centro documentado es el vector:
+ 
+-- 2026: `x[i,2026] = clip(x[i,2025] + shock[i,s], 0, 10)`
+-- 2027–2030: `x[i,t] = clip(x[i,t-1] + growth[i,s] * decay[t], 0, 10)`
+-- `decay = {2027:1.0, 2028:0.9, 2029:0.8, 2030:0.7}`
+-- Total: media aritmética de cinco categorías.
++`(8,88; 6,03; 5,07; 3,00; 6,42)`
+ 
+-## 7. Sensibilidad
++Su media es exactamente 5,88, pero esta restricción no identifica una única
++composición. Por ello, v2.1.0 genera 10 000 vectores admisibles mediante:
+ 
+-10,000 trayectorias por escenario. La desviación anual por categoría toma 25% de la volatilidad histórica 2020–2024, con piso 0.04 y techo 0.20. Se presentan p10/p50/p90 como **envolvente de sensibilidad**, no como intervalo de confianza estadístico.
++1. estimación de volatilidad histórica por dimensión a partir de las diferencias
++   anuales 2020–2024;
++2. desviación del ancla igual al 50 % de esa volatilidad, con piso 0,08 y techo
++   0,40;
++3. perturbaciones gaussianas centradas, proyectadas al subespacio de suma cero;
++4. truncamiento por límites equivalentes a dos desviaciones alrededor del centro;
++5. rechazo de cualquier vector fuera de 0–10;
++6. conservación exacta de la media 5,88 en cada simulación.
+ 
+-## 8. Limitaciones
++El conjunto se publica en `peru_2025_anchor_ensemble.csv` y su resumen en
++`peru_2025_anchor_summary.csv`.
+ 
+-- El EIU 2025 suministrado es un resumen; falta la tabla país/subpilar del Perú.
+-- Los escenarios son narrativas cuantificadas, no predicciones puntuales ni probabilidades.
+-- Eventos institucionales, económicos, de seguridad o constitucionales posteriores a la fecha de corte pueden invalidar coeficientes.
+-- La estructura del Democracy Index y sus revisiones futuras pueden modificar comparabilidad.
++## 5. Escenarios informados por evidencia
++
++Se mantienen tres escenarios:
++
++1. recuperación institucional y gobernabilidad negociada;
++2. continuidad híbrida y estabilización competitiva;
++3. deriva restrictiva y securitización.
++
++Los parámetros son **juicios analíticos estructurados y auditables**, no
++coeficientes estimados. Cada shock y tasa tiene valor central, rango plausible,
++fuentes específicas, señal y regla de traducción en
++`parameter_elicitation_matrix.csv`.
++
++El campo `source_priority` del inventario de evidencia es una clasificación
++documental. No entra en las ecuaciones y `computational_use` permanece en
++`false`. La fecha de corte de evidencia es 17 de agosto de 2026.
++
++## 6. Trayectorias centrales
++
++Para dimensión `i`, escenario `s` y año `t`:
++
++- 2026: `x[i,2026] = clip(x[i,2025] + shock[i,s], 0, 10)`;
++- 2027–2030: `x[i,t] = clip(x[i,t-1] + rate[i,s] × decay[t], 0, 10)`;
++- `decay = {2027:1,00; 2028:0,90; 2029:0,80; 2030:0,70}`;
++- total anual: media aritmética de las cinco dimensiones.
++
++Las trayectorias centrales permiten resumir el escenario, pero no sustituyen la
++envolvente de sensibilidad.
++
++## 7. Incertidumbre conjunta
++
++Se simulan 10 000 trayectorias por escenario con semilla `20260825`. El modelo
++integra cuatro capas:
++
++1. composición dimensional latente de 2025;
++2. shocks y tasas muestreados mediante distribuciones triangulares delimitadas
++   por la matriz de elicitación;
++3. escala global de las tasas estructurales triangular (0,85; 1,00; 1,15);
++4. perturbación residual anual.
++
++La desviación residual es el 25 % de la volatilidad anual observada por
++dimensión entre 2020 y 2024, con piso 0,04 y techo 0,20. La correlación común
++entre dimensiones se somete a sensibilidad triangular entre 0,00 y 0,60, con
++moda 0,30. No se estima una matriz de covarianza debido al número reducido de
++observaciones anuales.
++
++Se emplean los mismos números aleatorios entre escenarios para mejorar la
++comparabilidad. No se aplican multiplicadores de dispersión específicos por
++escenario ni el factor 0,85 de versiones anteriores.
++
++Los percentiles p10, p50 y p90 son **envolventes de sensibilidad**. No son
++intervalos de confianza, probabilidades de ocurrencia ni pronósticos electorales.
++
++## 8. Reproducibilidad
++
++El script `scripts/rebuild_scenarios.py` reconstruye:
++
++- anclas latentes;
++- trayectorias centrales;
++- bandas agregadas y dimensionales;
++- resumen de parámetros muestreados;
++- resumen 2030.
++
++La configuración completa está en `data/model_config_v2_1.json`. Las pruebas
++verifican la media 5,88, los límites 0–10, el número de escenarios, la
++reproducibilidad con semilla fija y la concordancia de la matriz de parámetros.
++
++## 9. Limitaciones
++
++- El 5,88 peruano de 2025 se obtuvo mediante reporte secundario y debe sustituirse
++  si se obtiene una tabla oficial equivalente.
++- La composición dimensional 2025 es latente y dependiente de supuestos.
++- Los rangos de shocks y tasas son juicios estructurados de un solo investigador;
++  no constituyen una elicitación experta colectiva.
++- Cuatro diferencias anuales son insuficientes para estimar robustamente una
++  estructura de covarianza.
++- La separación entre escenarios es endógena a sus supuestos y no demuestra por
++  sí misma que una variable domine causalmente el resultado.
++- Eventos posteriores a la fecha de corte pueden invalidar parámetros.
++
++## 10. Próxima integración bibliográfica
++
++La búsqueda avanzada de la fase 8 se incorporará únicamente después de congelar
++su corpus, strings, criterios y resultados. Hasta entonces, el repositorio no
++presenta el componente bibliográfico como revisión PRISMA ejecutada.
+diff --git a/docs/OSF_COMPLEMENT.md b/docs/OSF_COMPLEMENT.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..b7cca6c97f8665b081a26d8f562d41b891786ba6
+--- /dev/null
++++ b/docs/OSF_COMPLEMENT.md
+@@ -0,0 +1,91 @@
++# OSF como complemento del objeto principal preservado en Zenodo
++
++## Política de identidad
++
++El objeto ejecutable y citable principal es el release archivado en Zenodo. OSF
++no debe alojar una segunda copia del ZIP como si fuera otro objeto principal.
++
++- DOI conceptual: https://doi.org/10.5281/zenodo.22080540
++- DOI v2.0.0: https://doi.org/10.5281/zenodo.22080541
++- Repositorio: https://github.com/vanegasmagdiel/visor-democracia-peru-2020-2030
++
++## Disponibilidad operativa verificada
++
++El 2026-08-25, el panel autenticado de la cuenta indicó que no existe un
++proyecto OSF y que la creación de nuevos proyectos se encuentra en transición;
++la opción de almacenar materiales redirige a repositorios externos, con Zenodo
++como recomendación principal. Por ello:
++
++- el automatizador solo sincroniza OSF si se proporciona el GUID de un proyecto
++  preexistente y un token `osf.full_write`;
++- si no existe ese GUID, OSF se omite sin afectar GitHub, Pages o la validación;
++- no se creará una *Study Plan* o registro antes de cerrar la fase 8, porque eso
++  congelaría un protocolo todavía incompleto.
++
++## Título recomendado del proyecto OSF
++
++**Protocolo y decisiones analíticas del Visor Integrado de Democracia del Perú
++2020–2030**
++
++## Descripción
++
++Complemento documental del software de investigación preservado en Zenodo.
++Contiene protocolo, decisiones analíticas, matriz de elicitación, trazabilidad de
++datos y materiales bibliográficos no ejecutables. El código, el visor y los
++releases citables permanecen en GitHub y Zenodo.
++
++## Estructura de componentes
++
++1. `01_Protocolo_y_alcance`
++2. `02_Decisiones_analiticas`
++3. `03_Elicitacion_de_parametros`
++4. `04_Busqueda_bibliografica_fase_8`
++5. `05_Materiales_suplementarios`
++
++## Archivos que pueden sincronizarse ahora
++
++- `docs/METODOLOGIA.md`
++- `docs/PROVENANCE.md`
++- `docs/OSF_COMPLEMENT.md`
++- `data/data_status_registry.csv`
++- `data/model_config_v2_1.json`
++- `data/peru_2025_anchor_summary.csv`
++- `data/parameter_elicitation_matrix.csv`
++- `data/post_election_evidence_2026.csv`
++- `VALIDATION_REPORT.md`
++
++## Archivos que no deben duplicarse
++
++- ZIP completo del release;
++- `docs/index.html` autocontenido;
++- ejecutables o contenedores;
++- copia integral del repositorio;
++- informes PDF de terceros;
++- archivos EIU protegidos.
++
++## Versionado
++
++- OSF registra el protocolo y las decisiones por fecha.
++- Zenodo mantiene el DOI conceptual y los DOI de versión del software.
++- Cada registro OSF debe declarar la versión del modelo y el commit GitHub al que
++  corresponde.
++- Si se registra el protocolo, el registro debe congelarse antes de utilizar sus
++  resultados como método ejecutado en el artículo.
++
++## Fase 8
++
++El componente `04_Busqueda_bibliografica_fase_8` recibirá posteriormente:
++
++- protocolo de búsqueda;
++- bases consultadas;
++- strings completos;
++- fecha de corte;
++- criterios de inclusión y exclusión;
++- exportaciones RIS/BibTeX;
++- deduplicación;
++- corpus seleccionado;
++- diagrama y checklist solo si se ejecuta una ruta PRISMA completa.
++
++Hasta completar esta fase, el manuscrito debe describir la bibliografía como
++búsqueda estructurada pendiente de integración y no como revisión sistemática
++ejecutada.
+diff --git a/docs/PROVENANCE.md b/docs/PROVENANCE.md
+index 23e34a8b63cb22211aec3be9b4d3f00fcdce0415..e423285d9a302ff0d3d1ea06c40528e6fc7fda4e 100644
+--- a/docs/PROVENANCE.md
++++ b/docs/PROVENANCE.md
+@@ -1,17 +1,58 @@
+-# Provenance y trazabilidad
++# Provenance and traceability
+ 
+-**Fecha de corte:** 2026-08-19 (Perú).
++**Scientific candidate cut-off:** 2026-08-25 (Peru).
+ 
+-## Fuentes empíricas principales
++## Empirical layers
+ 
+-- Economist Intelligence Unit, *Democracy Index 2025: Democracy stabilises after eight years of decline* (archivo suministrado por el usuario).
+-- Bases históricas 2020–2024 y metadatos del visor `infografia_ponencia_v6_7_release_1_1` suministrado por el usuario.
+-- Base prospectiva y lógica del visor `visor_prospectivo_democracia_2030_v1_1_mejorada_completa` suministrado por el usuario.
++1. EIU *Democracy Index* editions 2020–2024 provide the observed historical
++   series and published dimensional values represented in the package.
++2. The Peru 2025 aggregate (`5.88`) is retained as a
++   `secondary_reported_aggregate`: it is attributed to the EIU in a supplied
++   cross-country secondary table, while the supplied EIU summary does not
++   contain a Peru country table.
++3. The five Peru 2025 dimensional values are not published EIU sub-scores.
++   They form a `modeled_latent_central` vector constrained to average `5.88`.
++4. `data/peru_2025_anchor_ensemble.csv` contains 10,000 admissible latent
++   compositions, each with exact mean `5.88`. Their distribution represents
++   uncertainty in composition, not uncertainty in the fixed aggregate.
++5. Values after 2025 are `simulated_scenario` outputs. They are conditional
++   analytical trajectories and not event probabilities or forecasts.
+ 
+-## Fuentes post-electorales 2026
++## Post-election evidence and analytical judgements
+ 
+-Ver `data/post_election_evidence_2026.csv`. Se priorizan JNE, UE y OEA; Reuters/AP se usan para contexto factual y de gobernabilidad; literatura/analítica académica se usa para mecanismos de participación, fragmentación y legitimidad.
++The evidence register is `data/post_election_evidence_2026.csv`. Source
++priority is categorical and `computational_use=false`; evidence rows are not
++numeric weights. The explicit bridge from sources to each bounded parameter is
++published in `data/parameter_elicitation_matrix.csv`, including central
++judgement and plausible bounds, source identifiers, translation rule, author,
++date and epistemic status.
+ 
+-## Regla de no-ficción de datos
++## Controlled vocabulary
+ 
+-El paquete distingue mediante campos `data_status_*` entre `observed_EIU`, `observed_EIU_secondary_replication` y `modeled_latent_anchor`. Ningún valor categorial modelado debe presentarse como cifra oficial del EIU.
++`data/data_status_registry.csv` is authoritative for epistemic-status labels.
++The application, static viewer, CSV files, XLSX workbook and documentation must
++use those labels consistently.
++
++## Rebuild chain
++
++```text
++source tables + calibration audit + model_config_v2_1.json
++  -> scripts/rebuild_scenarios.py
++  -> anchor ensemble + parameter samples + trajectories + sensitivity bands
++  -> scripts/build_static_viewer.py
++  -> docs/index.html
++  -> preflight + tests + secret scan + SHA-256 manifest
++```
++
++The candidate uses deterministic seed `20260825` and 10,000 simulations per
++scenario. The p10–p90 outputs are sensitivity envelopes, not confidence
++intervals.
++
++## Persistent identifiers
++
++- GitHub repository: https://github.com/vanegasmagdiel/visor-democracia-peru-2020-2030
++- Zenodo concept DOI: https://doi.org/10.5281/zenodo.22080540
++- Stable v2.0.0 DOI: https://doi.org/10.5281/zenodo.22080541
++
++The `v2.1.0-rc.1` candidate does not mint a DOI. A new version DOI is permitted
++only after phases 8–11 and an explicit publication GO.
+diff --git a/docs/data/base_integral_democracia_2020_2030_v2.xlsx b/docs/data/base_integral_democracia_2020_2030_v2.xlsx
+index 1cddd33a2c7898388ae13d1bfb5c9a60869c3c87..0a67830d2aa2ddf0ce4d66ce843a311c76d10caa 100644
+GIT binary patch
+literal 99663
+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

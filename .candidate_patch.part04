@@ -1,0 +1,1385 @@
+shed": "2026-08-25",
++      "identifier": "https://doi.org/10.5281/zenodo.22080540",
+       "license": {"@id": "https://spdx.org/licenses/MIT.html"},
+       "author": {"@id": "https://orcid.org/0000-0002-7913-214X"},
+       "copyrightHolder": {"@id": "https://orcid.org/0000-0002-7913-214X"},
+@@ -25,6 +26,8 @@
+         {"@id": "docs/METODOLOGIA.md"},
+         {"@id": "data/overall_multilevel_2020_2025.csv"},
+         {"@id": "data/scenario_trajectories_2025_2030.csv"},
++        {"@id": "data/peru_2025_anchor_ensemble.csv"},
++        {"@id": "data/parameter_elicitation_matrix.csv"},
+         {"@id": "data/base_integral_democracia_2020_2030_v2.xlsx"},
+         {"@id": "LICENSE_POLICY.md"}
+       ]
+@@ -76,6 +79,18 @@
+       "encodingFormat": "text/csv",
+       "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"}
+     },
++    {
++      "@id": "data/peru_2025_anchor_ensemble.csv",
++      "@type": "File",
++      "encodingFormat": "text/csv",
++      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"}
++    },
++    {
++      "@id": "data/parameter_elicitation_matrix.csv",
++      "@type": "File",
++      "encodingFormat": "text/csv",
++      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"}
++    },
+     {
+       "@id": "data/scenario_trajectories_2025_2030.csv",
+       "@type": "File",
+diff --git a/scripts/build_data_dictionary.py b/scripts/build_data_dictionary.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..b6b8c4acfaf73aaf1cf1bc4c04825108f525978b
+--- /dev/null
++++ b/scripts/build_data_dictionary.py
+@@ -0,0 +1,99 @@
++#!/usr/bin/env python3
++"""Regenerate the field-level dictionary for every public CSV data product."""
++
++from __future__ import annotations
++
++import csv
++from pathlib import Path
++
++import pandas as pd
++
++
++BASE = Path(__file__).resolve().parents[1]
++DATA = BASE / "data"
++OUTPUT = DATA / "data_dictionary.csv"
++
++DESCRIPTIONS = {
++    "scenario_id": "Stable machine-readable scenario identifier.",
++    "scenario_name": "Human-readable scenario name.",
++    "year": "Calendar or analytical year.",
++    "peru_score": "Peru score on the 0–10 Democracy Index scale; interpret with its data-status field.",
++    "latin_america_score": "Latin America and Caribbean aggregate on the 0–10 scale.",
++    "world_score": "World aggregate on the 0–10 scale.",
++    "overall_score": "Arithmetic mean of the five dimensional values on the 0–10 scale.",
++    "data_status": "Controlled epistemic-status identifier from data_status_registry.csv.",
++    "data_status_peru": "Epistemic status of the Peru value.",
++    "data_status_latam": "Epistemic status of the Latin America value.",
++    "data_status_world": "Epistemic status of the world value.",
++    "sample_id": "Deterministic simulation-row identifier.",
++    "p10": "10th percentile of the stated sensitivity distribution.",
++    "p50": "Median of the stated sensitivity distribution.",
++    "p90": "90th percentile of the stated sensitivity distribution.",
++    "n_sim": "Number of Monte Carlo sensitivity draws.",
++    "central": "Central structured analytical judgement for the parameter.",
++    "plausible_low": "Lower plausible bound used by the triangular parameter distribution.",
++    "plausible_high": "Upper plausible bound used by the triangular parameter distribution.",
++    "evidence_basis": "Semicolon-separated evidence identifiers supporting the judgement.",
++    "translation_rule": "Explicit rule translating qualitative evidence into a bounded parameter judgement.",
++    "source_priority": "Categorical source-priority label; never a numeric model weight.",
++    "computational_use": "Whether the evidence record is directly used as a numeric coefficient.",
++    "overall_constraint": "Fixed 2025 aggregate that every latent dimensional vector must preserve.",
++    "interpretation": "Mandatory interpretive limitation for the value or distribution.",
++    "uncertainty_layers": "Uncertainty components jointly propagated in the sensitivity exercise.",
++    "note": "Interpretive note, including limits on probabilistic claims.",
++    "parameter_status": "Epistemic classification of the parameter.",
++    "decision_author": "Person responsible for the documented analytical judgement.",
++    "decision_date": "ISO date of the analytical judgement.",
++    "url": "Source URL.",
++    "formula": "Human-readable model formula.",
++    "formula_id": "Stable formula identifier.",
++    "status_id": "Stable controlled-vocabulary identifier.",
++    "definition": "Definition of the controlled data status.",
++    "allowed_use": "Permitted interpretation and citation use.",
++}
++
++
++def describe(field: str) -> str:
++    if field in DESCRIPTIONS:
++        return DESCRIPTIONS[field]
++    if field.endswith("_score"):
++        return "Score on the 0–10 Democracy Index scale."
++    if field.startswith("source_"):
++        return "Bibliographic source and location for the corresponding value."
++    if field.startswith("peru_minus_") or field == "latam_minus_world":
++        return "Arithmetic score difference between the named geographies."
++    if field.endswith("pct_change_vs_2020"):
++        return "Percentage change relative to the 2020 baseline."
++    if field in {"Proceso electoral y pluralismo", "Funcionamiento del gobierno", "Participación política", "Cultura política", "Libertades civiles"}:
++        return "Dimensional score on the 0–10 scale; interpret with data_status."
++    return field.replace("_", " ").capitalize() + "."
++
++
++def main() -> None:
++    rows: list[dict[str, str]] = []
++    for path in sorted(DATA.glob("*.csv")):
++        if path.name == OUTPUT.name:
++            continue
++        frame = pd.read_csv(path, nrows=200)
++        for field, dtype in frame.dtypes.items():
++            rows.append(
++                {
++                    "file": path.name,
++                    "field": field,
++                    "dtype": str(dtype),
++                    "description": describe(field),
++                }
++            )
++    with OUTPUT.open("w", encoding="utf-8", newline="") as stream:
++        writer = csv.DictWriter(
++            stream,
++            fieldnames=["file", "field", "dtype", "description"],
++            lineterminator="\n",
++        )
++        writer.writeheader()
++        writer.writerows(rows)
++    print(f"WROTE {OUTPUT.relative_to(BASE)} ({len(rows)} fields)")
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/scripts/build_release_manifest.py b/scripts/build_release_manifest.py
+index f0b88a97e248d525f9701f0632f7e2c86a8f00ad..15512ff9a7ebcd1a0f6484f8b9c1e6c7c6591f6a 100644
+--- a/scripts/build_release_manifest.py
++++ b/scripts/build_release_manifest.py
+@@ -13,7 +13,7 @@ BASE = Path(__file__).resolve().parents[1]
+ MANIFEST_PATH = BASE / "RELEASE_MANIFEST.json"
+ CHECKSUM_PATH = BASE / "SHA256SUMS.txt"
+ EXCLUDED_FILES = {"RELEASE_MANIFEST.json", "SHA256SUMS.txt"}
+-EXCLUDED_DIRS = {".git", ".pytest_cache", "__pycache__", "_exports"}
++EXCLUDED_DIRS = {".git", ".venv", ".pytest_cache", "__pycache__", "_exports"}
+ 
+ 
+ def payload_files() -> list[Path]:
+@@ -49,9 +49,9 @@ def expected_outputs() -> tuple[str, str]:
+ 
+     manifest = {
+         "project": "Visor Integrado de Democracia del Perú 2020–2030",
+-        "version": "2.0.0",
+-        "release_date": "2026-08-19",
+-        "manifest_revision_date": "2026-08-24",
++        "version": "2.1.0-rc.1",
++        "release_date": "2026-08-25",
++        "manifest_revision_date": "2026-08-25",
+         "author": {
+             "name": "Magdiel Torres Vanegas",
+             "orcid": "https://orcid.org/0000-0002-7913-214X",
+diff --git a/scripts/build_static_viewer.py b/scripts/build_static_viewer.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..4a21a975fc263f183741a4a2200aec2c7d26b2f3
+--- /dev/null
++++ b/scripts/build_static_viewer.py
+@@ -0,0 +1,107 @@
++#!/usr/bin/env python3
++"""Build the self-contained GitHub Pages viewer from v2.1.0 CSV outputs."""
++
++from __future__ import annotations
++
++from html import escape
++from pathlib import Path
++
++import pandas as pd
++import plotly.graph_objects as go
++from plotly.offline import get_plotlyjs
++
++
++BASE = Path(__file__).resolve().parents[1]
++D = BASE / "data"
++OUT = BASE / "docs" / "index.html"
++COLORS = {
++    "recuperacion_institucional": "#26734d",
++    "continuidad_hibrida": "#24518a",
++    "deriva_restrictiva": "#a93232",
++}
++FILLS = {
++    "recuperacion_institucional": "rgba(38,115,77,0.14)",
++    "continuidad_hibrida": "rgba(36,81,138,0.14)",
++    "deriva_restrictiva": "rgba(169,50,50,0.14)",
++}
++
++
++def chart_html(fig: go.Figure, div_id: str) -> str:
++    return fig.to_html(full_html=False, include_plotlyjs=False, div_id=div_id, config={"responsive": True})
++
++
++def history_chart(overall: pd.DataFrame) -> go.Figure:
++    fig = go.Figure()
++    for col, name, color in (
++        ("peru_score", "Perú", "#24518a"),
++        ("latin_america_score", "América Latina y el Caribe", "#2f7d50"),
++        ("world_score", "Mundo", "#a66b18"),
++    ):
++        fig.add_trace(go.Scatter(x=overall.year, y=overall[col], mode="lines+markers", name=name, line={"width": 3, "color": color}, marker={"size": 8}))
++    fig.add_hline(y=6, line_dash="dot", line_color="#6b7280", annotation_text="Umbral 6,0")
++    fig.update_layout(template="plotly_white", height=460, margin={"l": 55, "r": 25, "t": 25, "b": 50}, yaxis={"range": [4.8, 6.8], "title": "Puntaje 0–10"}, xaxis_title="Año", legend={"orientation": "h", "y": 1.08})
++    return fig
++
++
++def anchor_chart(anchor: pd.DataFrame) -> go.Figure:
++    fig = go.Figure()
++    fig.add_trace(go.Scatter(x=anchor.category_es, y=anchor.peru_2024_official_source_observed, mode="markers", name="2024 observado", marker={"size": 13, "color": "#24518a", "symbol": "circle"}))
++    fig.add_trace(go.Scatter(x=anchor.category_es, y=anchor.p50, mode="markers", name="2025 ancla latente", marker={"size": 14, "color": "#a66b18", "symbol": "diamond-open", "line": {"width": 3}}, error_y={"type": "data", "symmetric": False, "array": anchor.p90-anchor.p50, "arrayminus": anchor.p50-anchor.p10, "color": "#a66b18", "thickness": 2}))
++    fig.update_layout(template="plotly_white", height=480, margin={"l": 50, "r": 25, "t": 25, "b": 120}, yaxis={"range": [0, 10], "title": "Puntaje 0–10"}, legend={"orientation": "h", "y": 1.08})
++    return fig
++
++
++def scenario_chart(bands: pd.DataFrame, summary: pd.DataFrame) -> go.Figure:
++    fig = go.Figure()
++    names = summary.set_index("scenario_id").scenario_name.to_dict()
++    for sid, name in names.items():
++        d = bands[bands.scenario_id == sid].sort_values("year")
++        fig.add_trace(go.Scatter(x=list(d.year)+list(d.year[::-1]), y=list(d.p90)+list(d.p10[::-1]), fill="toself", fillcolor=FILLS[sid], line={"color": "rgba(255,255,255,0)"}, hoverinfo="skip", showlegend=False))
++        fig.add_trace(go.Scatter(x=d.year, y=d.p50, mode="lines+markers", name=name, line={"width": 3, "color": COLORS[sid]}, marker={"size": 8}, hovertemplate=f"<b>{escape(name)}</b><br>Año: %{{x}}<br>p50: %{{y:.2f}}<extra></extra>"))
++    fig.add_hline(y=6, line_dash="dot", line_color="#6b7280", annotation_text="Umbral 6,0")
++    fig.update_layout(template="plotly_white", height=510, margin={"l": 55, "r": 25, "t": 25, "b": 55}, yaxis={"range": [4.9, 6.6], "title": "Puntaje 0–10"}, xaxis_title="Año", legend={"orientation": "h", "y": 1.15})
++    return fig
++
++
++def main() -> None:
++    overall = pd.read_csv(D / "overall_multilevel_2020_2025.csv")
++    anchor = pd.read_csv(D / "peru_2025_anchor_summary.csv")
++    bands = pd.read_csv(D / "scenario_sensitivity_bands.csv")
++    summary = pd.read_csv(D / "scenario_summary_2030.csv")
++    latest = overall.iloc[-1]
++
++    summary_rows = "".join(
++        f"<tr><td>{escape(row.scenario_name)}</td><td>{row.score_2030:.3f}</td><td>{row.p10_2030:.3f}–{row.p90_2030:.3f}</td><td>{escape(row.regime_2030)}</td></tr>"
++        for _, row in summary.iterrows()
++    )
++    html = f"""<!doctype html>
++<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
++<title>Visor Democracia Perú 2020–2030 · v2.1.0</title>
++<script>{get_plotlyjs()}</script>
++<style>
++:root{{--bg:#f2f6fb;--card:#fff;--line:#dbe4ee;--ink:#14253a;--muted:#63758a;--accent:#173f70}}
++*{{box-sizing:border-box}} body{{margin:0;background:var(--bg);color:var(--ink);font-family:Segoe UI,Arial,sans-serif}}
++.wrap{{max-width:1440px;margin:auto;padding:28px}} .hero{{background:linear-gradient(135deg,#173f70,#356caa);color:white;border-radius:24px;padding:34px 38px}}
++.hero h1{{font-size:2rem;margin:0 0 10px}} .hero p{{max-width:1100px;line-height:1.55;margin:0;color:#eef5fc}}
++.meta{{font-size:.82rem;margin-top:14px;color:#dbeafe}} .grid{{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}}
++.kpi,.card{{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px}} .kpi .label{{color:var(--muted);font-size:.84rem}} .kpi .value{{font-size:1.5rem;font-weight:800}}
++.card{{margin-bottom:18px}} .card h2{{font-size:1.15rem;margin:0 0 4px}} .note{{color:var(--muted);font-size:.9rem;line-height:1.5}}
++.warn{{background:#fff7df;border:1px solid #ead59a;border-radius:14px;padding:13px 15px;margin:12px 0;line-height:1.5}}
++table{{width:100%;border-collapse:collapse;margin-top:12px}} th,td{{padding:10px;border-bottom:1px solid var(--line);text-align:left}} th{{background:#1f2937;color:white}}
++.footer{{font-size:.82rem;color:var(--muted);text-align:right;padding:12px 0}} a{{color:#24518a}} @media(max-width:900px){{.grid{{grid-template-columns:repeat(2,1fr)}}}} @media(max-width:560px){{.grid{{grid-template-columns:1fr}}.wrap{{padding:14px}}}}
++</style></head><body><main class="wrap">
++<section class="hero"><h1>Visor Integrado de Democracia del Perú 2020–2030</h1><p>Serie agregada 2020–2025 y tres escenarios exploratorios 2026–2030. La versión 2.1.0 distingue observación oficial, agregado reportado secundariamente, ancla dimensional latente y simulación.</p><div class="meta">Candidato científico v2.1.0 · corte de evidencia: 17-08-2026 · 10 000 simulaciones por escenario</div></section>
++<section class="grid"><div class="kpi"><div class="label">Perú 2025</div><div class="value">{latest.peru_score:.2f}</div><div class="note">agregado reportado secundariamente</div></div><div class="kpi"><div class="label">Cambio 2024→2025</div><div class="value">+{latest.peru_score-overall.iloc[-2].peru_score:.2f}</div></div><div class="kpi"><div class="label">América Latina y Caribe</div><div class="value">{latest.latin_america_score:.2f}</div></div><div class="kpi"><div class="label">Mundo</div><div class="value">{latest.world_score:.2f}</div></div></section>
++<section class="card"><h2>Trayectoria agregada</h2><div class="note">Los valores 2020–2024 proceden de ediciones EIU; el agregado peruano 2025 tiene estatus de reporte secundario.</div>{chart_html(history_chart(overall),'history')}</section>
++<section class="card"><h2>Ancla dimensional de 2025</h2><div class="note">p50 y p10–p90 del conjunto de composiciones compatibles con el total 5,88. No son subpuntajes oficiales EIU.</div>{chart_html(anchor_chart(anchor),'anchor')}</section>
++<section class="card"><h2>Escenarios 2026–2030</h2><div class="note">Línea = p50; franja = p10–p90. Son envolventes de sensibilidad, no intervalos de confianza ni probabilidades de escenario.</div>{chart_html(scenario_chart(bands,summary),'scenarios')}<table><thead><tr><th>Escenario</th><th>Central 2030</th><th>p10–p90</th><th>Clasificación de la central</th></tr></thead><tbody>{summary_rows}</tbody></table></section>
++<div class="warn"><strong>Alcance:</strong> el visor mide calidad democrática mediante las dimensiones del <em>Democracy Index</em>. “Funcionamiento del gobierno” no se interpreta como medición directa de capacidad estatal. Los parámetros prospectivos son juicios analíticos estructurados y auditables.</div>
++<footer class="footer">Magdiel Torres Vanegas · <a href="https://orcid.org/0000-0002-7913-214X">ORCID</a> · <a href="https://doi.org/10.5281/zenodo.22080540">DOI conceptual</a> · <a href="https://github.com/vanegasmagdiel/visor-democracia-peru-2020-2030">Repositorio</a></footer>
++</main></body></html>"""
++    html = "\n".join(line.rstrip() for line in html.splitlines()) + "\n"
++    OUT.write_text(html, encoding="utf-8")
++    print(f"Wrote {OUT.relative_to(BASE)}")
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/scripts/preflight_check.py b/scripts/preflight_check.py
+index 67b12cbfaa6577a69dc2fde26f89d2489ecea170..2e39d917960037f774b7ee843c151dd51165dccf 100644
+--- a/scripts/preflight_check.py
++++ b/scripts/preflight_check.py
+@@ -7,8 +7,16 @@ required = [
+     "ro-crate-metadata.json", "LICENSE", "LICENSE_POLICY.md", "THIRD_PARTY_NOTICES.md",
+     "data/LICENSE.md",
+     "data/overall_multilevel_2020_2025.csv", "data/categories_multilevel_2020_2025.csv",
++    "data/data_status_registry.csv", "data/model_config_v2_1.json",
++    "data/peru_2025_anchor_ensemble.csv", "data/peru_2025_anchor_summary.csv",
++    "data/parameter_elicitation_matrix.csv", "data/scenario_sensitivity_by_category.csv",
++    "data/scenario_parameter_samples_summary.csv",
+     "data/scenario_summary_2030.csv", "data/scenario_trajectories_2025_2030.csv",
+     "data/base_integral_democracia_2020_2030_v2.xlsx", "docs/index.html",
++    "data/data_dictionary.csv", "docs/PROVENANCE.md", "docs/DECISION_LOG.md",
++    "docs/AUDIT_CLOSURE_PHASES_1_7.md", "docs/OSF_COMPLEMENT.md",
++    "PUBLICAR_VISOR_V2_1_0.bat", "scripts/publish_release.ps1",
++    "scripts/secret_scan.py", "scripts/sync_public_data.py",
+ ]
+ errors=[]
+ for item in required:
+@@ -27,6 +35,31 @@ try:
+         errors.append("2030 scenario ordering invariant failed")
+ except Exception as e:
+     errors.append(f"scenario parsing failed: {e}")
++try:
++    with open(BASE/"data/model_config_v2_1.json", encoding="utf-8") as f:
++        config=json.load(f)
++    if config.get("model_version") != "2.1.0":
++        errors.append("model_config_v2_1.json must declare model_version 2.1.0")
++    with open(BASE/"data/peru_2025_anchor_ensemble.csv", encoding="utf-8", newline="") as f:
++        anchors=list(csv.DictReader(f))
++    if len(anchors) != int(config.get("n_simulations", 0)):
++        errors.append("anchor ensemble row count differs from model configuration")
++    if any(abs(float(row["overall_score"])-5.88)>1e-9 for row in anchors):
++        errors.append("anchor ensemble does not preserve the fixed 2025 aggregate")
++    with open(BASE/"data/parameter_elicitation_matrix.csv", encoding="utf-8", newline="") as f:
++        params=list(csv.DictReader(f))
++    if len(params) != 30:
++        errors.append("parameter elicitation matrix must contain 30 rows")
++    if any(float(row["plausible_low"]) > float(row["central"]) or float(row["central"]) > float(row["plausible_high"]) for row in params):
++        errors.append("parameter range invariant failed")
++    with open(BASE/"data/data_dictionary.csv", encoding="utf-8", newline="") as f:
++        dictionary=list(csv.DictReader(f))
++    if not dictionary or any(not row.get("description", "").strip() for row in dictionary):
++        errors.append("data dictionary contains an empty description")
++    if "PublishRelease" not in (BASE/"scripts/publish_release.ps1").read_text(encoding="utf-8"):
++        errors.append("publisher lacks the explicit final-release gate")
++except Exception as e:
++    errors.append(f"v2.1.0 scientific preflight failed: {e}")
+ if errors:
+     print("PREFLIGHT FAIL")
+     print("\n".join(f"- {e}" for e in errors))
+diff --git a/scripts/publish_release.ps1 b/scripts/publish_release.ps1
+new file mode 100644
+index 0000000000000000000000000000000000000000..540bcfc48fc1cee13a13e1eab382cd92507b6f93
+--- /dev/null
++++ b/scripts/publish_release.ps1
+@@ -0,0 +1,405 @@
++[CmdletBinding()]
++param(
++    [string]$PackagePath = "",
++    [string]$Repo = "vanegasmagdiel/visor-democracia-peru-2020-2030",
++    [string]$CandidateBranch = "codex/v2.1.0-scientific-refactor",
++    [string]$Version = "2.1.0",
++    [string]$OsfProjectId = $env:OSF_PROJECT_ID,
++    [string]$OsfToken = $env:OSF_TOKEN,
++    [switch]$UseCurrentDirectory,
++    [switch]$SkipOsf,
++    [switch]$PublishRelease,
++    [switch]$NoPause
++)
++
++Set-StrictMode -Version Latest
++$ErrorActionPreference = "Stop"
++$ProgressPreference = "SilentlyContinue"
++
++$ScriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
++$EmbeddedRepoRoot = (Resolve-Path (Join-Path $ScriptRoot "..")).Path
++$ExpectedConceptDoi = "10.5281/zenodo.22080540"
++$ExpectedStableDoi = "10.5281/zenodo.22080541"
++$CandidateLabel = "v$Version-rc.1"
++$WorkRoot = $null
++$CloneRoot = $null
++
++function Write-Step([string]$Message) {
++    Write-Host "`n==> $Message" -ForegroundColor Cyan
++}
++
++function Write-Ok([string]$Message) {
++    Write-Host "[OK] $Message" -ForegroundColor Green
++}
++
++function Assert-Command([string]$Name) {
++    if (-not (Get-Command $Name -ErrorAction SilentlyContinue)) {
++        throw "No se encontro '$Name' en PATH. Instale el requisito y vuelva a ejecutar."
++    }
++}
++
++function Invoke-Native {
++    param(
++        [Parameter(Mandatory=$true)][string]$File,
++        [Parameter(Mandatory=$true)][string[]]$Arguments,
++        [string]$WorkingDirectory = ""
++    )
++    if ($WorkingDirectory) { Push-Location $WorkingDirectory }
++    try {
++        & $File @Arguments
++        if ($LASTEXITCODE -ne 0) {
++            throw "Fallo ($LASTEXITCODE): $File $($Arguments -join ' ')"
++        }
++    }
++    finally {
++        if ($WorkingDirectory) { Pop-Location }
++    }
++}
++
++function Invoke-Capture {
++    param(
++        [Parameter(Mandatory=$true)][string]$File,
++        [Parameter(Mandatory=$true)][string[]]$Arguments,
++        [string]$WorkingDirectory = ""
++    )
++    if ($WorkingDirectory) { Push-Location $WorkingDirectory }
++    try {
++        $Result = (& $File @Arguments 2>$null | Out-String).Trim()
++        if ($LASTEXITCODE -ne 0) { return $null }
++        return $Result
++    }
++    finally {
++        if ($WorkingDirectory) { Pop-Location }
++    }
++}
++
++function Resolve-Python {
++    if (Get-Command py -ErrorAction SilentlyContinue) {
++        return @{ Exe = "py"; Prefix = @("-3") }
++    }
++    if (Get-Command python -ErrorAction SilentlyContinue) {
++        return @{ Exe = "python"; Prefix = @() }
++    }
++    throw "No se encontro Python 3.11 o superior."
++}
++
++function Invoke-Python {
++    param([string[]]$Arguments, [string]$WorkingDirectory = "")
++    $AllArgs = @($script:Python.Prefix) + $Arguments
++    Invoke-Native -File $script:Python.Exe -Arguments $AllArgs -WorkingDirectory $WorkingDirectory
++}
++
++function Find-Package {
++    if ($PackagePath) {
++        if (-not (Test-Path -LiteralPath $PackagePath -PathType Leaf)) {
++            throw "No existe el paquete indicado: $PackagePath"
++        }
++        return (Resolve-Path -LiteralPath $PackagePath).Path
++    }
++    $Names = @(
++        "visor_democracia_peru_2020_2030_v2.1.0-rc.1.zip",
++        "visor-democracia-peru-2020-2030_v2.1.0-rc.1.zip"
++    )
++    $Folders = @(
++        $EmbeddedRepoRoot,
++        (Join-Path $env:USERPROFILE "Downloads"),
++        (Join-Path $env:USERPROFILE "Descargas")
++    ) | Select-Object -Unique
++    foreach ($Folder in $Folders) {
++        foreach ($Name in $Names) {
++            $Candidate = Join-Path $Folder $Name
++            if (Test-Path -LiteralPath $Candidate -PathType Leaf) {
++                return (Resolve-Path -LiteralPath $Candidate).Path
++            }
++        }
++    }
++    $Newest = Get-ChildItem -Path $Folders -Filter "*v2.1.0*rc*.zip" -File -ErrorAction SilentlyContinue |
++        Sort-Object LastWriteTime -Descending | Select-Object -First 1
++    if ($Newest) { return $Newest.FullName }
++    throw "No se localizo el ZIP v2.1.0-rc.1. Use -PackagePath con la ruta completa."
++}
++
++function Find-SourceRoot([string]$ExtractRoot) {
++    $Candidates = Get-ChildItem -LiteralPath $ExtractRoot -Filter "pyproject.toml" -File -Recurse
++    foreach ($Item in $Candidates) {
++        $Root = $Item.Directory.FullName
++        if ((Test-Path (Join-Path $Root "docs\index.html")) -and
++            (Test-Path (Join-Path $Root "data\model_config_v2_1.json")) -and
++            (Test-Path (Join-Path $Root "CITATION.cff"))) {
++            return $Root
++        }
++    }
++    throw "El paquete no contiene una raiz valida con pyproject.toml, docs\index.html y data\model_config_v2_1.json."
++}
++
++function Confirm-Upload {
++    Write-Host "Este proceso validara el paquete y publicara una rama/PR en GitHub." -ForegroundColor Yellow
++    if (-not $SkipOsf) {
++        Write-Host "Si proporciona GUID y token OSF, subira solo suplementos permitidos; nunca el ZIP." -ForegroundColor Yellow
++    }
++    if ($PublishRelease) {
++        Write-Host "MODO FINAL solicitado: puede fusionar, etiquetar y crear un GitHub Release que active Zenodo." -ForegroundColor Red
++    }
++    $Answer = Read-Host "Escriba SI para continuar"
++    if ($Answer -cne "SI") { throw "Operacion cancelada por el usuario." }
++}
++
++function Test-PackageHash([string]$ZipPath) {
++    $Sidecar = "$ZipPath.sha256"
++    if (-not (Test-Path -LiteralPath $Sidecar -PathType Leaf)) {
++        throw "Falta el checksum lateral: $Sidecar"
++    }
++    $Expected = ((Get-Content -LiteralPath $Sidecar -Raw).Trim() -split "\s+")[0].ToLowerInvariant()
++    if ($Expected -notmatch "^[a-f0-9]{64}$") { throw "El archivo SHA-256 tiene formato invalido." }
++    $Actual = (Get-FileHash -Algorithm SHA256 -LiteralPath $ZipPath).Hash.ToLowerInvariant()
++    if ($Actual -ne $Expected) { throw "SHA-256 no coincide. Paquete rechazado antes de extraer." }
++    Write-Ok "Integridad SHA-256 confirmada: $Actual"
++}
++
++function Configure-GitIdentity([string]$RepoRoot) {
++    $Login = Invoke-Capture -File "gh" -Arguments @("api", "user", "--jq", ".login")
++    if (-not $Login) { throw "No se pudo obtener el usuario autenticado de GitHub." }
++    $Name = Invoke-Capture -File "gh" -Arguments @("api", "user", "--jq", ".name")
++    if (-not $Name -or $Name -eq "null") { $Name = $Login }
++    $UserId = Invoke-Capture -File "gh" -Arguments @("api", "user", "--jq", ".id")
++    if (-not $UserId) { throw "No se pudo obtener el ID del usuario GitHub." }
++    $Email = "${UserId}+${Login}@users.noreply.github.com"
++    Invoke-Native -File "git" -Arguments @("config", "user.name", $Name) -WorkingDirectory $RepoRoot
++    Invoke-Native -File "git" -Arguments @("config", "user.email", $Email) -WorkingDirectory $RepoRoot
++    Invoke-Native -File "git" -Arguments @("config", "core.autocrlf", "false") -WorkingDirectory $RepoRoot
++    Write-Ok "Identidad Git configurada con correo noreply; no se solicitan datos manuales."
++}
++
++function Sync-OsfFile {
++    param([string]$ProjectId, [string]$Token, [string]$LocalPath, [string]$RemoteName)
++    $Headers = @{ Authorization = "Bearer $Token" }
++    $RootUri = "https://files.osf.io/v1/resources/$ProjectId/providers/osfstorage/"
++    $Listing = Invoke-RestMethod -Method Get -Uri $RootUri -Headers $Headers
++    $Existing = @($Listing.data) | Where-Object { $_.attributes.name -eq $RemoteName } | Select-Object -First 1
++    if ($Existing) {
++        $UploadUri = [string]$Existing.links.upload
++        if ($UploadUri.StartsWith("/")) { $UploadUri = "https://files.osf.io$UploadUri" }
++        Invoke-WebRequest -UseBasicParsing -Method Put -Uri $UploadUri -Headers $Headers -InFile $LocalPath -ContentType "application/octet-stream" | Out-Null
++        Write-Ok "OSF versionado: $RemoteName"
++    }
++    else {
++        $Encoded = [Uri]::EscapeDataString($RemoteName)
++        $UploadUri = "$RootUri`?kind=file&name=$Encoded"
++        Invoke-WebRequest -UseBasicParsing -Method Put -Uri $UploadUri -Headers $Headers -InFile $LocalPath -ContentType "application/octet-stream" | Out-Null
++        Write-Ok "OSF creado: $RemoteName"
++    }
++}
++
++function Sync-OsfSupplements([string]$RepoRoot, [string]$CommitSha) {
++    if ($SkipOsf) {
++        Write-Host "[OMITIDO] Sincronizacion OSF desactivada con -SkipOsf." -ForegroundColor Yellow
++        return
++    }
++    if (-not $OsfProjectId) {
++        $script:OsfProjectId = Read-Host "GUID OSF de cinco caracteres (Enter para omitir)"
++    }
++    if (-not $OsfProjectId) {
++        Write-Host "[PENDIENTE] OSF no se modifico: no se proporciono GUID." -ForegroundColor Yellow
++        return
++    }
++    if (-not $OsfToken) {
++        $Secure = Read-Host "Token OSF con osf.full_write (entrada oculta)" -AsSecureString
++        $Ptr = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($Secure)
++        try { $script:OsfToken = [Runtime.InteropServices.Marshal]::PtrToStringBSTR($Ptr) }
++        finally { [Runtime.InteropServices.Marshal]::ZeroFreeBSTR($Ptr) }
++    }
++    if (-not $OsfToken) { throw "No se proporciono token OSF." }
++
++    $ManifestPath = Join-Path $WorkRoot "osf-sync-manifest_$CandidateLabel.json"
++    $Manifest = [ordered]@{
++        title = "Suplementos metodologicos del visor"
++        model_version = $CandidateLabel
++        github_commit = $CommitSha
++        github_repository = "https://github.com/$Repo"
++        zenodo_concept_doi = $ExpectedConceptDoi
++        zenodo_stable_version_doi = $ExpectedStableDoi
++        relation = "IsSupplementTo"
++        generated_at = (Get-Date).ToUniversalTime().ToString("o")
++        exclusion = "No repository ZIP, executable viewer, container or third-party report is uploaded to OSF."
++    }
++    $Manifest | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath $ManifestPath -Encoding UTF8
++
++    $Files = [ordered]@{
++        "docs\METODOLOGIA.md" = "METODOLOGIA_$CandidateLabel.md"
++        "docs\PROVENANCE.md" = "PROVENANCE_$CandidateLabel.md"
++        "docs\DECISION_LOG.md" = "DECISION_LOG_$CandidateLabel.md"
++        "docs\AUDIT_CLOSURE_PHASES_1_7.md" = "AUDIT_CLOSURE_PHASES_1_7_$CandidateLabel.md"
++        "docs\OSF_COMPLEMENT.md" = "OSF_COMPLEMENT_$CandidateLabel.md"
++        "data\data_status_registry.csv" = "data_status_registry_$CandidateLabel.csv"
++        "data\model_config_v2_1.json" = "model_config_$CandidateLabel.json"
++        "data\peru_2025_anchor_summary.csv" = "peru_2025_anchor_summary_$CandidateLabel.csv"
++        "data\parameter_elicitation_matrix.csv" = "parameter_elicitation_matrix_$CandidateLabel.csv"
++        "data\post_election_evidence_2026.csv" = "post_election_evidence_2026_$CandidateLabel.csv"
++        "VALIDATION_REPORT.md" = "VALIDATION_REPORT_$CandidateLabel.md"
++    }
++    foreach ($Pair in $Files.GetEnumerator()) {
++        $Local = Join-Path $RepoRoot $Pair.Key
++        if (-not (Test-Path -LiteralPath $Local -PathType Leaf)) { throw "Suplemento OSF ausente: $($Pair.Key)" }
++        Sync-OsfFile -ProjectId $OsfProjectId -Token $OsfToken -LocalPath $Local -RemoteName $Pair.Value
++    }
++    Sync-OsfFile -ProjectId $OsfProjectId -Token $OsfToken -LocalPath $ManifestPath -RemoteName "osf-sync-manifest_$CandidateLabel.json"
++    $script:OsfToken = $null
++    Remove-Item Env:OSF_TOKEN -ErrorAction SilentlyContinue
++    Write-Ok "OSF sincronizado sin duplicar el objeto principal de Zenodo."
++}
++
++function Test-And-Build([string]$RepoRoot) {
++    Write-Step "Creando entorno reproducible y ejecutando controles"
++    $Venv = Join-Path $RepoRoot ".venv"
++    Invoke-Python -Arguments @("-m", "venv", $Venv)
++    $VenvPython = Join-Path $Venv "Scripts\python.exe"
++    Invoke-Native -File $VenvPython -Arguments @("-m", "pip", "install", "--disable-pip-version-check", "-r", "requirements.txt", "pytest") -WorkingDirectory $RepoRoot
++    Invoke-Native -File $VenvPython -Arguments @("scripts\rebuild_scenarios.py") -WorkingDirectory $RepoRoot
++    Invoke-Native -File $VenvPython -Arguments @("scripts\build_data_dictionary.py") -WorkingDirectory $RepoRoot
++    Invoke-Native -File $VenvPython -Arguments @("scripts\sync_public_data.py") -WorkingDirectory $RepoRoot
++    Invoke-Native -File $VenvPython -Arguments @("scripts\build_static_viewer.py") -WorkingDirectory $RepoRoot
++    Invoke-Native -File $VenvPython -Arguments @("-m", "compileall", "-q", "app.py", "scripts", "tests") -WorkingDirectory $RepoRoot
++    Invoke-Native -File $VenvPython -Arguments @("scripts\preflight_check.py") -WorkingDirectory $RepoRoot
++    Invoke-Native -File $VenvPython -Arguments @("-m", "pytest", "-q") -WorkingDirectory $RepoRoot
++    Invoke-Native -File $VenvPython -Arguments @("scripts\secret_scan.py") -WorkingDirectory $RepoRoot
++    Invoke-Native -File $VenvPython -Arguments @("scripts\build_release_manifest.py", "--check") -WorkingDirectory $RepoRoot
++    Write-Ok "Rebuild, preflight, tests, secret scan and manifest passed."
++}
++
++function Ensure-Pages {
++    $Url = Invoke-Capture -File "gh" -Arguments @("api", "repos/$Repo/pages", "--jq", ".html_url")
++    if ($Url) {
++        Write-Ok "GitHub Pages activo: $Url"
++        return
++    }
++    Write-Step "Activando GitHub Pages desde main/docs"
++    $BodyPath = Join-Path $WorkRoot "pages.json"
++    '{"source":{"branch":"main","path":"/docs"}}' | Set-Content -LiteralPath $BodyPath -Encoding ASCII
++    Get-Content -LiteralPath $BodyPath -Raw | & gh api --method POST "repos/$Repo/pages" --input - | Out-Null
++    if ($LASTEXITCODE -ne 0) { throw "No se pudo activar GitHub Pages." }
++    Write-Ok "GitHub Pages activado desde main/docs."
++}
++
++try {
++    Write-Host "============================================================" -ForegroundColor DarkCyan
++    Write-Host " VISOR DEMOCRACIA PERU - PUBLICADOR TRANSACCIONAL v2.1.0" -ForegroundColor White
++    Write-Host "============================================================" -ForegroundColor DarkCyan
++    Confirm-Upload
++
++    Write-Step "Comprobando prerequisitos"
++    Assert-Command "git"
++    Assert-Command "gh"
++    $script:Python = Resolve-Python
++    Invoke-Native -File "gh" -Arguments @("auth", "status", "-h", "github.com")
++    Invoke-Native -File "gh" -Arguments @("repo", "view", $Repo, "--json", "nameWithOwner,defaultBranchRef")
++    Write-Ok "GitHub y repositorio accesibles."
++
++    $Stamp = Get-Date -Format "yyyyMMdd_HHmmss"
++    $Documents = [Environment]::GetFolderPath("MyDocuments")
++    $WorkRoot = Join-Path $Documents "visor_publicacion_$Stamp"
++    New-Item -ItemType Directory -Path $WorkRoot -Force | Out-Null
++
++    if ($UseCurrentDirectory) {
++        $SourceRoot = $EmbeddedRepoRoot
++        Write-Ok "Fuente local validada: $SourceRoot"
++    }
++    else {
++        $ZipPath = Find-Package
++        Write-Ok "Paquete localizado: $ZipPath"
++        Test-PackageHash -ZipPath $ZipPath
++        $ExtractRoot = Join-Path $WorkRoot "paquete"
++        Expand-Archive -LiteralPath $ZipPath -DestinationPath $ExtractRoot -Force
++        $SourceRoot = Find-SourceRoot -ExtractRoot $ExtractRoot
++        Write-Ok "Raiz del producto: $SourceRoot"
++    }
++
++    Write-Step "Clonando mediante SSH para evitar restricciones de scope OAuth sobre workflows"
++    $CloneRoot = Join-Path $WorkRoot "repositorio"
++    Invoke-Native -File "git" -Arguments @("clone", "--filter=blob:none", "git@github.com:$Repo.git", $CloneRoot)
++    Configure-GitIdentity -RepoRoot $CloneRoot
++    Invoke-Native -File "git" -Arguments @("fetch", "origin", "--prune") -WorkingDirectory $CloneRoot
++    $RemoteCandidate = Invoke-Capture -File "git" -Arguments @("ls-remote", "--heads", "origin", $CandidateBranch) -WorkingDirectory $CloneRoot
++    if ($RemoteCandidate) {
++        Invoke-Native -File "git" -Arguments @("switch", "-C", $CandidateBranch, "origin/$CandidateBranch") -WorkingDirectory $CloneRoot
++        Invoke-Native -File "git" -Arguments @("merge", "--ff-only", "origin/main") -WorkingDirectory $CloneRoot
++    }
++    else {
++        Invoke-Native -File "git" -Arguments @("switch", "-c", $CandidateBranch, "origin/main") -WorkingDirectory $CloneRoot
++    }
++
++    Write-Step "Superponiendo el paquete en el clon validado"
++    & robocopy $SourceRoot $CloneRoot /MIR /XD .git .venv .pytest_cache __pycache__ /XF "*.zip" "*.zip.sha256" | Out-Host
++    if ($LASTEXITCODE -ge 8) { throw "Robocopy fallo con codigo $LASTEXITCODE." }
++    Test-And-Build -RepoRoot $CloneRoot
++
++    Write-Step "Creando commit candidato y publicando la rama"
++    Invoke-Native -File "git" -Arguments @("add", "-A") -WorkingDirectory $CloneRoot
++    $Staged = Invoke-Capture -File "git" -Arguments @("diff", "--cached", "--name-only") -WorkingDirectory $CloneRoot
++    if ($Staged) {
++        Invoke-Native -File "git" -Arguments @("commit", "-m", "Scientific refactor v2.1.0-rc.1: phases 1-7") -WorkingDirectory $CloneRoot
++    }
++    else { Write-Ok "No hay cambios nuevos; se reutilizara el commit candidato existente." }
++    Invoke-Native -File "git" -Arguments @("push", "-u", "origin", $CandidateBranch) -WorkingDirectory $CloneRoot
++    $CommitSha = Invoke-Capture -File "git" -Arguments @("rev-parse", "HEAD") -WorkingDirectory $CloneRoot
++    Write-Ok "Commit GitHub: $CommitSha"
++
++    $PrUrl = Invoke-Capture -File "gh" -Arguments @("pr", "view", $CandidateBranch, "--repo", $Repo, "--json", "url", "--jq", ".url")
++    if (-not $PrUrl) {
++        $PrBody = @"
++Candidate scientific refactor covering phases 1–7.
++
++- separates the secondary-reported 2025 aggregate from latent dimensions;
++- publishes bounded parameter elicitation and joint sensitivity;
++- aligns CSV/XLSX/app/Pages/metadata/licensing;
++- adds transactional GitHub/OSF publication automation;
++- preserves v2.0.0 and its Zenodo DOI.
++
++Publication gate: phase 8 and phases 9–11 remain pending. Do not create tag/release/DOI yet.
++"@
++        $PrUrl = Invoke-Capture -File "gh" -Arguments @("pr", "create", "--repo", $Repo, "--base", "main", "--head", $CandidateBranch, "--draft", "--title", "v2.1.0-rc.1: scientific refactor phases 1-7", "--body", $PrBody)
++        if (-not $PrUrl) { throw "No se pudo crear el pull request borrador." }
++    }
++    Write-Ok "PR candidato: $PrUrl"
++    Ensure-Pages
++    Sync-OsfSupplements -RepoRoot $CloneRoot -CommitSha $CommitSha
++
++    if ($PublishRelease) {
++        Write-Step "Comprobando compuerta final"
++        $Citation = Get-Content -LiteralPath (Join-Path $CloneRoot "CITATION.cff") -Raw
++        $Notes = Get-Content -LiteralPath (Join-Path $CloneRoot "RELEASE_NOTES.md") -Raw
++        if ($Citation -match "rc[.-]?1" -or $Notes -match "release candidate|candidato") {
++            throw "La metadata sigue marcada como RC. Incorpore fases 8-11 y retire la marca candidata antes del release final."
++        }
++        $FinalAnswer = Read-Host "Para fusionar, etiquetar y activar Zenodo escriba exactamente PUBLICAR v$Version"
++        if ($FinalAnswer -cne "PUBLICAR v$Version") { throw "Compuerta final no confirmada." }
++        Invoke-Native -File "gh" -Arguments @("pr", "ready", $CandidateBranch, "--repo", $Repo)
++        Invoke-Native -File "gh" -Arguments @("pr", "merge", $CandidateBranch, "--repo", $Repo, "--squash", "--delete-branch")
++        Invoke-Native -File "git" -Arguments @("switch", "main") -WorkingDirectory $CloneRoot
++        Invoke-Native -File "git" -Arguments @("pull", "--ff-only", "origin", "main") -WorkingDirectory $CloneRoot
++        Test-And-Build -RepoRoot $CloneRoot
++        $ExistingTag = Invoke-Capture -File "git" -Arguments @("ls-remote", "--tags", "origin", "refs/tags/v$Version") -WorkingDirectory $CloneRoot
++        if ($ExistingTag) { throw "El tag v$Version ya existe; no se sobrescribe una version archivada." }
++        $Archive = Join-Path $WorkRoot "visor_democracia_peru_2020_2030_v$Version.zip"
++        Invoke-Native -File "git" -Arguments @("archive", "--format=zip", "--output=$Archive", "HEAD") -WorkingDirectory $CloneRoot
++        $ArchiveHash = (Get-FileHash -Algorithm SHA256 -LiteralPath $Archive).Hash.ToLowerInvariant()
++        $ArchiveSidecar = "$Archive.sha256"
++        "$ArchiveHash  $([IO.Path]::GetFileName($Archive))" | Set-Content -LiteralPath $ArchiveSidecar -Encoding ASCII
++        Invoke-Native -File "gh" -Arguments @("release", "create", "v$Version", $Archive, $ArchiveSidecar, "--repo", $Repo, "--target", "main", "--title", "Visor Integrado de Democracia del Peru v$Version", "--notes-file", (Join-Path $CloneRoot "RELEASE_NOTES.md"))
++        Write-Ok "GitHub Release creado. La integracion GitHub-Zenodo queda activada para acuñar la nueva version DOI."
++    }
++    else {
++        Write-Host "`n[COMPuERTA] No se creo tag, GitHub Release ni DOI. Espere fase 8 y GO de fases 9-11." -ForegroundColor Yellow
++    }
++
++    Write-Host "`nRESULTADO" -ForegroundColor Cyan
++    Write-Host "Directorio auditado: $WorkRoot"
++    Write-Host "PR: $PrUrl"
++    Write-Host "Commit: $CommitSha"
++    exit 0
++}
++catch {
++    Write-Host "`n[FALLO] $($_.Exception.Message)" -ForegroundColor Red
++    if ($WorkRoot) { Write-Host "Directorio preservado para diagnostico: $WorkRoot" -ForegroundColor Yellow }
++    Write-Host "No se crea ni sobrescribe un release cuando falla una compuerta." -ForegroundColor Yellow
++    exit 1
++}
+diff --git a/scripts/rebuild_scenarios.py b/scripts/rebuild_scenarios.py
+index 321711470589814f311b087e017e70ff1ad82906..56d883f1279c77324c1cb3f7cb50e6eaee35004f 100644
+--- a/scripts/rebuild_scenarios.py
++++ b/scripts/rebuild_scenarios.py
+@@ -1,20 +1,23 @@
+ #!/usr/bin/env python3
+-"""Rebuild deterministic scenario trajectories and Monte Carlo sensitivity bands.
++"""Rebuild the v2.1.0 scenario layer and epistemic sensitivity outputs.
+ 
+-This script intentionally does NOT regenerate the XLSX workbook; the workbook is a
+-release artifact. It reproduces the computational scenario layer from the auditable
+-CSV inputs in data/.
++The model keeps Peru's 2025 aggregate fixed at 5.88 while representing its
++unpublished dimensional composition as an ensemble. Scenario parameters are
++bounded structured analytical judgements, not statistically estimated effects.
++The same random draws are reused across scenarios for comparability.
+ """
++
++from __future__ import annotations
++
++import json
+ from pathlib import Path
++
+ import numpy as np
+ import pandas as pd
+ 
++
+ BASE = Path(__file__).resolve().parents[1]
+ D = BASE / "data"
+-SEED = 20260819
+-N = 10_000
+-DECAY = {2027: 1.0, 2028: 0.9, 2029: 0.8, 2030: 0.7}
+-
+ CATS = [
+     "Electoral process and pluralism",
+     "Functioning of government",
+@@ -41,73 +44,289 @@ def regime(score: float) -> str:
+     return "Full democracy"
+ 
+ 
+-def main() -> None:
+-    calibration = pd.read_csv(D / "peru_2025_category_calibration_audit.csv")
+-    anchor = calibration.set_index("category_full")["peru_2025_modeled_anchor"].reindex(CATS).astype(float)
+-    assert abs(anchor.mean() - 5.88) < 1e-12
+-
+-    coeff = pd.read_csv(D / "scenario_coefficients.csv")
+-    meta = pd.read_csv(D / "scenario_summary_2030.csv").set_index("scenario_id")
+-    scenario_ids = list(meta.index)
++def triangular_ppf(u: np.ndarray, left: np.ndarray, mode: np.ndarray, right: np.ndarray) -> np.ndarray:
++    """Inverse CDF of a triangular distribution with broadcastable arrays."""
++    width = right - left
++    c = np.divide(mode - left, width, out=np.full_like(width, 0.5, dtype=float), where=width > 0)
++    left_branch = left + np.sqrt(u * width * (mode - left))
++    right_branch = right - np.sqrt((1.0 - u) * width * (right - mode))
++    return np.where(u < c, left_branch, right_branch)
+ 
+-    rows = []
+-    for sid in scenario_ids:
+-        c = coeff[coeff.scenario_id == sid].set_index("category_full").reindex(CATS)
+-        shock = c["shock_2026"].to_numpy(float)
+-        growth = c["annual_structural_rate"].to_numpy(float)
+-        current = anchor.to_numpy(float).copy()
+-        vals = {ES[k]: round(float(v), 3) for k, v in zip(CATS, current)}
+-        rows.append({"scenario_id": sid, "scenario_name": meta.loc[sid, "scenario_name"], "year": 2025,
+-                     **vals, "overall_score": round(float(current.mean()), 3),
+-                     "phase": "anchor_observed_overall_modeled_categories", "regime_type": regime(float(current.mean()))})
+-        current = np.clip(current + shock, 0, 10)
+-        vals = {ES[k]: round(float(v), 3) for k, v in zip(CATS, current)}
+-        rows.append({"scenario_id": sid, "scenario_name": meta.loc[sid, "scenario_name"], "year": 2026,
+-                     **vals, "overall_score": round(float(current.mean()), 3),
+-                     "phase": "post_election_shock", "regime_type": regime(float(current.mean()))})
+-        for year, decay in DECAY.items():
+-            current = np.clip(current + growth * decay, 0, 10)
+-            vals = {ES[k]: round(float(v), 3) for k, v in zip(CATS, current)}
+-            rows.append({"scenario_id": sid, "scenario_name": meta.loc[sid, "scenario_name"], "year": year,
+-                         **vals, "overall_score": round(float(current.mean()), 3),
+-                         "phase": "structural_projection", "regime_type": regime(float(current.mean()))})
+-    proj = pd.DataFrame(rows)
+-    proj.to_csv(D / "scenario_trajectories_2025_2030.csv", index=False)
+ 
++def historical_matrix() -> pd.DataFrame:
+     cats = pd.read_csv(D / "categories_multilevel_2020_2025.csv")
+-    hist = cats[cats.year <= 2024].pivot(index="year", columns="category_full", values="peru_score").reindex(columns=CATS)
+-    sigma = (hist.diff().dropna().std(ddof=1) * 0.25).clip(lower=0.04, upper=0.20)
+-    rng = np.random.default_rng(SEED)
+-    sigma_mult = {"recuperacion_institucional": 0.80, "continuidad_hibrida": 1.00, "deriva_restrictiva": 1.25}
+-    bands = []
++    return (
++        cats[cats.year <= 2024]
++        .pivot(index="year", columns="category_full", values="peru_score")
++        .reindex(columns=CATS)
++        .astype(float)
++    )
++
++
++def build_anchor_ensemble(config: dict, rng: np.random.Generator) -> tuple[pd.DataFrame, pd.DataFrame]:
++    audit = pd.read_csv(D / "peru_2025_category_calibration_audit.csv")
++    central = audit.set_index("category_full")["peru_2025_modeled_anchor"].reindex(CATS).astype(float)
++    target = float(config["overall_2025"])
++    if not np.isclose(central.mean(), target, atol=1e-12):
++        raise ValueError("The documented central anchor does not average to the 2025 aggregate.")
++
++    hist = historical_matrix()
++    rule = config["anchor_uncertainty"]
++    sigma = (hist.diff().dropna().std(ddof=1) * float(rule["historical_volatility_multiplier"])).clip(
++        lower=float(rule["sigma_floor"]), upper=float(rule["sigma_cap"])
++    )
++    bounds = float(rule["bound_sigma_multiplier"])
++    lower = np.maximum(0.0, central.to_numpy() - bounds * sigma.to_numpy())
++    upper = np.minimum(10.0, central.to_numpy() + bounds * sigma.to_numpy())
++    n = int(config["n_simulations"])
++
++    accepted: list[np.ndarray] = []
++    accepted_count = 0
++    while accepted_count < n:
++        batch_n = max(2000, (n - accepted_count) * 2)
++        raw = rng.normal(0.0, sigma.to_numpy(), size=(batch_n, len(CATS)))
++        raw -= raw.mean(axis=1, keepdims=True)
++        candidate = central.to_numpy() + raw
++        keep = ((candidate >= lower) & (candidate <= upper)).all(axis=1)
++        if keep.any():
++            block = candidate[keep]
++            accepted.append(block)
++            accepted_count += len(block)
++    arr = np.vstack(accepted)[:n]
++    if not np.allclose(arr.mean(axis=1), target, atol=1e-12):
++        raise AssertionError("Anchor ensemble does not preserve the fixed 2025 aggregate.")
++
++    ensemble = pd.DataFrame(arr, columns=[ES[c] for c in CATS])
++    ensemble.insert(0, "sample_id", np.arange(1, n + 1))
++    ensemble["overall_score"] = arr.mean(axis=1)
++    ensemble["data_status"] = "modeled_latent_ensemble"
++
++    summary_rows = []
++    hist_2024 = hist.loc[2024]
++    for i, cat in enumerate(CATS):
++        q10, q50, q90 = np.quantile(arr[:, i], [0.10, 0.50, 0.90])
++        summary_rows.append(
++            {
++                "category_full": cat,
++                "category_es": ES[cat],
++                "peru_2024_official_source_observed": round(float(hist_2024[cat]), 4),
++                "central_anchor_2025": round(float(central[cat]), 4),
++                "anchor_sigma": round(float(sigma[cat]), 4),
++                "admissible_low": round(float(lower[i]), 4),
++                "p10": round(float(q10), 4),
++                "p50": round(float(q50), 4),
++                "p90": round(float(q90), 4),
++                "admissible_high": round(float(upper[i]), 4),
++                "overall_constraint": target,
++                "data_status": "modeled_latent_ensemble",
++                "interpretation": "Uncertainty in dimensional composition; not an official EIU Peru sub-score.",
++            }
++        )
++    return ensemble, pd.DataFrame(summary_rows)
++
++
++def parameter_arrays(matrix: pd.DataFrame, scenario_id: str, parameter: str) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
++    rows = (
++        matrix[(matrix.scenario_id == scenario_id) & (matrix.parameter == parameter)]
++        .set_index("category_full")
++        .reindex(CATS)
++    )
++    if rows[["central", "plausible_low", "plausible_high"]].isna().any().any():
++        raise ValueError(f"Incomplete parameter matrix for {scenario_id}/{parameter}")
++    return (
++        rows["plausible_low"].to_numpy(float),
++        rows["central"].to_numpy(float),
++        rows["plausible_high"].to_numpy(float),
++    )
++
++
++def build_outputs(config: dict, ensemble: pd.DataFrame) -> None:
++    n = int(config["n_simulations"])
++    seed = int(config["seed"])
++    rng = np.random.default_rng(seed + 1)
++    parameter_matrix = pd.read_csv(D / "parameter_elicitation_matrix.csv")
++    scenario_meta = pd.read_csv(D / "scenario_summary_2030.csv").set_index("scenario_id")
++    scenario_ids = list(scenario_meta.index)
++    decay = {int(year): float(value) for year, value in config["decay"].items()}
++    anchor_arr = ensemble[[ES[c] for c in CATS]].to_numpy(float)
++
++    # Common random numbers improve cross-scenario comparability.
++    u_shock = rng.random((n, len(CATS)))
++    u_rate = rng.random((n, len(CATS)))
++    u_scale = rng.random(n)
++    u_rho = rng.random(n)
++    years_noise = [2026, *decay.keys()]
++    common_z = {year: rng.normal(size=(n, 1)) for year in years_noise}
++    idio_z = {year: rng.normal(size=(n, len(CATS))) for year in years_noise}
++
++    scale_cfg = config["structural_rate_scale"]
++    rate_scale = triangular_ppf(
++        u_scale,
++        np.full(n, float(scale_cfg["low"])),
++        np.full(n, float(scale_cfg["mode"])),
++        np.full(n, float(scale_cfg["high"])),
++    )
++    residual_cfg = config["residual_uncertainty"]
++    rho = triangular_ppf(
++        u_rho,
++        np.full(n, float(residual_cfg["rho_low"])),
++        np.full(n, float(residual_cfg["rho_mode"])),
++        np.full(n, float(residual_cfg["rho_high"])),
++    )
++    hist = historical_matrix()
++    residual_sigma = (
++        hist.diff().dropna().std(ddof=1) * float(residual_cfg["historical_volatility_multiplier"])
++    ).clip(lower=float(residual_cfg["sigma_floor"]), upper=float(residual_cfg["sigma_cap"]))
++
++    def residual(year: int) -> np.ndarray:
++        correlated = np.sqrt(rho)[:, None] * common_z[year] + np.sqrt(1.0 - rho)[:, None] * idio_z[year]
++        return correlated * residual_sigma.to_numpy()[None, :]
++
++    deterministic_rows = []
++    band_rows = []
++    category_band_rows = []
++    parameter_summary_rows = []
++    central_anchor = (
++        pd.read_csv(D / "peru_2025_category_calibration_audit.csv")
++        .set_index("category_full")["peru_2025_modeled_anchor"]
++        .reindex(CATS)
++        .to_numpy(float)
++    )
++
+     for sid in scenario_ids:
+-        c = coeff[coeff.scenario_id == sid].set_index("category_full").reindex(CATS)
+-        shock = c["shock_2026"].to_numpy(float)
+-        growth = c["annual_structural_rate"].to_numpy(float)
+-        arr = np.tile(anchor.to_numpy(float), (N, 1))
+-        ov = arr.mean(axis=1)
+-        bands.append([sid, 2025, *np.quantile(ov, [0.10, 0.50, 0.90]), N])
+-        arr = np.clip(arr + shock + rng.normal(0, sigma.to_numpy() * sigma_mult[sid], size=(N, 5)), 0, 10)
+-        ov = arr.mean(axis=1)
+-        bands.append([sid, 2026, *np.quantile(ov, [0.10, 0.50, 0.90]), N])
+-        for year, decay in DECAY.items():
+-            arr = np.clip(arr + growth * decay + rng.normal(0, sigma.to_numpy() * sigma_mult[sid] * 0.85, size=(N, 5)), 0, 10)
+-            ov = arr.mean(axis=1)
+-            bands.append([sid, year, *np.quantile(ov, [0.10, 0.50, 0.90]), N])
+-    b = pd.DataFrame(bands, columns=["scenario_id", "year", "p10", "p50", "p90", "n_sim"])
+-    b[["p10", "p50", "p90"]] = b[["p10", "p50", "p90"]].round(3)
+-    b["note"] = "Sensitivity envelope from 10,000 Monte Carlo paths using 25% of historical annual category volatility (floored/capped); not a statistical confidence interval."
+-    b.to_csv(D / "scenario_sensitivity_bands.csv", index=False)
+-
+-    summary = pd.read_csv(D / "scenario_summary_2030.csv")
++        shock_low, shock_central, shock_high = parameter_arrays(parameter_matrix, sid, "shock_2026")
++        rate_low, rate_central, rate_high = parameter_arrays(parameter_matrix, sid, "annual_structural_rate")
++        shock_draws = triangular_ppf(u_shock, shock_low, shock_central, shock_high)
++        rate_draws = triangular_ppf(u_rate, rate_low, rate_central, rate_high)
++
++        for parameter, draws in (("shock_2026", shock_draws), ("annual_structural_rate", rate_draws)):
++            for i, cat in enumerate(CATS):
++                q10, q50, q90 = np.quantile(draws[:, i], [0.10, 0.50, 0.90])
++                parameter_summary_rows.append(
++                    {
++                        "scenario_id": sid,
++                        "category_full": cat,
++                        "category_es": ES[cat],
++                        "parameter": parameter,
++                        "p10": round(float(q10), 5),
++                        "p50": round(float(q50), 5),
++                        "p90": round(float(q90), 5),
++                        "n_sim": n,
++                    }
++                )
++
++        current_c = central_anchor.copy()
++        central_by_year = {2025: current_c.copy()}
++        current_c = np.clip(current_c + shock_central, 0, 10)
++        central_by_year[2026] = current_c.copy()
++        for year, decay_value in decay.items():
++            current_c = np.clip(current_c + rate_central * decay_value, 0, 10)
++            central_by_year[year] = current_c.copy()
++
++        for year, values in central_by_year.items():
++            deterministic_rows.append(
++                {
++                    "scenario_id": sid,
++                    "scenario_name": scenario_meta.loc[sid, "scenario_name"],
++                    "year": year,
++                    **{ES[cat]: round(float(value), 3) for cat, value in zip(CATS, values)},
++                    "overall_score": round(float(values.mean()), 3),
++                    "phase": "modeled_latent_central" if year == 2025 else ("post_election_shock" if year == 2026 else "structural_projection"),
++                    "data_status": "modeled_latent_central" if year == 2025 else "simulated_scenario",
++                    "regime_type": regime(float(values.mean())),
++                }
++            )
++
++        current = anchor_arr.copy()
++        simulation_by_year = {2025: current.copy()}
++        current = np.clip(current + shock_draws + residual(2026), 0, 10)
++        simulation_by_year[2026] = current.copy()
++        for year, decay_value in decay.items():
++            current = np.clip(
++                current + rate_draws * decay_value * rate_scale[:, None] + residual(year), 0, 10
++            )
++            simulation_by_year[year] = current.copy()
++
++        for year, values in simulation_by_year.items():
++            overall = values.mean(axis=1)
++            q10, q50, q90 = np.quantile(overall, [0.10, 0.50, 0.90])
++            band_rows.append(
++                {
++                    "scenario_id": sid,
++                    "year": year,
++                    "p10": round(float(q10), 3),
++                    "p50": round(float(q50), 3),
++                    "p90": round(float(q90), 3),
++                    "n_sim": n,
++                    "uncertainty_layers": "2025 dimensional composition; bounded scenario parameters; structural-rate scale; correlated residual perturbation",
++                    "note": "Sensitivity envelope; not a confidence interval and not a scenario-occurrence probability.",
++                }
++            )
++            for i, cat in enumerate(CATS):
++                cq10, cq50, cq90 = np.quantile(values[:, i], [0.10, 0.50, 0.90])
++                category_band_rows.append(
++                    {
++                        "scenario_id": sid,
++                        "year": year,
++                        "category_full": cat,
++                        "category_es": ES[cat],
++                        "p10": round(float(cq10), 3),
++                        "p50": round(float(cq50), 3),
++                        "p90": round(float(cq90), 3),
++                        "n_sim": n,
++                    }
++                )
++
++    trajectories = pd.DataFrame(deterministic_rows)
++    bands = pd.DataFrame(band_rows)
++    category_bands = pd.DataFrame(category_band_rows)
++    parameter_summary = pd.DataFrame(parameter_summary_rows)
++    trajectories.to_csv(D / "scenario_trajectories_2025_2030.csv", index=False)
++    bands.to_csv(D / "scenario_sensitivity_bands.csv", index=False)
++    category_bands.to_csv(D / "scenario_sensitivity_by_category.csv", index=False)
++    parameter_summary.to_csv(D / "scenario_parameter_samples_summary.csv", index=False)
++
++    summary = scenario_meta.reset_index()
+     for i, row in summary.iterrows():
+         sid = row.scenario_id
+-        summary.loc[i, "score_2026"] = float(proj[(proj.scenario_id == sid) & (proj.year == 2026)].overall_score.iloc[0])
+-        s2030 = float(proj[(proj.scenario_id == sid) & (proj.year == 2030)].overall_score.iloc[0])
+-        summary.loc[i, "score_2030"] = s2030
+-        summary.loc[i, "regime_2030"] = regime(s2030)
++        central_2026 = trajectories[(trajectories.scenario_id == sid) & (trajectories.year == 2026)].iloc[0]
++        central_2030 = trajectories[(trajectories.scenario_id == sid) & (trajectories.year == 2030)].iloc[0]
++        band_2030 = bands[(bands.scenario_id == sid) & (bands.year == 2030)].iloc[0]
++        summary.loc[i, "score_2026"] = central_2026.overall_score
++        summary.loc[i, "score_2030"] = central_2030.overall_score
++        summary.loc[i, "p10_2030"] = band_2030.p10
++        summary.loc[i, "p50_2030"] = band_2030.p50
++        summary.loc[i, "p90_2030"] = band_2030.p90
++        summary.loc[i, "regime_2030"] = regime(float(central_2030.overall_score))
++        summary.loc[i, "classification_basis"] = "central deterministic trajectory"
+     summary.to_csv(D / "scenario_summary_2030.csv", index=False)
+-    print("Rebuilt trajectories, sensitivity bands and 2030 summary.")
++
++
++def write_compatibility_coefficients() -> None:
++    matrix = pd.read_csv(D / "parameter_elicitation_matrix.csv")
++    pivot = matrix.pivot_table(
++        index=["scenario_id", "scenario_name", "category_full", "category_es"],
++        columns="parameter",
++        values="central",
++        aggfunc="first",
++    ).reset_index()
++    evidence = (
++        matrix.groupby(["scenario_id", "category_full"], as_index=False)["evidence_basis"]
++        .agg(lambda values: ";".join(dict.fromkeys(";".join(values).split(";"))))
++    )
++    pivot = pivot.merge(evidence, on=["scenario_id", "category_full"], how="left")
++    pivot.to_csv(D / "scenario_coefficients.csv", index=False)
++
++
++def main() -> None:
++    config = json.loads((D / "model_config_v2_1.json").read_text(encoding="utf-8"))
++    rng = np.random.default_rng(int(config["seed"]))
++    ensemble, anchor_summary = build_anchor_ensemble(config, rng)
++    ensemble.to_csv(D / "peru_2025_anchor_ensemble.csv", index=False)
++    anchor_summary.to_csv(D / "peru_2025_anchor_summary.csv", index=False)
++    build_outputs(config, ensemble)
++    write_compatibility_coefficients()
++    print("Rebuilt v2.1.0 anchors, trajectories and sensitivity outputs.")
+ 
+ 
+ if __name__ == "__main__":
+diff --git a/scripts/secret_scan.py b/scripts/secret_scan.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..4ab44f88fe7b6b5ed3c742b85ab6b9fbeae49adf
+--- /dev/null
++++ b/scripts/secret_scan.py
+@@ -0,0 +1,50 @@
++#!/usr/bin/env python3
++"""Fail on common credentials or machine-specific paths in release payloads."""
++
++from __future__ import annotations
++
++import re
++import sys
++from pathlib import Path
++
++
++BASE = Path(__file__).resolve().parents[1]
++TEXT_EXTENSIONS = {
++    ".bat", ".cff", ".csv", ".html", ".json", ".md", ".ps1", ".py",
++    ".sh", ".toml", ".txt", ".yaml", ".yml",
++}
++EXCLUDED_DIRS = {".git", ".venv", ".pytest_cache", "__pycache__"}
++PATTERNS = {
++    "private key": re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
++    "GitHub token": re.compile(r"\b(?:ghp|gho|ghu|ghs|github_pat)_[A-Za-z0-9_]{20,}\b"),
++    "AWS access key": re.compile(r"\bAKIA[0-9A-Z]{16}\b"),
++    "embedded bearer token": re.compile(r"Authorization\s*[:=]\s*Bearer\s+[A-Za-z0-9._~-]{20,}", re.I),
++    "embedded password": re.compile(r"(?:password|passwd|pwd)\s*[:=]\s*[\"'][^\"']{6,}[\"']", re.I),
++    "Windows user path": re.compile(r"\b[A-Za-z]:\\Users\\[^\\\s]+\\", re.I),
++    "Unix home path": re.compile(r"/(?:home|Users)/[^/\s]+/"),
++}
++
++
++def main() -> int:
++    findings: list[str] = []
++    for path in sorted(BASE.rglob("*")):
++        if not path.is_file() or path.suffix.lower() not in TEXT_EXTENSIONS:
++            continue
++        rel = path.relative_to(BASE)
++        if any(part in EXCLUDED_DIRS for part in rel.parts):
++            continue
++        text = path.read_text(encoding="utf-8", errors="replace")
++        for label, pattern in PATTERNS.items():
++            for match in pattern.finditer(text):
++                line = text.count("\n", 0, match.start()) + 1
++                findings.append(f"{rel.as_posix()}:{line}: {label}")
++    if findings:
++        print("SECRET SCAN FAIL")
++        print("\n".join(f"- {item}" for item in findings))
++        return 1
++    print("SECRET SCAN OK")
++    return 0
++
++
++if __name__ == "__main__":
++    raise SystemExit(main())
+diff --git a/scripts/sync_public_data.py b/scripts/sync_public_data.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..fba8cb3adfb825bf25a7051185f640f92db609e8
+--- /dev/null
++++ b/scripts/sync_public_data.py
+@@ -0,0 +1,30 @@
++#!/usr/bin/env python3
++"""Synchronize the small public download set consumed by GitHub Pages."""
++
++from __future__ import annotations
++
++import shutil
++from pathlib import Path
++
++
++BASE = Path(__file__).resolve().parents[1]
++PUBLIC = BASE / "docs" / "data"
++FILES = [
++    "base_integral_democracia_2020_2030_v2.xlsx",
++    "data_status_registry.csv",
++    "overall_multilevel_2020_2025.csv",
++    "peru_2025_anchor_summary.csv",
++    "scenario_sensitivity_bands.csv",
++    "scenario_trajectories_2025_2030.csv",
++]
++
++
++def main() -> None:
++    PUBLIC.mkdir(parents=True, exist_ok=True)
++    for name in FILES:
++        shutil.copy2(BASE / "data" / name, PUBLIC / name)
++    print(f"SYNCED {len(FILES)} public data products")
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/tests/test_model.py b/tests/test_model.py
+index 609176bf142e117bd3f51e295cfe7d47f93518b1..4fbae199c1e6cd2665765a99072429c4d1fe8ad9 100644
+--- a/tests/test_model.py
++++ b/tests/test_model.py
+@@ -1,21 +1,84 @@
++import json
+ from pathlib import Path
++
++import numpy as np
+ import pandas as pd
+-BASE=Path(__file__).resolve().parents[1]
+ 
+-def test_anchor_2025():
+-    d=pd.read_csv(BASE/'data/categories_multilevel_2020_2025.csv')
+-    p=d[d.year==2025].peru_score.mean()
+-    assert abs(p-5.88)<1e-9
+ 
+-def test_three_scenarios():
+-    d=pd.read_csv(BASE/'data/scenario_summary_2030.csv')
+-    assert d.scenario_id.nunique()==3
+-    assert set(d.scenario_id)=={'recuperacion_institucional','continuidad_hibrida','deriva_restrictiva'}
++BASE = Path(__file__).resolve().parents[1]
++D = BASE / "data"
++SCENARIOS = {"recuperacion_institucional", "continuidad_hibrida", "deriva_restrictiva"}
++
++
++def test_secondary_aggregate_and_latent_center_are_distinct():
++    overall = pd.read_csv(D / "overall_multilevel_2020_2025.csv")
++    categories = pd.read_csv(D / "categories_multilevel_2020_2025.csv")
++    row = overall[overall.year == 2025].iloc[0]
++    assert row.data_status_peru == "secondary_reported_aggregate"
++    assert np.isclose(row.peru_score, 5.88)
++    assert set(categories[categories.year == 2025].data_status_peru) == {"modeled_latent_central"}
++    assert np.isclose(categories[categories.year == 2025].peru_score.mean(), 5.88)
++
++
++def test_anchor_ensemble_preserves_fixed_aggregate():
++    ensemble = pd.read_csv(D / "peru_2025_anchor_ensemble.csv")
++    config = json.loads((D / "model_config_v2_1.json").read_text(encoding="utf-8"))
++    assert len(ensemble) == config["n_simulations"] == 10_000
++    assert np.allclose(ensemble.overall_score, 5.88, atol=1e-12)
++    numeric = ensemble.drop(columns=["sample_id", "overall_score", "data_status"])
++    assert ((numeric >= 0) & (numeric <= 10)).all().all()
++
++
++def test_anchor_summary_intervals_are_ordered():
++    summary = pd.read_csv(D / "peru_2025_anchor_summary.csv")
++    assert len(summary) == 5
++    assert (summary.admissible_low <= summary.p10).all()
++    assert (summary.p10 <= summary.p50).all()
++    assert (summary.p50 <= summary.p90).all()
++    assert (summary.p90 <= summary.admissible_high).all()
++
++
++def test_parameter_matrix_complete_and_bounded():
++    matrix = pd.read_csv(D / "parameter_elicitation_matrix.csv")
++    assert len(matrix) == 30
++    assert set(matrix.scenario_id) == SCENARIOS
++    assert set(matrix.parameter) == {"shock_2026", "annual_structural_rate"}
++    assert (matrix.plausible_low <= matrix.central).all()
++    assert (matrix.central <= matrix.plausible_high).all()
++    assert matrix.evidence_basis.str.len().gt(0).all()
++    assert matrix.translation_rule.str.len().gt(20).all()
++
++
++def test_source_priority_is_not_a_computational_weight():
++    evidence = pd.read_csv(D / "post_election_evidence_2026.csv")
++    assert "weight" not in evidence.columns
++    assert "source_priority" in evidence.columns
++    assert set(evidence.computational_use.astype(str).str.lower()) == {"false"}
++
++
++def test_three_scenarios_and_ordering():
++    summary = pd.read_csv(D / "scenario_summary_2030.csv").set_index("scenario_id")
++    assert set(summary.index) == SCENARIOS
++    assert (
++        summary.loc["recuperacion_institucional", "score_2030"]
++        > summary.loc["continuidad_hibrida", "score_2030"]
++        > summary.loc["deriva_restrictiva", "score_2030"]
++    )
++
++
++def test_sensitivity_outputs_are_valid():
++    bands = pd.read_csv(D / "scenario_sensitivity_bands.csv")
++    assert len(bands) == 18
++    assert bands.p10.le(bands.p50).all() and bands.p50.le(bands.p90).all()
++    assert bands[["p10", "p50", "p90"]].ge(0).all().all()
++    assert bands[["p10", "p50", "p90"]].le(10).all().all()
++    assert bands.note.str.contains("not a confidence interval", regex=False).all()
++    start = bands[bands.year == 2025]
++    assert np.allclose(start[["p10", "p50", "p90"]], 5.88)
+ 
+-def test_ordering_2030():
+-    d=pd.read_csv(BASE/'data/scenario_summary_2030.csv').set_index('scenario_id')
+-    assert d.loc['recuperacion_institucional','score_2030'] > d.loc['continuidad_hibrida','score_2030'] > d.loc['deriva_restrictiva','score_2030']
+ 
+-def test_scores_in_range():
+-    d=pd.read_csv(BASE/'data/scenario_trajectories_2025_2030.csv')
+-    assert d.overall_score.between(0,10).all()
++def test_trajectory_status_and_ranges():
++    trajectories = pd.read_csv(D / "scenario_trajectories_2025_2030.csv")
++    assert trajectories.overall_score.between(0, 10).all()
++    assert set(trajectories[trajectories.year == 2025].data_status) == {"modeled_latent_central"}
++    assert set(trajectories[trajectories.year > 2025].data_status) == {"simulated_scenario"}
+diff --git a/tests/test_static_integrity.py b/tests/test_static_integrity.py
+index 7aaed4126def51f2b47f2bdff4a4455b257c5212..479f6bdea2135d7df566ac87143229a95ea04bc6 100644
+--- a/tests/test_static_integrity.py
++++ b/tests/test_static_integrity.py
+@@ -15,10 +15,23 @@ REQ = [
+     'LICENSE_POLICY.md',
+     'data/LICENSE.md',
+     'data/overall_multilevel_2020_2025.csv',
++    'data/data_status_registry.csv',
++    'data/model_config_v2_1.json',
++    'data/peru_2025_anchor_ensemble.csv',
++    'data/peru_2025_anchor_summary.csv',
++    'data/parameter_elicitation_matrix.csv',
++    'data/scenario_sensitivity_by_category.csv',
+     'data/base_integral_democracia_2020_2030_v2.xlsx',
+     'docs/index.html',
+     'docs/.nojekyll',
+     'scripts/build_release_manifest.py',
++    'scripts/build_data_dictionary.py',
++    'scripts/sync_public_data.py',
++    'scripts/secret_scan.py',
++    'scripts/publish_release.ps1',
++    'PUBLICAR_VISOR_V2_1_0.bat',
++    'docs/DECISION_LOG.md',
++    'docs/AUDIT_CLOSURE_PHASES_1_7.md',
+ ]
+ 
+ 
+@@ -35,6 +48,9 @@ def test_identity_metadata():
+     assert codemeta['author'][0]['@id'].endswith(ORCID)
+     assert codemeta['codeRepository'] == REPOSITORY
+     assert datacite['creators'][0]['nameIdentifiers'][0]['nameIdentifier'].endswith(ORCID)
++    assert zenodo['version'].startswith('2.1.0')
++    assert codemeta['version'].startswith('2.1.0')
++    assert datacite['version'].startswith('2.1.0')
+ 
+ 
+ def test_layered_license_policy():
+@@ -52,6 +68,23 @@ def test_github_pages_marker():
+     assert (BASE/'docs/.nojekyll').is_file()
+ 
+ 
++def test_candidate_publisher_cannot_silently_release():
++    publisher = (BASE/'scripts/publish_release.ps1').read_text(encoding='utf-8')
++    assert '[switch]$PublishRelease' in publisher
++    assert 'PUBLICAR v$Version' in publisher
++    assert 'release candidate|candidato' in publisher
++    assert 'No se creo tag, GitHub Release ni DOI' in publisher
++
++
++def test_osf_sync_whitelist_excludes_primary_object():
++    publisher = (BASE/'scripts/publish_release.ps1').read_text(encoding='utf-8')
++    osf_policy = (BASE/'docs/OSF_COMPLEMENT.md').read_text(encoding='utf-8')
++    assert 'docs\\METODOLOGIA.md' in publisher
++    assert 'data\\parameter_elicitation_matrix.csv' in publisher
++    assert 'ZIP completo del release' in osf_policy
++    assert 'Sync-OsfFile' in publisher
++
++
+ def test_release_inventory_is_current():
+     import importlib.util
+     script = BASE/'scripts/build_release_manifest.py'
