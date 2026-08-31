@@ -1,0 +1,7 @@
+status_id,label_es,definition,allowed_use
+observed_EIU,Observado en edición EIU,Identificador heredado para valores publicados en ediciones o tablas EIU,Citar como dato observado con edición y localización
+official_source_observed,Observado en fuente oficial,Valor publicado directamente en una edición o tabla oficial de la fuente,Citar como dato observado con edición y localización
+secondary_reported_aggregate,Agregado reportado secundariamente,Valor atribuido a la fuente primaria y reproducido en una tabla secundaria; no sustituye la tabla oficial,Citar con la fuente secundaria y explicitar la limitación
+modeled_latent_central,Centro de ancla latente modelada,Asignación central construida para distribuir un agregado conocido entre dimensiones no publicadas,Usar únicamente como centro del modelo y nunca como subpuntaje oficial
+modeled_latent_ensemble,Conjunto de anclas latentes admisibles,Distribuciones dimensionales compatibles con el agregado y las restricciones documentadas,Propagar como incertidumbre epistemológica
+simulated_scenario,Simulado bajo escenario,Resultado de supuestos y perturbaciones explícitas,Interpretar como trayectoria condicional y no como probabilidad de ocurrencia

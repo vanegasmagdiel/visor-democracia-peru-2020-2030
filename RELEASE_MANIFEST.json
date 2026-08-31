@@ -1,8 +1,8 @@
 {
   "project": "Visor Integrado de Democracia del Perú 2020–2030",
-  "version": "2.0.0",
-  "release_date": "2026-08-19",
-  "manifest_revision_date": "2026-08-24",
+  "version": "2.1.0-rc.5",
+  "release_date": "2026-08-31",
+  "manifest_revision_date": "2026-08-31",
   "author": {
     "name": "Magdiel Torres Vanegas",
     "orcid": "https://orcid.org/0000-0002-7913-214X"
@@ -12,8 +12,8 @@
     "RELEASE_MANIFEST.json",
     "SHA256SUMS.txt"
   ],
-  "file_count": 52,
-  "total_bytes": 5012854,
+  "file_count": 125,
+  "total_bytes": 11937252,
   "files": [
     {
       "path": ".gitattributes",
@@ -22,8 +22,8 @@
     },
     {
       "path": ".github/workflows/tests.yml",
-      "bytes": 480,
-      "sha256": "71fdf8c27fb0c665c93fa342a7b9e151dff419ca05c661d4b947a1791638b472"
+      "bytes": 909,
+      "sha256": "e1673cb3df5f926cddb52e67ef47e5435a4d190425e221fb69dba09da1bdb826"
     },
     {
       "path": ".gitignore",
@@ -32,18 +32,23 @@
     },
     {
       "path": ".zenodo.json",
-      "bytes": 1046,
-      "sha256": "23b93fd3eddab2e2b9820a5ee2f531a210b578fa99cdfe51bfeef8f419137c57"
+      "bytes": 1300,
+      "sha256": "d9448a3b670eedf48e4160a7f8db2cc3b1c717d3e922b1d92d540be2f825d09b"
     },
     {
       "path": "CITATION.cff",
-      "bytes": 1229,
-      "sha256": "daf0d2d3f56f48ffec5909baaf73e7ced3bf80a59247313468bf65ec43781682"
+      "bytes": 1639,
+      "sha256": "c99907bf61ef319e2909c83ca434804babd8aec852569ff3acbb090b9a2ea807"
     },
     {
       "path": "Dockerfile",
       "bytes": 209,
       "sha256": "93746ff2418e7b2e0ecd7a5b2671a76964bc7a0cb3e372340c6a9596c2dd2d5d"
+    },
+    {
+      "path": "GIT_HTTPS_HOTFIX_2026-08-31.md",
+      "bytes": 969,
+      "sha256": "e0b3cfb025039a6c22287e9db592c47f9d28f8f38a22cee804427d944af74ac9"
     },
     {
       "path": "LICENSE",
@@ -57,68 +62,123 @@
     },
     {
       "path": "LICENSE_POLICY.md",
-      "bytes": 1793,
-      "sha256": "df0bb716e2fe80a85c104497fc353a3fc77530634412db5751f2d9437221b17e"
+      "bytes": 2796,
+      "sha256": "21e13dd16e79cf90241826ae7abd24a06ac551fa4ea873a4addaa959e432960c"
+    },
+    {
+      "path": "PRE_RELEASE_FIXES_2026-08-31.md",
+      "bytes": 820,
+      "sha256": "96365b6feb49e88f1735646c521f4d2c8fef07d1331c68d1c7390218343e0ffc"
+    },
+    {
+      "path": "PUBLICAR_VISOR_V2_1_0.bat",
+      "bytes": 822,
+      "sha256": "ff057f9dce9d0f9825e688311ed009e4de163d400d63b251625e9ff11724da86"
+    },
+    {
+      "path": "RC5_CLOSURE_REPORT.md",
+      "bytes": 2465,
+      "sha256": "788ebedc4a0517685ec296c7a04939cb08d3a21a0d234a87dc15fdf639ec670a"
     },
     {
       "path": "README.md",
-      "bytes": 4501,
-      "sha256": "b92ae986ed99167882125114400a39deb34daa47de4060dd747902b6757fe892"
+      "bytes": 7015,
+      "sha256": "478e81fa16c322e5751b13e84dc9051bec15dc7b2b1bcb3752396a927d32dea0"
+    },
+    {
+      "path": "RELEASE_GATE_STATUS.json",
+      "bytes": 1329,
+      "sha256": "cca4be0cbdae69b98ef78b18f5d0a94231681f6427e9cb6bddb8f40308d696af"
+    },
+    {
+      "path": "RELEASE_INDEPENDENCE_POLICY.md",
+      "bytes": 1187,
+      "sha256": "eeabc82680845ecde921c34d76830d947d181446599f56474912d79d82c3899b"
     },
     {
       "path": "RELEASE_NOTES.md",
-      "bytes": 1876,
-      "sha256": "3105735e5aed7e450c9ff4237cd5608b5959b92face5b02f4e7587945ebfa5b5"
+      "bytes": 2190,
+      "sha256": "5f7fac52dcb3c95f59b188e1b9694ad4d2566d73f3fb63aa2ca5a79b22f870ac"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 1369,
-      "sha256": "da900a5533541ccc67d77521429a488ee66c65522fe597530cecc47ae44adad4"
+      "bytes": 1772,
+      "sha256": "f76415ec1421b1fce2e8ca788cf386a36ed1aaf91dc31c44b36edaafc0c0bb8e"
     },
     {
       "path": "VALIDATION_REPORT.md",
-      "bytes": 1928,
-      "sha256": "2f7e1412eb211f7b2b2a0744135f63e4bfe4ff607e02eb50684b6372591fa70b"
+      "bytes": 5665,
+      "sha256": "c0020635778b862d124b1238390003f4d991dd21df47efd043a6f74bb7ea3f50"
+    },
+    {
+      "path": "WINDOWS_MANIFEST_HOTFIX_2026-08-31.md",
+      "bytes": 1415,
+      "sha256": "c34d269ff9144272c2555fb72069caebde29a21b7821310819d2d325991c7cae"
     },
     {
       "path": "app.py",
-      "bytes": 11263,
-      "sha256": "42013238e49933300cbbe7de16d305058d3d00307d0bd3792b71d3b4d6662c82"
+      "bytes": 12572,
+      "sha256": "1bac21f5c2ca1e33cb05a97bb425862e4c9c3f579a63cf342bfe616c85c86193"
     },
     {
       "path": "codemeta.json",
-      "bytes": 1619,
-      "sha256": "1228a10b55b53a007862e89758bf1862961f23bbc3a81c7c789a421eaf9153ac"
+      "bytes": 1816,
+      "sha256": "14f4c4911ea06343103ba6a574c3f496b3a24abb72ecb4a1dd43828a5a2f487d"
     },
     {
       "path": "data/LICENSE.md",
-      "bytes": 992,
-      "sha256": "1765df0f17e8bc3ece7ba5a5a7e078c38359ce57cfe8ef06460cafce3028a219"
+      "bytes": 1435,
+      "sha256": "881893618a55a0a62bf69fcd7fa7f961eb4d0c962638b84b3da2586d2b6d1a85"
     },
     {
       "path": "data/base_integral_democracia_2020_2030_v2.xlsx",
-      "bytes": 29486,
-      "sha256": "f58091ebe077041b86a9c4270ba0f2bd6665fb120b0f73aa0e1c7edce3ef3cae"
+      "bytes": 99663,
+      "sha256": "48c4d57a4924b3b59c03a221615ba9ab6827a720c866c68c9680413c2c20c2ac"
     },
     {
       "path": "data/categories_multilevel_2020_2025.csv",
-      "bytes": 8950,
-      "sha256": "971b0c51958f16b4fe43d45b4f1d0a4609cd36468bb600ad74da77db66739ab0"
+      "bytes": 9125,
+      "sha256": "9c6ca2bd56edef903e4a0075f142484f827ed4923e60b57b903041f265377747"
     },
     {
       "path": "data/data_dictionary.csv",
-      "bytes": 2822,
-      "sha256": "aacea20acaf94f4060b12ced28acd3520b5eec81656b39d772421cda41e37ab5"
+      "bytes": 13558,
+      "sha256": "5ae3f83442b9cb642c41f12c2e6b3e5a78224cd15556110a46770e29cafa0863"
+    },
+    {
+      "path": "data/data_status_registry.csv",
+      "bytes": 1218,
+      "sha256": "dc60ad6ff56ac504d932900bfd66461d265607a10e1a93fd564bbbf9f0e5c1c7"
+    },
+    {
+      "path": "data/model_config_v2_1.json",
+      "bytes": 872,
+      "sha256": "0897d40f1651d979b780585e6366ddb035c1b3320cea13846cd506659c49cdac"
     },
     {
       "path": "data/model_formulas_v2.csv",
-      "bytes": 945,
-      "sha256": "73e1394bd817b8a38dc79d3bd3ba63c711f8fa4d8f6baa139d159c8e24776923"
+      "bytes": 1427,
+      "sha256": "399903d0f3ea68ad397186c25ddf29559a87597d92486b580f3cf816f6fa5e9c"
     },
     {
       "path": "data/overall_multilevel_2020_2025.csv",
-      "bytes": 1941,
-      "sha256": "f894a767e129b540891c66e35535b5ef02b8980c3f1442cf2f7ecba7ef3925b9"
+      "bytes": 1905,
+      "sha256": "d3b5a52e36a522c66dc955168db51fb4e87f10dd0d0f078b549bf2587e736ff5"
+    },
+    {
+      "path": "data/parameter_elicitation_matrix.csv",
+      "bytes": 9535,
+      "sha256": "242839e8f3888115d2b466afdee14dbf73953d8c4322b1b65d9365e20a8a54a2"
+    },
+    {
+      "path": "data/peru_2025_anchor_ensemble.csv",
+      "bytes": 1329001,
+      "sha256": "c7c03d758d6a4c5bddc0e3066df1ad60d302761c456ea90fd8038c32ebe5a756"
+    },
+    {
+      "path": "data/peru_2025_anchor_summary.csv",
+      "bytes": 1188,
+      "sha256": "0aa1badd36aea6b87962b324335d4183e46c38b9a803e227b492c3e7b7725e2a"
     },
     {
       "path": "data/peru_2025_category_calibration_audit.csv",
@@ -127,33 +187,168 @@
     },
     {
       "path": "data/post_election_evidence_2026.csv",
-      "bytes": 3408,
-      "sha256": "aa532e86d32b8824ace0c72009eddd497579c46c1c584211f1e2cef13e13cb5b"
+      "bytes": 3627,
+      "sha256": "76edccd6b5053abd624b46b38a2ec0698dfec2deb90f3b29425004540fe6eca4"
+    },
+    {
+      "path": "data/prisma_phase8/Bibliografia_Incluida_Visor_Democracia_Fulltext_Final_29.ris",
+      "bytes": 11947,
+      "sha256": "aaff6e643f7f25868ee47fcbe7807f15943a869f4c6241eed27e5b8a786f358f"
+    },
+    {
+      "path": "data/prisma_phase8/Libro_Analisis_PRISMA_Visor_Democracia_R4_3_5_Cierre_Fulltext.xlsx",
+      "bytes": 161452,
+      "sha256": "63aff87c15afc4db110c2e802fca992859c54be4e1d6535485b33e368a40f850"
+    },
+    {
+      "path": "data/prisma_phase8/README.md",
+      "bytes": 795,
+      "sha256": "fd863b3e5645cb6847c626e922a81e52ba84dcdda79f38176e1e69d8c31eb650"
+    },
+    {
+      "path": "data/prisma_phase8/archive/pre_fulltext/Bibliografia_Incluida_Visor_Democracia_Fulltext.ris",
+      "bytes": 94370,
+      "sha256": "a832a400bf95edd6115b81fe97e2882bf3056e789fa9a4bf75a7c28fa4680c62"
+    },
+    {
+      "path": "data/prisma_phase8/archive/pre_fulltext/INFORME_METODOLOGICO_PRISMA_FASE_8.md",
+      "bytes": 35858,
+      "sha256": "a0fd665ee86427261753951043d7fe2af402b630ee18667aaa8d0dd40f5b8044"
+    },
+    {
+      "path": "data/prisma_phase8/archive/pre_fulltext/Libro_Analisis_PRISMA_Visor_Democracia_R4_3_4.xlsx",
+      "bytes": 116965,
+      "sha256": "5b8a72183682e1e2a2b6e1c6d5fd3f656a264f9d4fe8dc3f78f93dc0fb8671b5"
+    },
+    {
+      "path": "data/prisma_phase8/archive/pre_fulltext/README.md",
+      "bytes": 466,
+      "sha256": "567b730d60d27bf20ab070fbe412943d29d6af913f655fe29be0c17f690585cd"
+    },
+    {
+      "path": "data/prisma_phase8/archive/pre_fulltext/fulltext_extraction_template_45.csv",
+      "bytes": 83624,
+      "sha256": "6265bac42269ed741fd1cb3e6f5a6be13f0addc4d50c8db6e7b8fddd27dff0c7"
+    },
+    {
+      "path": "data/prisma_phase8/archive/pre_fulltext/fulltext_retrieval_queue_72.csv",
+      "bytes": 26437,
+      "sha256": "8974fa5545551643970d92da699b5a92a1ff25881531b5a1c04e816a1c8c9593"
+    },
+    {
+      "path": "data/prisma_phase8/archive/pre_fulltext/human_review_snapshot.csv",
+      "bytes": 408,
+      "sha256": "54029ae8614bcbc89f272ec8dd400156cf4bc45b55d38561b27c05fe65ca27cf"
+    },
+    {
+      "path": "data/prisma_phase8/archive/pre_fulltext/included_provisional_45.csv",
+      "bytes": 86668,
+      "sha256": "c1d2178a5b613071996fd05025f878fb7f0e9ea74bd7d1907728d6b0229d73d0"
+    },
+    {
+      "path": "data/prisma_phase8/archive/pre_fulltext/literature_integration_register_45.csv",
+      "bytes": 15099,
+      "sha256": "acbad347fefade286f7f430a241a7ac41080c0513415cd5f375dd2273cea181e"
+    },
+    {
+      "path": "data/prisma_phase8/archive/pre_fulltext/prisma_title_abstract_300dpi.png",
+      "bytes": 1273097,
+      "sha256": "bab7e88ef044b48714ac4901d37a71f22b9b80f209f9c089821875a1f9355dd9"
+    },
+    {
+      "path": "data/prisma_phase8/archive/pre_fulltext/prisma_title_abstract_conceptual_original.png",
+      "bytes": 1840718,
+      "sha256": "af673a67d81531013ec80634707ed45babe1cfd4278cd634691d3b488b4f85e5"
+    },
+    {
+      "path": "data/prisma_phase8/archive/pre_fulltext/uncertain_27.csv",
+      "bytes": 16390,
+      "sha256": "f4e4a5b63ec679788af4916dc2c6c349de5268f9f4dadbec6ad7fca642045d4f"
+    },
+    {
+      "path": "data/prisma_phase8/evidence_integration_map_29.csv",
+      "bytes": 12732,
+      "sha256": "d38da97e9eb6672db696470d4ed87808f3afdca5d35c2fd7df4a80cf89d16caf"
+    },
+    {
+      "path": "data/prisma_phase8/exclusion_reasons_3.csv",
+      "bytes": 210,
+      "sha256": "50c90c5e3441b41deb2f96b5faf41484fa7f1d9e0c0f70792b0f0ea5532250f9"
+    },
+    {
+      "path": "data/prisma_phase8/fulltext_decisions_72.csv",
+      "bytes": 52866,
+      "sha256": "93a92c29db0d0e4b811e2eec3927b6d7c0ccf8f60dcb4ecbcb16014b0c6caa73"
+    },
+    {
+      "path": "data/prisma_phase8/fulltext_excluded_13.csv",
+      "bytes": 10453,
+      "sha256": "6eed9de2033c4f5a235e1cf1589fc709d2d7c20ad50cd87642d1fd73799c3b10"
+    },
+    {
+      "path": "data/prisma_phase8/fulltext_included_29.csv",
+      "bytes": 23037,
+      "sha256": "81dd5166b3e2655f8067244a586e2275af05a1173e49b414e594c150e9247bec"
+    },
+    {
+      "path": "data/prisma_phase8/fulltext_not_retrieved_30.csv",
+      "bytes": 20176,
+      "sha256": "acabb7759106bb7cd42b0ca29c42bd6ea7e7e541ca1feef2bcd8ad03cc155c94"
+    },
+    {
+      "path": "data/prisma_phase8/phase8_fulltext_summary.json",
+      "bytes": 926,
+      "sha256": "55983cbe3664c6b98881eff172a79434dda5f10c8fad550a66342b0f005b62f0"
+    },
+    {
+      "path": "data/prisma_phase8/phase8_manifest.json",
+      "bytes": 1196,
+      "sha256": "abef8ca66acec205e4c015ae0b1459ae037a2e5734ccda731b77ceb273485cdd"
+    },
+    {
+      "path": "data/prisma_phase8/search_profiles_105.csv",
+      "bytes": 26667,
+      "sha256": "50290a3571e869fd942aaed7e542802ce449d45279ed56a2bafc4f066107f807"
+    },
+    {
+      "path": "data/prisma_phase8/source_performance_7.csv",
+      "bytes": 611,
+      "sha256": "754cabc288ffc8e2e01811f47df0f1752a44793b7798001f5c16cfed630ed51e"
     },
     {
       "path": "data/scenario_coefficients.csv",
-      "bytes": 2555,
-      "sha256": "4c23080d77ea24622ce2eb61d851f33f201019765f22fe81acb842edadfb8298"
+      "bytes": 2207,
+      "sha256": "f6f9198c411bdb56be9d6149221ffa005059555f1f7c3e59e8e579ee6b0121b2"
+    },
+    {
+      "path": "data/scenario_parameter_samples_summary.csv",
+      "bytes": 3624,
+      "sha256": "64e45aec61e16327b5e464e9636d8d8fcd699d6ac5727ee03e0f80cc86f2bfcb"
     },
     {
       "path": "data/scenario_sensitivity_bands.csv",
-      "bytes": 3844,
-      "sha256": "d2727343d4f92996ff9be4e05d946be903aa69502772538d292b767e761226b9"
+      "bytes": 4691,
+      "sha256": "cf6cf07b0a50a4ebe4350d47e75bfd2b66bab05572f699ce456c4bcea3bc935b"
+    },
+    {
+      "path": "data/scenario_sensitivity_by_category.csv",
+      "bytes": 8982,
+      "sha256": "95aa89d962622ff31cf4f7008a59bb7165dfa34f5cc14ac1dd614b6a0babd0bd"
     },
     {
       "path": "data/scenario_summary_2030.csv",
-      "bytes": 1917,
-      "sha256": "f9601bb7d5d13a987b4baf0f29092b131163dd6298ab34541db497205242c07a"
+      "bytes": 2133,
+      "sha256": "a2e8f04fc6d51b93f1e7f5c544930b2d0646c6ddacb77f7a531a749059dabdb2"
     },
     {
       "path": "data/scenario_trajectories_2025_2030.csv",
-      "bytes": 2820,
-      "sha256": "660e077c4afa936457d03932c98dba5bf34b2fbb927d63f33933b9bb40ec4383"
+      "bytes": 3145,
+      "sha256": "4da26565aa7f13d4d6bb8f82da1f7921e329c58389c621afdf90c7ae6b5ea67a"
     },
     {
       "path": "datacite.json",
-      "bytes": 1777,
-      "sha256": "3bc51dfa0e121f44794d09ae1e651033d416ded09854a3b499a7899c1f362279"
+      "bytes": 2007,
+      "sha256": "d8bf1c60b34a2b4536b896da65d25f827bd831db6f1c938940a34d0004d874d7"
     },
     {
       "path": "docker-compose.yml",
@@ -166,14 +361,39 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "path": "docs/AUDIT_CLOSURE_PHASES_1_7.md",
+      "bytes": 1698,
+      "sha256": "0e88d0c282ad5f97ab2ac5fda8be9e91112ce5ddfde51d3cf5e9a263372c6a38"
+    },
+    {
       "path": "docs/CHANGELOG.md",
-      "bytes": 280,
-      "sha256": "68f2b928575fc3efe41f35c9d430ee94c8517b8ec0facf7a116db5ac4f423ada"
+      "bytes": 2668,
+      "sha256": "38cdbc9d8d1fdb52f917e07e06a9b8b5d06d4776c83b0c70f6857caf60090269"
+    },
+    {
+      "path": "docs/DECISION_LOG.md",
+      "bytes": 2769,
+      "sha256": "cbeb891383039c64ad830a96b6437343cc17303533e81a6c366dc3ec2073cd5b"
     },
     {
       "path": "docs/DOI_GITHUB_OSF_ZENODO.md",
-      "bytes": 2105,
-      "sha256": "01d311038c97cd4ec04be846da009f7e0b1db4a72f94a31b6def3e102ca84bb2"
+      "bytes": 2381,
+      "sha256": "4e192094c2a53fe30562cbcbad11e07bbe8ee5ddc1e0c72e81a360a1e1e46aab"
+    },
+    {
+      "path": "docs/FASE_8_GATE.md",
+      "bytes": 1138,
+      "sha256": "9aeee8f89738bb53fd9cba2aed1c154725b7706c711d9ae048e9eea11f448ea6"
+    },
+    {
+      "path": "docs/FASE_8_PRISMA.md",
+      "bytes": 5172,
+      "sha256": "277dcacbdd588aef7e95bc34f7466f0719d89d59c894d3dbdeb12b20b1928155"
+    },
+    {
+      "path": "docs/INFORME_METODOLOGICO_PRISMA_FASE_8_CIERRE_FULLTEXT.md",
+      "bytes": 5172,
+      "sha256": "277dcacbdd588aef7e95bc34f7466f0719d89d59c894d3dbdeb12b20b1928155"
     },
     {
       "path": "docs/INPUT_PROVENANCE.md",
@@ -187,93 +407,238 @@
     },
     {
       "path": "docs/INTEGRATION_MAP.md",
-      "bytes": 1443,
-      "sha256": "c3b81b36dfc62f0e31828ec359ab4febecba81cec86be0ec3f78cd9aaeb0b029"
+      "bytes": 2145,
+      "sha256": "deb6d3d7c742bb3c93aa61a70646f2bb220c3e048bbba695f4768d9a07f2a864"
     },
     {
       "path": "docs/METODOLOGIA.md",
-      "bytes": 3069,
-      "sha256": "b71d286314b2a0014ff7b7374df2bfc292fc0544ebaf0e7b3f9ce30f5296c133"
+      "bytes": 7616,
+      "sha256": "683921e46af14457e0a82eb1c19ae6163acbd204d566c9f3a3f3a810cd12f52c"
+    },
+    {
+      "path": "docs/OSF_COMPLEMENT.md",
+      "bytes": 4438,
+      "sha256": "67ae741213473bead1360e43a4a8181013ac9de6a36f8ff74d324cb7bbb0786d"
     },
     {
       "path": "docs/PROVENANCE.md",
-      "bytes": 1025,
-      "sha256": "0c5fcc927e639c635b7033512e4223bc289e2e61cd7326dc6a519b3c921438ad"
+      "bytes": 3367,
+      "sha256": "c99a905e260e9929af69c8af434d4967fefb251ffeab9a3135bb7cfd737c63e9"
+    },
+    {
+      "path": "docs/assets/figura_1_trayectoria_2020_2025.pdf",
+      "bytes": 18740,
+      "sha256": "49be8f3e838e05b151537ecd3a186ceb49cda0cf17f8ae5abacc54288bbd604f"
+    },
+    {
+      "path": "docs/assets/figura_1_trayectoria_2020_2025.png",
+      "bytes": 157988,
+      "sha256": "de35d3fe8e3743a8fabc5ef5af59b5847f2879ec97618f750a62ac77df344ae4"
+    },
+    {
+      "path": "docs/assets/figura_1_trayectoria_2020_2025.svg",
+      "bytes": 46506,
+      "sha256": "f4eba30232586da46d6c503cc1b43c84550fd829d4d66307574e0215b66ba0c7"
+    },
+    {
+      "path": "docs/assets/figura_2_dimensiones_ancla_2025.pdf",
+      "bytes": 30391,
+      "sha256": "43c71bd269b97b71055804d5d44af35f364c6a1285b298ecc140a05d0d952668"
+    },
+    {
+      "path": "docs/assets/figura_2_dimensiones_ancla_2025.png",
+      "bytes": 204843,
+      "sha256": "70ae5b9132c9f4fe6b5f400b2da33c23ad974a9282fe0e2212f94c36dab0749d"
+    },
+    {
+      "path": "docs/assets/figura_2_dimensiones_ancla_2025.svg",
+      "bytes": 85023,
+      "sha256": "bfda5f9eebc14d4b1c9f80dc2a51f124f33dccce88cd735a28aecd8278751af9"
+    },
+    {
+      "path": "docs/assets/figura_3_escenarios_2025_2030.pdf",
+      "bytes": 19272,
+      "sha256": "cbdbee3747c174cc73c734cca869e4a8d7a116901b098f6381bd37e0586c0869"
+    },
+    {
+      "path": "docs/assets/figura_3_escenarios_2025_2030.png",
+      "bytes": 211435,
+      "sha256": "677cd269e5d9c52fcde274ca4aef9a0dec41ce99261a70be1eabc513c22c317d"
+    },
+    {
+      "path": "docs/assets/figura_3_escenarios_2025_2030.svg",
+      "bytes": 50353,
+      "sha256": "96722d4b0e7934d2704bf1a4b904880fa8b0ab05b9c743e117f7e5d8fcb4637b"
+    },
+    {
+      "path": "docs/assets/figura_s1_prisma_fulltext_final.pdf",
+      "bytes": 34138,
+      "sha256": "22904a65039c4bc1f539a21d0add99a9ae6a2670575f514bf0c024aa983c54fa"
+    },
+    {
+      "path": "docs/assets/figura_s1_prisma_fulltext_final.png",
+      "bytes": 357628,
+      "sha256": "0ae2cfb8faca60d23316096c81b65ae3b0d967e879dea1af12a4a92908d70383"
+    },
+    {
+      "path": "docs/assets/figura_s1_prisma_fulltext_final.svg",
+      "bytes": 115601,
+      "sha256": "6992eb6285064bbe9d32819e4b644ba18db8b0e65f916bcdb371449dfd4d946e"
     },
     {
       "path": "docs/data/base_integral_democracia_2020_2030_v2.xlsx",
-      "bytes": 29486,
-      "sha256": "f58091ebe077041b86a9c4270ba0f2bd6665fb120b0f73aa0e1c7edce3ef3cae"
+      "bytes": 99663,
+      "sha256": "48c4d57a4924b3b59c03a221615ba9ab6827a720c866c68c9680413c2c20c2ac"
+    },
+    {
+      "path": "docs/data/data_status_registry.csv",
+      "bytes": 1218,
+      "sha256": "dc60ad6ff56ac504d932900bfd66461d265607a10e1a93fd564bbbf9f0e5c1c7"
     },
     {
       "path": "docs/data/overall_multilevel_2020_2025.csv",
-      "bytes": 1941,
-      "sha256": "f894a767e129b540891c66e35535b5ef02b8980c3f1442cf2f7ecba7ef3925b9"
+      "bytes": 1905,
+      "sha256": "d3b5a52e36a522c66dc955168db51fb4e87f10dd0d0f078b549bf2587e736ff5"
+    },
+    {
+      "path": "docs/data/peru_2025_anchor_summary.csv",
+      "bytes": 1188,
+      "sha256": "0aa1badd36aea6b87962b324335d4183e46c38b9a803e227b492c3e7b7725e2a"
+    },
+    {
+      "path": "docs/data/scenario_sensitivity_bands.csv",
+      "bytes": 4691,
+      "sha256": "cf6cf07b0a50a4ebe4350d47e75bfd2b66bab05572f699ce456c4bcea3bc935b"
     },
     {
       "path": "docs/data/scenario_trajectories_2025_2030.csv",
-      "bytes": 2820,
-      "sha256": "660e077c4afa936457d03932c98dba5bf34b2fbb927d63f33933b9bb40ec4383"
+      "bytes": 3145,
+      "sha256": "4da26565aa7f13d4d6bb8f82da1f7921e329c58389c621afdf90c7ae6b5ea67a"
     },
     {
       "path": "docs/index.html",
-      "bytes": 4859818,
-      "sha256": "7c91959c66a5863d980cd0ee023d4514cf754f535f8a1aee0db9a7304fc66784"
+      "bytes": 4886813,
+      "sha256": "7bf81b94fd1d3cb3bcf8a0f4568bb5b611ba73b043012b63bf746d2c6400a05b"
+    },
+    {
+      "path": "osf-project-metadata.json",
+      "bytes": 1160,
+      "sha256": "e1a3ee3a630fb83bd25505442c28b6987bf6c59dc46b4f8b1be752b87b6837dc"
     },
     {
       "path": "pyproject.toml",
-      "bytes": 327,
-      "sha256": "61c53aa6282490d0cddfe7486aa904b999adf622ec32fe24a98df84f43163a9d"
+      "bytes": 345,
+      "sha256": "eba7377dfb89d560f5354110d0b1acc7c6ea0ee2863d0b7894d1753ae9745dc4"
+    },
+    {
+      "path": "requirements-lock.txt",
+      "bytes": 1137,
+      "sha256": "f0865534ffb5976b6d747816050ab97a32c148509436377cdbe2568b1558ce2f"
     },
     {
       "path": "requirements.txt",
-      "bytes": 77,
-      "sha256": "d4a4e74ae5bd1237582022ab7725fd3a91f33380a812c1c59c17a5b3f53f4ae9"
+      "bytes": 88,
+      "sha256": "5b7905cc93450ec24abdb6594147edd5825908ac1582c49b4a29975503c40251"
     },
     {
       "path": "ro-crate-metadata.json",
-      "bytes": 3310,
-      "sha256": "1e1c11b911cb98f003a000c82b417cda6ec2752334545d155a520d299fab8ae2"
+      "bytes": 5337,
+      "sha256": "d69b2111c9f01c9ca13a695bfbb403785c14f51f4d264ea1b6b9a94b8425cb29"
     },
     {
       "path": "run_here.bat",
-      "bytes": 192,
-      "sha256": "fcd7ee4c72ca23181dbd59f81df7c70f854b0162633430e2193319d44990cdb9"
+      "bytes": 228,
+      "sha256": "46903c41db16d47d96180eef10b497afc9bdc9086b4b5b2a6c40eb33a4456f44"
     },
     {
       "path": "run_here.ps1",
-      "bytes": 196,
-      "sha256": "abfa6f9a16951e7d906bf6314cb2d714cfdb7369d1925433c153aa1c2f84ca39"
+      "bytes": 232,
+      "sha256": "7fe5f1fa133ab473747bbad7d3f22dffa3a0afd412f4f4b4de21e3b33a3379e7"
     },
     {
       "path": "run_here.sh",
-      "bytes": 209,
-      "sha256": "25f412ce7984c02abad31468b6fc1c1a7adfba3c5dd2f148369fe80436a22138"
+      "bytes": 242,
+      "sha256": "2e59d093a45920c0945f387354d3a1ad150861d74e4b52780a40a6cf1ee9ec76"
+    },
+    {
+      "path": "runtime-lock.json",
+      "bytes": 316,
+      "sha256": "4d5e84ff22e2b9b37c763243e08c752f0d65de68d286b8c34b702d5bdbed308b"
+    },
+    {
+      "path": "scripts/audit_release_independence.py",
+      "bytes": 2698,
+      "sha256": "061b8ee8c54009d7479472c9c326f99e6189b46dadf8159669de636756cca2e9"
+    },
+    {
+      "path": "scripts/build_data_dictionary.py",
+      "bytes": 4752,
+      "sha256": "bc38b031d94691f945179fdd8800eb0441bbb3acbbfd6dbc77f0c2a3bec55335"
+    },
+    {
+      "path": "scripts/build_prisma_fulltext_figure.py",
+      "bytes": 4356,
+      "sha256": "05425e40264cc4f45ba95c47a87e66b4017762b3433c4009d09ce4510f0fb627"
     },
     {
       "path": "scripts/build_release_manifest.py",
-      "bytes": 3063,
-      "sha256": "fb8aef8f34f1f03e1ce9bb46ed4be2192f411507ab235b91e09db199a18696d7"
+      "bytes": 3077,
+      "sha256": "aedda0e436620b08b5fb7cf444920de2a1ae0189e943e46022c699fe37c82fdb"
+    },
+    {
+      "path": "scripts/build_static_viewer.py",
+      "bytes": 9194,
+      "sha256": "ce2f1ec245c97029b3d2e478ad31fc4720fd1aa2a40aea9d4bde8096d04e5511"
+    },
+    {
+      "path": "scripts/check_windows_publisher.py",
+      "bytes": 4906,
+      "sha256": "1aba3f585f3f1cd3659ffb0e10c7a75d34eeeaf6e8b2170801df69327bc23c6a"
     },
     {
       "path": "scripts/preflight_check.py",
-      "bytes": 1459,
-      "sha256": "ee9c5718703418524fd69ab1f0262671e987ed03138753ceaea1f888895c6e99"
+      "bytes": 5753,
+      "sha256": "57d6b915baea41317ee8c9a373ec348600f7e74253c82ea7fe5532f55395cd8b"
+    },
+    {
+      "path": "scripts/publish_release.ps1",
+      "bytes": 27424,
+      "sha256": "193bfe2a64f6afd0216f07c8d0d2bef15ea05b5dc34cb1596295284777c9f72e"
     },
     {
       "path": "scripts/rebuild_scenarios.py",
-      "bytes": 5603,
-      "sha256": "3bb18535245790e6439115f197709d5fdc6d262ce1c80995e83c28e65e27b938"
+      "bytes": 14593,
+      "sha256": "b1e12b065c81412a6ad3cfb22b4d21f519ba8e2ac8af33f772f4ff6a64de9784"
+    },
+    {
+      "path": "scripts/secret_scan.py",
+      "bytes": 1854,
+      "sha256": "c82da4a439bd63236908b3dc4cb10ee52639255ead15c21aabfee9e5e39b0660"
+    },
+    {
+      "path": "scripts/sync_public_data.py",
+      "bytes": 745,
+      "sha256": "72ee4d64649d37e1e3a1b44cd309b43662480947d73413a77da699e76f97a5f2"
+    },
+    {
+      "path": "scripts/validate_phase8.py",
+      "bytes": 2732,
+      "sha256": "c6141b281607476e9082e07f541c7e418ad17acdd2cba3db145f64cd946ba5cf"
     },
     {
       "path": "tests/test_model.py",
-      "bytes": 874,
-      "sha256": "a2210b72c64abeac31479e00ef7304c51354bbdf80033fcf37faabe173e3aa42"
+      "bytes": 3635,
+      "sha256": "e4aba8a8a30d6813071b6da03d2fc7bb7f2c14777448b2035baa10dce096cfe4"
+    },
+    {
+      "path": "tests/test_phase8.py",
+      "bytes": 817,
+      "sha256": "fb963fa7756b5076d7038095093d8286a384d4f951b7a5b9dd2653417d41477f"
     },
     {
       "path": "tests/test_static_integrity.py",
-      "bytes": 2406,
-      "sha256": "5c6b0caf35bb79e9a3addf8a6df899721a70e893b407619d8a730fa7378e4eb9"
+      "bytes": 8744,
+      "sha256": "04cadb57e9661d07a49303fd5ca2770604bb155e456449fb2ccc545f6e651724"
     }
   ]
 }

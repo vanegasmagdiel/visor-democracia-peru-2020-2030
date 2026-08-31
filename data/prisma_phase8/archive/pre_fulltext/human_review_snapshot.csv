@@ -1,0 +1,10 @@
+﻿Indicador,Valor,%,Nota
+Registros en Human Review,196,,
+Human include,18,,
+Human exclude,151,,
+Human uncertain,27,,
+Cambios humano vs IA,0,,
+No resueltos,27,,
+Estado,WARNING_PASS,,
+screening_reconciled,False,,Debe ser TRUE para cierre científico
+Advertencia: el snapshot conserva 27 decisiones uncertain; screening_reconciled=false. El full-text final aún no está científicamente cerrado.,,,

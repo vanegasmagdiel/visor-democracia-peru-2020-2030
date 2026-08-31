@@ -13,6 +13,8 @@ summary=pd.read_csv(D/'scenario_summary_2030.csv')
 bands=pd.read_csv(D/'scenario_sensitivity_bands.csv')
 evidence=pd.read_csv(D/'post_election_evidence_2026.csv')
 coef=pd.read_csv(D/'scenario_coefficients.csv')
+anchor_summary=pd.read_csv(D/'peru_2025_anchor_summary.csv')
+parameter_matrix=pd.read_csv(D/'parameter_elicitation_matrix.csv')
 
 SCEN={r.scenario_id:r.scenario_name for _,r in summary.iterrows()}
 COL={'recuperacion_institucional':'#26734d','continuidad_hibrida':'#24518a','deriva_restrictiva':'#a93232'}
@@ -50,6 +52,14 @@ def fig_categories(year):
     f.update_layout(barmode='group',template='plotly_white',height=480,margin=dict(l=45,r=20,t=25,b=100),yaxis=dict(range=[0,10],title='Puntaje'),legend=dict(orientation='h',y=1.04))
     return f
 
+def fig_anchor():
+    a=anchor_summary.copy()
+    f=go.Figure()
+    f.add_trace(go.Scatter(x=a.category_es,y=a.peru_2024_official_source_observed,mode='markers',name='2024 observado',marker=dict(size=13,color='#24518a',symbol='circle'),hovertemplate='<b>%{x}</b><br>2024: %{y:.2f}<extra></extra>'))
+    f.add_trace(go.Scatter(x=a.category_es,y=a.p50,mode='markers',name='2025 ancla latente',marker=dict(size=14,color='#a66b18',symbol='diamond-open',line=dict(width=3)),error_y=dict(type='data',symmetric=False,array=a.p90-a.p50,arrayminus=a.p50-a.p10,color='#a66b18',thickness=2),hovertemplate='<b>%{x}</b><br>p50: %{y:.2f}<extra></extra>'))
+    f.update_layout(template='plotly_white',height=470,margin=dict(l=45,r=20,t=25,b=105),yaxis=dict(range=[0,10],title='Puntaje'),legend=dict(orientation='h',y=1.05))
+    return f
+
 def fig_scenarios():
     f=go.Figure()
     # observed line
@@ -59,7 +69,7 @@ def fig_scenarios():
         b=bands[bands.scenario_id==sid]
         c=COL[sid]
         f.add_trace(go.Scatter(x=list(b.year)+list(b.year[::-1]),y=list(b.p90)+list(b.p10[::-1]),fill='toself',fillcolor=FILL[sid],line=dict(color='rgba(255,255,255,0)'),hoverinfo='skip',showlegend=False,name=name+' sensibilidad'))
-        f.add_trace(go.Scatter(x=d.year,y=d.overall_score,mode='lines+markers+text',name=name,line=dict(color=c,width=3),marker=dict(size=8),text=[f'{v:.2f}' if y==2030 else '' for y,v in zip(d.year,d.overall_score)],textposition='middle right',hovertemplate='<b>'+name+'</b><br>Año: %{x}<br>Puntaje: %{y:.2f}<extra></extra>'))
+        f.add_trace(go.Scatter(x=b.year,y=b.p50,mode='lines+markers+text',name=name,line=dict(color=c,width=3),marker=dict(size=8),text=[f'{v:.2f}' if y==2030 else '' for y,v in zip(b.year,b.p50)],textposition='middle right',hovertemplate='<b>'+name+'</b><br>Año: %{x}<br>p50: %{y:.2f}<extra></extra>'))
     f.add_hline(y=6,line_dash='dot',line_color='#777')
     f.update_layout(template='plotly_white',height=520,margin=dict(l=50,r=40,t=25,b=55),yaxis=dict(range=[4.8,6.6],title='Puntaje 0–10'),xaxis_title='Año',legend=dict(orientation='h',y=1.10))
     return f
@@ -76,18 +86,19 @@ def fig_scenario_categories(sid):
 latest=overall.iloc[-1]
 app_ui=ui.page_navbar(
     ui.nav_panel('Serie 2020–2025',
-        ui.div(ui.h1('Democracia en el Perú: serie integrada 2020–2025'),ui.p('Actualización del Democracy Index 2025 con comparación multinivel y trazabilidad explícita entre datos observados y calibrados.'),class_='hero'),
+        ui.div(ui.h1('Democracia en el Perú: serie integrada 2020–2025'),ui.p('Versión científica 2.1.0: separación explícita entre observación oficial, agregado reportado secundariamente, ancla latente y simulación.'),class_='hero'),
         ui.div(
-            ui.div(ui.div('Perú 2025',class_='l'),ui.div(f"{latest.peru_score:.2f}",class_='v'),ui.div('Régimen híbrido · rank 76',class_='n'),class_='kpi'),
+            ui.div(ui.div('Perú 2025',class_='l'),ui.div(f"{latest.peru_score:.2f}",class_='v'),ui.div('agregado reportado secundariamente',class_='n'),class_='kpi'),
             ui.div(ui.div('Cambio 2024→2025',class_='l'),ui.div(f"+{latest.peru_score-overall.iloc[-2].peru_score:.2f}",class_='v'),ui.div('reversión parcial del descenso',class_='n'),class_='kpi'),
             ui.div(ui.div('LatAm 2025',class_='l'),ui.div(f"{latest.latin_america_score:.2f}",class_='v'),ui.div('vs. 5.61 en 2024',class_='n'),class_='kpi'),
             ui.div(ui.div('Mundo 2025',class_='l'),ui.div(f"{latest.world_score:.2f}",class_='v'),ui.div('vs. 5.17 en 2024',class_='n'),class_='kpi'),class_='kpis'),
         ui.div(ui.div('Trayectoria comparada',class_='titlex'),ui.div('Perú recupera 0.19 puntos en 2025, pero permanece por debajo del umbral >6.',class_='subx'),output_widget('history'),class_='cardx'),
-        ui.div(ui.input_slider('year','Año para comparar categorías',2020,2025,2025,sep=''),output_widget('category_compare'),class_='cardx'),
-        ui.div(ui.strong('Nota de calidad de datos 2025: '),'el puntaje total del Perú (5.88) se trata como observado; los cinco subpilares Perú-2025 son una calibración latente cuya media es 5.88 porque el resumen EIU suministrado no publica la tabla país. No deben citarse como subpilares oficiales EIU.',class_='warn')
+        ui.div(ui.input_slider('year','Año observado para comparar categorías',2020,2024,2024,sep=''),output_widget('category_compare'),class_='cardx'),
+        ui.div(ui.div('Composición dimensional 2025: ancla latente',class_='titlex'),ui.div('El marcador abierto es p50 y las barras son p10–p90 del conjunto de 10 000 composiciones admisibles; no son subpuntajes oficiales EIU.',class_='subx'),output_widget('anchor_plot'),class_='cardx'),
+        ui.div(ui.strong('Nota de calidad de datos 2025: '),'el total 5,88 se registra como agregado reportado secundariamente. Su composición dimensional es latente, conserva exactamente el total y se propaga como incertidumbre hacia 2030.',class_='warn')
     ),
     ui.nav_panel('Escenarios 2026–2030',
-        ui.div(ui.h1('Tres escenarios prospectivos post-elecciones 2026'),ui.p('Escenarios condicionados por el resultado presidencial, observación electoral internacional, polarización, gobernabilidad bicameral, seguridad y libertades civiles. Son escenarios cuantificados, no probabilidades.'),class_='hero'),
+        ui.div(ui.h1('Tres escenarios prospectivos post-elecciones 2026'),ui.p('Escenarios exploratorios informados por evidencia y parametrizados mediante juicios analíticos estructurados. No son probabilidades ni pronósticos.'),class_='hero'),
         ui.div(ui.div('Comparación de trayectorias',class_='titlex'),ui.div('Las franjas son bandas de sensibilidad p10–p90 de 10,000 simulaciones; no son intervalos de confianza.',class_='subx'),output_widget('scenario_compare'),class_='cardx'),
         ui.div(ui.input_select('scenario','Escenario para inspección',SCEN,selected='continuidad_hibrida'),class_='cardx'),
         ui.output_ui('scenario_kpis'),
@@ -110,6 +121,8 @@ def server(input,output,session):
     @render_widget
     def category_compare(): return fig_categories(int(input.year()))
     @render_widget
+    def anchor_plot(): return fig_anchor()
+    @render_widget
     def scenario_compare(): return fig_scenarios()
     @render_widget
     def scenario_categories(): return fig_scenario_categories(input.scenario())
@@ -118,18 +131,19 @@ def server(input,output,session):
         sid=input.scenario(); r=summary[summary.scenario_id==sid].iloc[0]
         return ui.div(
             ui.div(ui.div('2026',class_='l'),ui.div(f"{r.score_2026:.2f}",class_='v'),ui.div(regime(r.score_2026),class_='n'),class_='kpi'),
-            ui.div(ui.div('2030',class_='l'),ui.div(f"{r.score_2030:.2f}",class_='v'),ui.div(regime(r.score_2030),class_='n'),class_='kpi'),
+            ui.div(ui.div('2030 central',class_='l'),ui.div(f"{r.score_2030:.2f}",class_='v'),ui.div(regime(r.score_2030),class_='n'),class_='kpi'),
+            ui.div(ui.div('Sensibilidad 2030',class_='l'),ui.div(f"{r.p10_2030:.2f}–{r.p90_2030:.2f}",class_='v'),ui.div('p10–p90; no IC',class_='n'),class_='kpi'),
             ui.div(ui.div('Cambio 2025→2030',class_='l'),ui.div(f"{r.score_2030-5.88:+.2f}",class_='v'),ui.div('puntos',class_='n'),class_='kpi'),
-            ui.div(ui.div('Tipo',class_='l'),ui.div(str(r.scenario_type).title(),class_='v'),ui.div('escenario estructurado',class_='n'),class_='kpi'),class_='kpis')
+            class_='kpis')
     @render.ui
     def scenario_text():
         r=summary[summary.scenario_id==input.scenario()].iloc[0]
         return ui.div(ui.div(str(r.description),class_='subx'),ui.tags.ul(ui.tags.li(ui.strong('Disparadores: '),str(r.triggers)),ui.tags.li(ui.strong('Advertencias: '),str(r.warnings))),class_='cardx')
     @render.data_frame
     def evidence_table():
-        return render.DataGrid(evidence[['date','source','title','signal','model_dimensions','weight']],filters=True,height='520px')
+        return render.DataGrid(evidence[['date','source','title','signal','model_dimensions','source_priority','computational_use']],filters=True,height='520px')
     @render.data_frame
     def coef_table():
-        return render.DataGrid(coef[['scenario_name','category_es','shock_2026','annual_structural_rate']],filters=True,height='430px')
+        return render.DataGrid(parameter_matrix[['scenario_name','category_es','parameter','central','plausible_low','plausible_high','evidence_basis','translation_rule']],filters=True,height='520px')
 
 app=App(app_ui,server)

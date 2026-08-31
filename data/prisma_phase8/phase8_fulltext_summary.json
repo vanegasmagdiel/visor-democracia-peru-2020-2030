@@ -1,0 +1,32 @@
+{
+  "schema": "phase8-fulltext-closure-1.0",
+  "date_closed": "2026-08-29",
+  "study_type": "original_article",
+  "review_function": "structured_support_literature_search",
+  "identified_databases": 767,
+  "registers": 0,
+  "duplicates_removed": 116,
+  "other_gate_removed": 3,
+  "records_screened": 648,
+  "title_abstract_excluded": 576,
+  "reports_sought": 72,
+  "reports_not_retrieved": 30,
+  "reports_assessed_fulltext": 42,
+  "reports_excluded_fulltext": 13,
+  "studies_included_support_corpus": 29,
+  "exclusion_reasons": {
+    "EXC_NO_DIRECT_CONTRIBUTION_TO_ORIGINAL_ARTICLE": 8,
+    "EXC_WRONG_CONSTRUCT_OR_OUTCOME": 2,
+    "EXC_CONTEXT_NOT_TRANSFERABLE": 2,
+    "EXC_OUTSIDE_TEMPORAL_ANALYTIC_SCOPE": 1
+  },
+  "drive_fulltexts": 27,
+  "web_open_fulltexts": 15,
+  "automatic_parameter_changes": false,
+  "arithmetic_checks": {
+    "screened": true,
+    "sought": true,
+    "assessed": true,
+    "included": true
+  }
+}

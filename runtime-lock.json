@@ -1,0 +1,9 @@
+{
+  "schema": "visor-runtime-lock-1.0",
+  "candidate_version": "2.1.0-rc.5",
+  "python": "3.12",
+  "tested_python": "3.12.13",
+  "dependency_lock": "requirements-lock.txt",
+  "generated_at": "2026-08-31",
+  "policy": "The publication workflow installs the complete exact-version lock before rebuilding artifacts."
+}

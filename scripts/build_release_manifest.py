@@ -13,7 +13,7 @@ BASE = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = BASE / "RELEASE_MANIFEST.json"
 CHECKSUM_PATH = BASE / "SHA256SUMS.txt"
 EXCLUDED_FILES = {"RELEASE_MANIFEST.json", "SHA256SUMS.txt"}
-EXCLUDED_DIRS = {".git", ".pytest_cache", "__pycache__", "_exports"}
+EXCLUDED_DIRS = {".git", ".venv", ".pytest_cache", "__pycache__", "_exports"}
 
 
 def payload_files() -> list[Path]:
@@ -49,9 +49,9 @@ def expected_outputs() -> tuple[str, str]:
 
     manifest = {
         "project": "Visor Integrado de Democracia del Perú 2020–2030",
-        "version": "2.0.0",
-        "release_date": "2026-08-19",
-        "manifest_revision_date": "2026-08-24",
+        "version": "2.1.0-rc.5",
+        "release_date": "2026-08-31",
+        "manifest_revision_date": "2026-08-31",
         "author": {
             "name": "Magdiel Torres Vanegas",
             "orcid": "https://orcid.org/0000-0002-7913-214X",

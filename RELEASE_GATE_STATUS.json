@@ -1,0 +1,39 @@
+{
+  "schema": "visor-release-gate-1.0",
+  "candidate_version": "2.1.0-rc.5",
+  "evaluated_at": "2026-08-31",
+  "gates": {
+    "GO_ARTICLE_CORRECTION": true,
+    "GO_RELEASE_RC4": false,
+    "GO_RELEASE_RC5_REFACTOR": true,
+    "GO_RELEASE_V2.1.0": true
+  },
+  "release_gate_requires": [
+    "dependency_lock_pass",
+    "release_gate_decoupled_pass",
+    "phase8_canonical_narrative_pass",
+    "metadata_method_classification_pass",
+    "osf_post_release_transaction_pass",
+    "runtime_metadata_consistency_pass",
+    "ro_crate_integrity_pass",
+    "license_policy_current_pass",
+    "clean_rebuild_pass",
+    "tests_pass",
+    "ci_pass",
+    "post_rebuild_manifest_regeneration_pass",
+    "manifest_pass",
+    "secret_scan_pass",
+    "human_release_approval"
+  ],
+  "release_gate_forbids": [
+    "manuscript_status",
+    "journal_submission",
+    "journal_acceptance",
+    "editorial_forms",
+    "article_doi",
+    "osf_sync_required"
+  ],
+  "technical_eligibility": "PASS",
+  "external_execution_state": "NOT_EXECUTED",
+  "note": "Nine technical P0 controls are closed locally. The BAT evaluates autonomous software/evidence gates only, requires successful pull-request CI and the exact human phrase PUBLICAR v2.1.0, and performs optional final OSF synchronization only after the GitHub Release using the final main commit."
+}

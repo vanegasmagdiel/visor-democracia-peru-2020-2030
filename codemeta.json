@@ -2,16 +2,20 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "name": "Visor Integrado de Democracia del Perú 2020–2030",
-  "description": "Visor reproducible que integra datos longitudinales de democracia 2020–2025 y tres escenarios prospectivos para el Perú al 2030.",
-  "version": "2.0.0",
-  "datePublished": "2026-08-19",
+  "description": "Visor reproducible que integra la trayectoria democrática 2020–2025 con tres escenarios prospectivos exploratorios y propaga la incertidumbre dimensional de 2025.",
+  "version": "2.1.0-rc.5",
+  "datePublished": "2026-08-31",
   "codeRepository": "https://github.com/vanegasmagdiel/visor-democracia-peru-2020-2030",
   "url": "https://vanegasmagdiel.github.io/visor-democracia-peru-2020-2030/",
+  "identifier": "https://doi.org/10.5281/zenodo.22080540",
   "license": "https://spdx.org/licenses/MIT.html",
   "isAccessibleForFree": true,
   "applicationCategory": "Research software",
-  "programmingLanguage": ["Python", "JavaScript"],
-  "runtimePlatform": "Python >=3.11",
+  "programmingLanguage": [
+    "Python",
+    "JavaScript"
+  ],
+  "runtimePlatform": "Python >=3.12,<3.13",
   "author": [
     {
       "@id": "https://orcid.org/0000-0002-7913-214X",
@@ -44,6 +48,9 @@
     "scenario analysis",
     "reproducible research",
     "Shiny",
-    "Plotly"
+    "Plotly",
+    "PRISMA-S",
+    "structured literature search",
+    "evidence traceability"
   ]
 }

@@ -16,6 +16,14 @@ Unión Europea, Reuters, AP, BTI y literatura académica— conservan sus derech
 y licencias. Se proporcionan referencias y URL; no se incorporan copias de
 textos completos salvo que exista permiso independiente.
 
+## Metadatos bibliográficos de fase 8
+
+El Excel, RIS y CSV derivados contienen títulos, autores, identificadores,
+resúmenes y enlaces obtenidos mediante OpenAlex, Crossref, CORE, arXiv, Scopus,
+SciELO y Semantic Scholar. La curación y codificación del proyecto no
+relicencian esos campos ni los artículos subyacentes. El paquete no contiene
+los PDF recuperables mediante los enlaces registrados.
+
 ## Bibliotecas de software
 
 El visor utiliza o incorpora dependencias como Shiny for Python, pandas, NumPy,

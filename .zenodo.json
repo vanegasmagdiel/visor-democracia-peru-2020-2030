@@ -1,7 +1,7 @@
 {
   "title": "Visor Integrado de Democracia del Perú 2020–2030",
   "upload_type": "software",
-  "description": "Aplicación reproducible en Python y Shiny que integra la serie observada 2020–2025 y tres escenarios prospectivos condicionados por evidencia para el Perú al 2030. El código se distribuye bajo MIT; la documentación y narrativa original bajo CC BY 4.0; los insumos de terceros conservan sus condiciones originales y no se redistribuye el informe de The Economist Intelligence Unit.",
+  "description": "Aplicación reproducible en Python y Shiny que integra la serie 2020–2025 y tres escenarios prospectivos exploratorios informados por evidencia para el Perú al 2030. La composición dimensional 2025 se representa mediante 10 000 anclas latentes admisibles y los parámetros prospectivos se publican con rangos y reglas de traducción. El código se distribuye bajo MIT; la documentación y narrativa original bajo CC BY 4.0; los insumos de terceros conservan sus condiciones originales.",
   "creators": [
     {
       "name": "Torres Vanegas, Magdiel",
@@ -19,7 +19,14 @@
     "data visualization"
   ],
   "license": "mit",
-  "version": "2.0.0",
+  "version": "2.1.0-rc.5",
   "language": "spa",
-  "access_right": "open"
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.22080540",
+      "relation": "isVersionOf",
+      "scheme": "doi"
+    }
+  ]
 }

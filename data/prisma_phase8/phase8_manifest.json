@@ -1,0 +1,39 @@
+{
+  "schema": "phase8-manifest-2.0",
+  "candidate_version": "2.1.0-rc.5",
+  "state": "fulltext_closed",
+  "date_closed": "2026-08-29",
+  "counts": {
+    "records_identified": 767,
+    "metadata_gate_quarantine": 3,
+    "duplicates_removed": 116,
+    "records_screened": 648,
+    "records_excluded": 576,
+    "reports_sought": 72,
+    "reports_not_retrieved": 30,
+    "reports_retrieved": 42,
+    "reports_assessed": 42,
+    "fulltext_excluded": 13,
+    "final_included": 29
+  },
+  "publication_gate": {
+    "fulltext_complete": true,
+    "final_prisma_ready": true,
+    "release_scientific_validation_ready": true,
+    "dependency_lock_ready": true,
+    "release_gate_decoupled": true,
+    "phase8_canonical_narrative": true,
+    "metadata_method_classification": true,
+    "osf_sync_required": false,
+    "release_doi_status": "HUMAN_APPROVAL_REQUIRED"
+  },
+  "artifacts": [
+    "fulltext_decisions_72.csv",
+    "fulltext_included_29.csv",
+    "fulltext_excluded_13.csv",
+    "fulltext_not_retrieved_30.csv",
+    "evidence_integration_map_29.csv",
+    "Bibliografia_Incluida_Visor_Democracia_Fulltext_Final_29.ris",
+    "Libro_Analisis_PRISMA_Visor_Democracia_R4_3_5_Cierre_Fulltext.xlsx"
+  ]
+}

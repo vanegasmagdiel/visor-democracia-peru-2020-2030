@@ -1,50 +1,148 @@
 file,field,dtype,description
-overall_multilevel_2020_2025.csv,year,int64,
-overall_multilevel_2020_2025.csv,peru_score,float64,
-overall_multilevel_2020_2025.csv,latin_america_score,float64,
-overall_multilevel_2020_2025.csv,world_score,float64,
-overall_multilevel_2020_2025.csv,peru_regime_type,object,
-overall_multilevel_2020_2025.csv,peru_minus_latam,float64,
-overall_multilevel_2020_2025.csv,peru_minus_world,float64,
-overall_multilevel_2020_2025.csv,latam_minus_world,float64,
-overall_multilevel_2020_2025.csv,peru_pct_change_vs_2020,float64,
-overall_multilevel_2020_2025.csv,latin_america_pct_change_vs_2020,float64,
-overall_multilevel_2020_2025.csv,world_pct_change_vs_2020,float64,
-overall_multilevel_2020_2025.csv,source_peru,object,
-overall_multilevel_2020_2025.csv,source_latam,object,
-overall_multilevel_2020_2025.csv,source_world,object,
-overall_multilevel_2020_2025.csv,peru_rank,Int64,
-overall_multilevel_2020_2025.csv,data_status_peru,object,
-categories_multilevel_2020_2025.csv,year,int64,
-categories_multilevel_2020_2025.csv,category,object,
-categories_multilevel_2020_2025.csv,category_full,object,
-categories_multilevel_2020_2025.csv,peru_score,float64,
-categories_multilevel_2020_2025.csv,latin_america_score,float64,
-categories_multilevel_2020_2025.csv,world_score,float64,
-categories_multilevel_2020_2025.csv,peru_minus_latam,float64,
-categories_multilevel_2020_2025.csv,peru_minus_world,float64,
-categories_multilevel_2020_2025.csv,latam_minus_world,float64,
-categories_multilevel_2020_2025.csv,source_peru,object,
-categories_multilevel_2020_2025.csv,source_latam,object,
-categories_multilevel_2020_2025.csv,source_world,object,
-categories_multilevel_2020_2025.csv,data_status_peru,object,
-categories_multilevel_2020_2025.csv,data_status_latam,object,
-categories_multilevel_2020_2025.csv,data_status_world,object,
-scenario_trajectories_2025_2030.csv,scenario_id,object,
-scenario_trajectories_2025_2030.csv,scenario_name,object,
-scenario_trajectories_2025_2030.csv,year,int64,
-scenario_trajectories_2025_2030.csv,Proceso electoral y pluralismo,float64,
-scenario_trajectories_2025_2030.csv,Funcionamiento del gobierno,float64,
-scenario_trajectories_2025_2030.csv,Participación política,float64,
-scenario_trajectories_2025_2030.csv,Cultura política,float64,
-scenario_trajectories_2025_2030.csv,Libertades civiles,float64,
-scenario_trajectories_2025_2030.csv,overall_score,float64,
-scenario_trajectories_2025_2030.csv,phase,object,
-scenario_trajectories_2025_2030.csv,regime_type,object,
-scenario_sensitivity_bands.csv,scenario_id,object,
-scenario_sensitivity_bands.csv,year,int64,
-scenario_sensitivity_bands.csv,p10,float64,
-scenario_sensitivity_bands.csv,p50,float64,
-scenario_sensitivity_bands.csv,p90,float64,
-scenario_sensitivity_bands.csv,n_sim,int64,
-scenario_sensitivity_bands.csv,note,object,
+categories_multilevel_2020_2025.csv,year,int64,Calendar or analytical year.
+categories_multilevel_2020_2025.csv,category,object,Category.
+categories_multilevel_2020_2025.csv,category_full,object,Category full.
+categories_multilevel_2020_2025.csv,peru_score,float64,Peru score on the 0–10 Democracy Index scale; interpret with its data-status field.
+categories_multilevel_2020_2025.csv,latin_america_score,float64,Latin America and Caribbean aggregate on the 0–10 scale.
+categories_multilevel_2020_2025.csv,world_score,float64,World aggregate on the 0–10 scale.
+categories_multilevel_2020_2025.csv,peru_minus_latam,float64,Arithmetic score difference between the named geographies.
+categories_multilevel_2020_2025.csv,peru_minus_world,float64,Arithmetic score difference between the named geographies.
+categories_multilevel_2020_2025.csv,latam_minus_world,float64,Arithmetic score difference between the named geographies.
+categories_multilevel_2020_2025.csv,source_peru,object,Bibliographic source and location for the corresponding value.
+categories_multilevel_2020_2025.csv,source_latam,object,Bibliographic source and location for the corresponding value.
+categories_multilevel_2020_2025.csv,source_world,object,Bibliographic source and location for the corresponding value.
+categories_multilevel_2020_2025.csv,data_status_peru,object,Epistemic status of the Peru value.
+categories_multilevel_2020_2025.csv,data_status_latam,object,Epistemic status of the Latin America value.
+categories_multilevel_2020_2025.csv,data_status_world,object,Epistemic status of the world value.
+data_status_registry.csv,status_id,object,Stable controlled-vocabulary identifier.
+data_status_registry.csv,label_es,object,Label es.
+data_status_registry.csv,definition,object,Definition of the controlled data status.
+data_status_registry.csv,allowed_use,object,Permitted interpretation and citation use.
+model_formulas_v2.csv,formula_id,object,Stable formula identifier.
+model_formulas_v2.csv,component,object,Component.
+model_formulas_v2.csv,formula,object,Human-readable model formula.
+model_formulas_v2.csv,interpretation,object,Mandatory interpretive limitation for the value or distribution.
+overall_multilevel_2020_2025.csv,year,int64,Calendar or analytical year.
+overall_multilevel_2020_2025.csv,peru_score,float64,Peru score on the 0–10 Democracy Index scale; interpret with its data-status field.
+overall_multilevel_2020_2025.csv,latin_america_score,float64,Latin America and Caribbean aggregate on the 0–10 scale.
+overall_multilevel_2020_2025.csv,world_score,float64,World aggregate on the 0–10 scale.
+overall_multilevel_2020_2025.csv,peru_regime_type,object,Peru regime type.
+overall_multilevel_2020_2025.csv,peru_minus_latam,float64,Arithmetic score difference between the named geographies.
+overall_multilevel_2020_2025.csv,peru_minus_world,float64,Arithmetic score difference between the named geographies.
+overall_multilevel_2020_2025.csv,latam_minus_world,float64,Arithmetic score difference between the named geographies.
+overall_multilevel_2020_2025.csv,peru_pct_change_vs_2020,float64,Percentage change relative to the 2020 baseline.
+overall_multilevel_2020_2025.csv,latin_america_pct_change_vs_2020,float64,Percentage change relative to the 2020 baseline.
+overall_multilevel_2020_2025.csv,world_pct_change_vs_2020,float64,Percentage change relative to the 2020 baseline.
+overall_multilevel_2020_2025.csv,source_peru,object,Bibliographic source and location for the corresponding value.
+overall_multilevel_2020_2025.csv,source_latam,object,Bibliographic source and location for the corresponding value.
+overall_multilevel_2020_2025.csv,source_world,object,Bibliographic source and location for the corresponding value.
+overall_multilevel_2020_2025.csv,peru_rank,float64,Peru rank.
+overall_multilevel_2020_2025.csv,data_status_peru,object,Epistemic status of the Peru value.
+parameter_elicitation_matrix.csv,scenario_id,object,Stable machine-readable scenario identifier.
+parameter_elicitation_matrix.csv,scenario_name,object,Human-readable scenario name.
+parameter_elicitation_matrix.csv,category_full,object,Category full.
+parameter_elicitation_matrix.csv,category_es,object,Category es.
+parameter_elicitation_matrix.csv,parameter,object,Parameter.
+parameter_elicitation_matrix.csv,central,float64,Central structured analytical judgement for the parameter.
+parameter_elicitation_matrix.csv,plausible_low,float64,Lower plausible bound used by the triangular parameter distribution.
+parameter_elicitation_matrix.csv,plausible_high,float64,Upper plausible bound used by the triangular parameter distribution.
+parameter_elicitation_matrix.csv,evidence_basis,object,Semicolon-separated evidence identifiers supporting the judgement.
+parameter_elicitation_matrix.csv,signal,object,Signal.
+parameter_elicitation_matrix.csv,translation_rule,object,Explicit rule translating qualitative evidence into a bounded parameter judgement.
+parameter_elicitation_matrix.csv,decision_author,object,Person responsible for the documented analytical judgement.
+parameter_elicitation_matrix.csv,decision_date,object,ISO date of the analytical judgement.
+parameter_elicitation_matrix.csv,parameter_status,object,Epistemic classification of the parameter.
+peru_2025_anchor_ensemble.csv,sample_id,int64,Deterministic simulation-row identifier.
+peru_2025_anchor_ensemble.csv,Proceso electoral y pluralismo,float64,Dimensional score on the 0–10 scale; interpret with data_status.
+peru_2025_anchor_ensemble.csv,Funcionamiento del gobierno,float64,Dimensional score on the 0–10 scale; interpret with data_status.
+peru_2025_anchor_ensemble.csv,Participación política,float64,Dimensional score on the 0–10 scale; interpret with data_status.
+peru_2025_anchor_ensemble.csv,Cultura política,float64,Dimensional score on the 0–10 scale; interpret with data_status.
+peru_2025_anchor_ensemble.csv,Libertades civiles,float64,Dimensional score on the 0–10 scale; interpret with data_status.
+peru_2025_anchor_ensemble.csv,overall_score,float64,Arithmetic mean of the five dimensional values on the 0–10 scale.
+peru_2025_anchor_ensemble.csv,data_status,object,Controlled epistemic-status identifier from data_status_registry.csv.
+peru_2025_anchor_summary.csv,category_full,object,Category full.
+peru_2025_anchor_summary.csv,category_es,object,Category es.
+peru_2025_anchor_summary.csv,peru_2024_official_source_observed,float64,Peru 2024 official source observed.
+peru_2025_anchor_summary.csv,central_anchor_2025,float64,Central anchor 2025.
+peru_2025_anchor_summary.csv,anchor_sigma,float64,Anchor sigma.
+peru_2025_anchor_summary.csv,admissible_low,float64,Admissible low.
+peru_2025_anchor_summary.csv,p10,float64,10th percentile of the stated sensitivity distribution.
+peru_2025_anchor_summary.csv,p50,float64,Median of the stated sensitivity distribution.
+peru_2025_anchor_summary.csv,p90,float64,90th percentile of the stated sensitivity distribution.
+peru_2025_anchor_summary.csv,admissible_high,float64,Admissible high.
+peru_2025_anchor_summary.csv,overall_constraint,float64,Fixed 2025 aggregate that every latent dimensional vector must preserve.
+peru_2025_anchor_summary.csv,data_status,object,Controlled epistemic-status identifier from data_status_registry.csv.
+peru_2025_anchor_summary.csv,interpretation,object,Mandatory interpretive limitation for the value or distribution.
+peru_2025_category_calibration_audit.csv,category_full,object,Category full.
+peru_2025_category_calibration_audit.csv,peru_2024_observed,float64,Peru 2024 observed.
+peru_2025_category_calibration_audit.csv,latam_delta_2025_2024,float64,Latam delta 2025 2024.
+peru_2025_category_calibration_audit.csv,world_delta_2025_2024,float64,World delta 2025 2024.
+peru_2025_category_calibration_audit.csv,peru_2025_modeled_anchor,float64,Peru 2025 modeled anchor.
+peru_2025_category_calibration_audit.csv,peru_delta_2025_2024,float64,Peru delta 2025 2024.
+peru_2025_category_calibration_audit.csv,rationale,object,Rationale.
+post_election_evidence_2026.csv,id,object,Id.
+post_election_evidence_2026.csv,date,object,Date.
+post_election_evidence_2026.csv,type,object,Type.
+post_election_evidence_2026.csv,source,object,Source.
+post_election_evidence_2026.csv,title,object,Title.
+post_election_evidence_2026.csv,signal,object,Signal.
+post_election_evidence_2026.csv,model_dimensions,object,Model dimensions.
+post_election_evidence_2026.csv,url,object,Source URL.
+post_election_evidence_2026.csv,source_priority,object,Categorical source-priority label; never a numeric model weight.
+post_election_evidence_2026.csv,computational_use,bool,Whether the evidence record is directly used as a numeric coefficient.
+scenario_coefficients.csv,scenario_id,object,Stable machine-readable scenario identifier.
+scenario_coefficients.csv,scenario_name,object,Human-readable scenario name.
+scenario_coefficients.csv,category_full,object,Category full.
+scenario_coefficients.csv,category_es,object,Category es.
+scenario_coefficients.csv,annual_structural_rate,float64,Annual structural rate.
+scenario_coefficients.csv,shock_2026,float64,Shock 2026.
+scenario_coefficients.csv,evidence_basis,object,Semicolon-separated evidence identifiers supporting the judgement.
+scenario_parameter_samples_summary.csv,scenario_id,object,Stable machine-readable scenario identifier.
+scenario_parameter_samples_summary.csv,category_full,object,Category full.
+scenario_parameter_samples_summary.csv,category_es,object,Category es.
+scenario_parameter_samples_summary.csv,parameter,object,Parameter.
+scenario_parameter_samples_summary.csv,p10,float64,10th percentile of the stated sensitivity distribution.
+scenario_parameter_samples_summary.csv,p50,float64,Median of the stated sensitivity distribution.
+scenario_parameter_samples_summary.csv,p90,float64,90th percentile of the stated sensitivity distribution.
+scenario_parameter_samples_summary.csv,n_sim,int64,Number of Monte Carlo sensitivity draws.
+scenario_sensitivity_bands.csv,scenario_id,object,Stable machine-readable scenario identifier.
+scenario_sensitivity_bands.csv,year,int64,Calendar or analytical year.
+scenario_sensitivity_bands.csv,p10,float64,10th percentile of the stated sensitivity distribution.
+scenario_sensitivity_bands.csv,p50,float64,Median of the stated sensitivity distribution.
+scenario_sensitivity_bands.csv,p90,float64,90th percentile of the stated sensitivity distribution.
+scenario_sensitivity_bands.csv,n_sim,int64,Number of Monte Carlo sensitivity draws.
+scenario_sensitivity_bands.csv,uncertainty_layers,object,Uncertainty components jointly propagated in the sensitivity exercise.
+scenario_sensitivity_bands.csv,note,object,"Interpretive note, including limits on probabilistic claims."
+scenario_sensitivity_by_category.csv,scenario_id,object,Stable machine-readable scenario identifier.
+scenario_sensitivity_by_category.csv,year,int64,Calendar or analytical year.
+scenario_sensitivity_by_category.csv,category_full,object,Category full.
+scenario_sensitivity_by_category.csv,category_es,object,Category es.
+scenario_sensitivity_by_category.csv,p10,float64,10th percentile of the stated sensitivity distribution.
+scenario_sensitivity_by_category.csv,p50,float64,Median of the stated sensitivity distribution.
+scenario_sensitivity_by_category.csv,p90,float64,90th percentile of the stated sensitivity distribution.
+scenario_sensitivity_by_category.csv,n_sim,int64,Number of Monte Carlo sensitivity draws.
+scenario_summary_2030.csv,scenario_id,object,Stable machine-readable scenario identifier.
+scenario_summary_2030.csv,scenario_name,object,Human-readable scenario name.
+scenario_summary_2030.csv,scenario_type,object,Scenario type.
+scenario_summary_2030.csv,description,object,Description.
+scenario_summary_2030.csv,score_2026,float64,Score 2026.
+scenario_summary_2030.csv,score_2030,float64,Score 2030.
+scenario_summary_2030.csv,regime_2030,object,Regime 2030.
+scenario_summary_2030.csv,triggers,object,Triggers.
+scenario_summary_2030.csv,warnings,object,Warnings.
+scenario_summary_2030.csv,p10_2030,float64,P10 2030.
+scenario_summary_2030.csv,p50_2030,float64,P50 2030.
+scenario_summary_2030.csv,p90_2030,float64,P90 2030.
+scenario_summary_2030.csv,classification_basis,object,Classification basis.
+scenario_trajectories_2025_2030.csv,scenario_id,object,Stable machine-readable scenario identifier.
+scenario_trajectories_2025_2030.csv,scenario_name,object,Human-readable scenario name.
+scenario_trajectories_2025_2030.csv,year,int64,Calendar or analytical year.
+scenario_trajectories_2025_2030.csv,Proceso electoral y pluralismo,float64,Dimensional score on the 0–10 scale; interpret with data_status.
+scenario_trajectories_2025_2030.csv,Funcionamiento del gobierno,float64,Dimensional score on the 0–10 scale; interpret with data_status.
+scenario_trajectories_2025_2030.csv,Participación política,float64,Dimensional score on the 0–10 scale; interpret with data_status.
+scenario_trajectories_2025_2030.csv,Cultura política,float64,Dimensional score on the 0–10 scale; interpret with data_status.
+scenario_trajectories_2025_2030.csv,Libertades civiles,float64,Dimensional score on the 0–10 scale; interpret with data_status.
+scenario_trajectories_2025_2030.csv,overall_score,float64,Arithmetic mean of the five dimensional values on the 0–10 scale.
+scenario_trajectories_2025_2030.csv,phase,object,Phase.
+scenario_trajectories_2025_2030.csv,data_status,object,Controlled epistemic-status identifier from data_status_registry.csv.
+scenario_trajectories_2025_2030.csv,regime_type,object,Regime type.

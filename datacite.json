@@ -24,7 +24,7 @@
   ],
   "publisher": "Zenodo",
   "publicationYear": 2026,
-  "version": "2.0.0",
+  "version": "2.1.0-rc.5",
   "language": "es",
   "url": "https://github.com/vanegasmagdiel/visor-democracia-peru-2020-2030",
   "rightsList": [
@@ -42,12 +42,22 @@
     {"subject": "democratic backsliding"},
     {"subject": "prospective scenarios"},
     {"subject": "reproducible research"},
-    {"subject": "research software"}
+    {"subject": "research software"},
+    {"subject": "PRISMA-S"},
+    {"subject": "structured literature search"},
+    {"subject": "evidence traceability"}
   ],
   "descriptions": [
     {
       "descriptionType": "Abstract",
-      "description": "Portable reproducible viewer integrating Peru Democracy Index trends for 2020–2025 with three evidence-conditioned scenarios to 2030. Code is licensed under MIT; documentation and original narrative content under CC BY 4.0; third-party inputs retain their original terms."
+      "description": "Portable reproducible viewer integrating Peru Democracy Index trends for 2020–2025 with three evidence-informed exploratory scenarios to 2030 and joint propagation of dimensional and parameter uncertainty."
+    }
+  ],
+  "relatedIdentifiers": [
+    {
+      "relatedIdentifier": "10.5281/zenodo.22080540",
+      "relatedIdentifierType": "DOI",
+      "relationType": "IsVersionOf"
     }
   ]
 }
