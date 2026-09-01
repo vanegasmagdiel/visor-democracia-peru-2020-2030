@@ -1,0 +1,91 @@
+scenario_id,year,category_full,category_es,p10,p50,p90,n_sim
+recuperacion_institucional,2025,Electoral process and pluralism,Proceso electoral y pluralismo,8.772,8.879,8.987,10000
+recuperacion_institucional,2025,Functioning of government,Funcionamiento del gobierno,5.914,6.03,6.143,10000
+recuperacion_institucional,2025,Political participation,Participación política,4.906,5.07,5.237,10000
+recuperacion_institucional,2025,Political culture,Cultura política,2.692,2.999,3.308,10000
+recuperacion_institucional,2025,Civil liberties,Libertades civiles,6.252,6.422,6.586,10000
+recuperacion_institucional,2026,Electoral process and pluralism,Proceso electoral y pluralismo,8.879,9.0,9.121,10000
+recuperacion_institucional,2026,Functioning of government,Funcionamiento del gobierno,6.017,6.147,6.282,10000
+recuperacion_institucional,2026,Political participation,Participación política,4.964,5.151,5.338,10000
+recuperacion_institucional,2026,Political culture,Cultura política,2.748,3.145,3.553,10000
+recuperacion_institucional,2026,Civil liberties,Libertades civiles,6.279,6.471,6.662,10000
+recuperacion_institucional,2027,Electoral process and pluralism,Proceso electoral y pluralismo,8.908,9.04,9.173,10000
+recuperacion_institucional,2027,Functioning of government,Funcionamiento del gobierno,6.101,6.247,6.395,10000
+recuperacion_institucional,2027,Political participation,Participación política,5.0,5.213,5.419,10000
+recuperacion_institucional,2027,Political culture,Cultura política,2.778,3.248,3.726,10000
+recuperacion_institucional,2027,Civil liberties,Libertades civiles,6.308,6.521,6.736,10000
+recuperacion_institucional,2028,Electoral process and pluralism,Proceso electoral y pluralismo,8.932,9.076,9.22,10000
+recuperacion_institucional,2028,Functioning of government,Funcionamiento del gobierno,6.174,6.338,6.501,10000
+recuperacion_institucional,2028,Political participation,Participación política,5.031,5.266,5.496,10000
+recuperacion_institucional,2028,Political culture,Cultura política,2.799,3.334,3.882,10000
+recuperacion_institucional,2028,Civil liberties,Libertades civiles,6.334,6.563,6.799,10000
+recuperacion_institucional,2029,Electoral process and pluralism,Proceso electoral y pluralismo,8.952,9.109,9.263,10000
+recuperacion_institucional,2029,Functioning of government,Funcionamiento del gobierno,6.234,6.419,6.604,10000
+recuperacion_institucional,2029,Political participation,Participación política,5.061,5.315,5.568,10000
+recuperacion_institucional,2029,Political culture,Cultura política,2.816,3.426,4.029,10000
+recuperacion_institucional,2029,Civil liberties,Libertades civiles,6.35,6.604,6.857,10000
+recuperacion_institucional,2030,Electoral process and pluralism,Proceso electoral y pluralismo,8.966,9.137,9.305,10000
+recuperacion_institucional,2030,Functioning of government,Funcionamiento del gobierno,6.282,6.489,6.693,10000
+recuperacion_institucional,2030,Political participation,Participación política,5.083,5.356,5.627,10000
+recuperacion_institucional,2030,Political culture,Cultura política,2.832,3.499,4.146,10000
+recuperacion_institucional,2030,Civil liberties,Libertades civiles,6.369,6.638,6.91,10000
+continuidad_hibrida,2025,Electoral process and pluralism,Proceso electoral y pluralismo,8.772,8.879,8.987,10000
+continuidad_hibrida,2025,Functioning of government,Funcionamiento del gobierno,5.914,6.03,6.143,10000
+continuidad_hibrida,2025,Political participation,Participación política,4.906,5.07,5.237,10000
+continuidad_hibrida,2025,Political culture,Cultura política,2.692,2.999,3.308,10000
+continuidad_hibrida,2025,Civil liberties,Libertades civiles,6.252,6.422,6.586,10000
+continuidad_hibrida,2026,Electoral process and pluralism,Proceso electoral y pluralismo,8.831,8.953,9.075,10000
+continuidad_hibrida,2026,Functioning of government,Funcionamiento del gobierno,5.834,5.967,6.103,10000
+continuidad_hibrida,2026,Political participation,Participación política,4.94,5.128,5.315,10000
+continuidad_hibrida,2026,Political culture,Cultura política,2.498,2.895,3.303,10000
+continuidad_hibrida,2026,Civil liberties,Libertades civiles,6.148,6.341,6.532,10000
+continuidad_hibrida,2027,Electoral process and pluralism,Proceso electoral y pluralismo,8.821,8.952,9.087,10000
+continuidad_hibrida,2027,Functioning of government,Funcionamiento del gobierno,5.831,5.978,6.125,10000
+continuidad_hibrida,2027,Political participation,Participación política,4.937,5.149,5.357,10000
+continuidad_hibrida,2027,Political culture,Cultura política,2.428,2.899,3.376,10000
+continuidad_hibrida,2027,Civil liberties,Libertades civiles,6.116,6.33,6.547,10000
+continuidad_hibrida,2028,Electoral process and pluralism,Proceso electoral y pluralismo,8.81,8.953,9.096,10000
+continuidad_hibrida,2028,Functioning of government,Funcionamiento del gobierno,5.826,5.987,6.146,10000
+continuidad_hibrida,2028,Political participation,Participación política,4.93,5.167,5.396,10000
+continuidad_hibrida,2028,Political culture,Cultura política,2.361,2.894,3.439,10000
+continuidad_hibrida,2028,Civil liberties,Libertades civiles,6.089,6.319,6.555,10000
+continuidad_hibrida,2029,Electoral process and pluralism,Proceso electoral y pluralismo,8.798,8.954,9.106,10000
+continuidad_hibrida,2029,Functioning of government,Funcionamiento del gobierno,5.822,5.996,6.169,10000
+continuidad_hibrida,2029,Political participation,Participación política,4.928,5.183,5.435,10000
+continuidad_hibrida,2029,Political culture,Cultura política,2.297,2.909,3.503,10000
+continuidad_hibrida,2029,Civil liberties,Libertades civiles,6.057,6.314,6.566,10000
+continuidad_hibrida,2030,Electoral process and pluralism,Proceso electoral y pluralismo,8.789,8.955,9.119,10000
+continuidad_hibrida,2030,Functioning of government,Funcionamiento del gobierno,5.816,6.002,6.191,10000
+continuidad_hibrida,2030,Political participation,Participación política,4.923,5.197,5.467,10000
+continuidad_hibrida,2030,Political culture,Cultura política,2.244,2.908,3.554,10000
+continuidad_hibrida,2030,Civil liberties,Libertades civiles,6.033,6.304,6.578,10000
+deriva_restrictiva,2025,Electoral process and pluralism,Proceso electoral y pluralismo,8.772,8.879,8.987,10000
+deriva_restrictiva,2025,Functioning of government,Funcionamiento del gobierno,5.914,6.03,6.143,10000
+deriva_restrictiva,2025,Political participation,Participación política,4.906,5.07,5.237,10000
+deriva_restrictiva,2025,Political culture,Cultura política,2.692,2.999,3.308,10000
+deriva_restrictiva,2025,Civil liberties,Libertades civiles,6.252,6.422,6.586,10000
+deriva_restrictiva,2026,Electoral process and pluralism,Proceso electoral y pluralismo,8.672,8.799,8.928,10000
+deriva_restrictiva,2026,Functioning of government,Funcionamiento del gobierno,5.688,5.828,5.971,10000
+deriva_restrictiva,2026,Political participation,Participación política,4.831,5.021,5.212,10000
+deriva_restrictiva,2026,Political culture,Cultura política,2.344,2.744,3.158,10000
+deriva_restrictiva,2026,Civil liberties,Libertades civiles,5.938,6.141,6.343,10000
+deriva_restrictiva,2027,Electoral process and pluralism,Proceso electoral y pluralismo,8.621,8.759,8.9,10000
+deriva_restrictiva,2027,Functioning of government,Funcionamiento del gobierno,5.543,5.698,5.854,10000
+deriva_restrictiva,2027,Political participation,Participación política,4.736,4.953,5.165,10000
+deriva_restrictiva,2027,Political culture,Cultura política,2.146,2.618,3.099,10000
+deriva_restrictiva,2027,Civil liberties,Libertades civiles,5.754,5.98,6.208,10000
+deriva_restrictiva,2028,Electoral process and pluralism,Proceso electoral y pluralismo,8.57,8.724,8.874,10000
+deriva_restrictiva,2028,Functioning of government,Funcionamiento del gobierno,5.405,5.581,5.755,10000
+deriva_restrictiva,2028,Political participation,Participación política,4.648,4.89,5.123,10000
+deriva_restrictiva,2028,Political culture,Cultura política,1.955,2.497,3.049,10000
+deriva_restrictiva,2028,Civil liberties,Libertades civiles,5.586,5.836,6.088,10000
+deriva_restrictiva,2029,Electoral process and pluralism,Proceso electoral y pluralismo,8.526,8.692,8.859,10000
+deriva_restrictiva,2029,Functioning of government,Funcionamiento del gobierno,5.28,5.477,5.674,10000
+deriva_restrictiva,2029,Political participation,Participación política,4.574,4.834,5.09,10000
+deriva_restrictiva,2029,Political culture,Cultura política,1.79,2.408,3.013,10000
+deriva_restrictiva,2029,Civil liberties,Libertades civiles,5.426,5.707,5.983,10000
+deriva_restrictiva,2030,Electoral process and pluralism,Proceso electoral y pluralismo,8.484,8.665,8.844,10000
+deriva_restrictiva,2030,Functioning of government,Funcionamiento del gobierno,5.164,5.386,5.606,10000
+deriva_restrictiva,2030,Political participation,Participación política,4.505,4.783,5.062,10000
+deriva_restrictiva,2030,Political culture,Cultura política,1.636,2.317,2.975,10000
+deriva_restrictiva,2030,Civil liberties,Libertades civiles,5.287,5.597,5.904,10000

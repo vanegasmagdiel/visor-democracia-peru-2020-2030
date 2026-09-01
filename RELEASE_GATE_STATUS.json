@@ -1,0 +1,43 @@
+{
+  "schema": "visor-release-gate-2.0",
+  "evaluated_at": "2026-08-31",
+  "product": "research_software_and_evidence",
+  "gates": {
+    "GO_RELEASE_V2.1.0_TECHNICAL": true
+  },
+  "release_gate_requires": [
+    "dependency_lock_pass",
+    "release_gate_decoupled_pass",
+    "phase8_canonical_narrative_pass",
+    "metadata_method_classification_pass",
+    "runtime_metadata_consistency_pass",
+    "ro_crate_integrity_pass",
+    "license_policy_current_pass",
+    "cross_platform_determinism_pass",
+    "release_hygiene_pass",
+    "clean_rebuild_pass",
+    "tests_pass",
+    "ci_pass",
+    "manifest_pass",
+    "secret_scan_pass",
+    "exact_pr_head_pass",
+    "final_slot_empty_pass",
+    "human_release_approval",
+    "ci_exact_commit_filter_pass",
+    "draft_asset_roundtrip_sha256_pass",
+    "release_slot_fail_closed_pass",
+    "candidate_recovery_branch_pass"
+  ],
+  "release_gate_forbids": [
+    "manuscript_status",
+    "journal_submission",
+    "journal_acceptance",
+    "editorial_forms",
+    "article_doi",
+    "osf_sync_required"
+  ],
+  "technical_eligibility": "PASS",
+  "external_execution_state": "CANDIDATE_PR_CI_REVALIDATION_REQUIRED",
+  "note": "Product B is autonomous. Final release requires exact-commit cross-platform CI, fail-closed slot verification, draft-asset SHA-256 roundtrip, exact PR head/base, and explicit human approval; OSF is optional and post-release.",
+  "release_version": "2.1.0"
+}

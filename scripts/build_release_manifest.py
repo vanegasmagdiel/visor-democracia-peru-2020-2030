@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Build or verify the deterministic SHA-256 release inventory."""
+"""Build or verify the deterministic SHA-256 release inventory.
+
+The inventory files themselves are written and verified as raw UTF-8 bytes.
+This intentionally bypasses platform newline translation so Windows and Linux
+produce byte-identical RELEASE_MANIFEST.json and SHA256SUMS.txt files.
+"""
 
 from __future__ import annotations
 
@@ -13,7 +18,7 @@ BASE = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = BASE / "RELEASE_MANIFEST.json"
 CHECKSUM_PATH = BASE / "SHA256SUMS.txt"
 EXCLUDED_FILES = {"RELEASE_MANIFEST.json", "SHA256SUMS.txt"}
-EXCLUDED_DIRS = {".git", ".pytest_cache", "__pycache__", "_exports"}
+EXCLUDED_DIRS = {".git", ".venv", ".pytest_cache", "__pycache__", "_exports"}
 
 
 def payload_files() -> list[Path]:
@@ -49,9 +54,9 @@ def expected_outputs() -> tuple[str, str]:
 
     manifest = {
         "project": "Visor Integrado de Democracia del Perú 2020–2030",
-        "version": "2.0.0",
-        "release_date": "2026-08-19",
-        "manifest_revision_date": "2026-08-24",
+        "version": "2.1.0",
+        "release_date": "2026-08-31",
+        "manifest_revision_date": "2026-08-31",
         "author": {
             "name": "Magdiel Torres Vanegas",
             "orcid": "https://orcid.org/0000-0002-7913-214X",
@@ -67,24 +72,46 @@ def expected_outputs() -> tuple[str, str]:
     return manifest_text, checksum_text
 
 
+def expected_output_bytes() -> tuple[bytes, bytes]:
+    manifest_text, checksum_text = expected_outputs()
+    return manifest_text.encode("utf-8"), checksum_text.encode("utf-8")
+
+
+def _is_canonical_text_bytes(raw: bytes) -> bool:
+    return not raw.startswith(b"\xef\xbb\xbf") and b"\r" not in raw
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--check", action="store_true", help="verify without writing")
+    parser.add_argument("--check", action="store_true", help="verify exact bytes without writing")
     args = parser.parse_args()
-    manifest_text, checksum_text = expected_outputs()
+    manifest_bytes, checksum_bytes = expected_output_bytes()
+    outputs = ((MANIFEST_PATH, manifest_bytes), (CHECKSUM_PATH, checksum_bytes))
+
     if args.check:
         valid = True
-        for path, expected in ((MANIFEST_PATH, manifest_text), (CHECKSUM_PATH, checksum_text)):
-            if not path.is_file() or path.read_text(encoding="utf-8") != expected:
+        for path, expected in outputs:
+            if not path.is_file():
+                print(f"MISSING: {path.name}")
+                valid = False
+                continue
+            actual = path.read_bytes()
+            if actual != expected:
                 print(f"OUTDATED: {path.name}")
+                valid = False
+            if not _is_canonical_text_bytes(actual):
+                print(f"NONCANONICAL_TEXT: {path.name}")
                 valid = False
         if valid:
             print("RELEASE MANIFEST OK")
             return 0
         return 1
-    MANIFEST_PATH.write_text(manifest_text, encoding="utf-8")
-    CHECKSUM_PATH.write_text(checksum_text, encoding="utf-8")
-    print(f"WROTE {MANIFEST_PATH.name} and {CHECKSUM_PATH.name}")
+
+    # write_bytes is deliberate: Path.write_text/newline handling is platform
+    # dependent on Windows and previously introduced CRLF after normalization.
+    MANIFEST_PATH.write_bytes(manifest_bytes)
+    CHECKSUM_PATH.write_bytes(checksum_bytes)
+    print(f"WROTE {MANIFEST_PATH.name} and {CHECKSUM_PATH.name} as UTF-8/LF bytes")
     return 0
 
 

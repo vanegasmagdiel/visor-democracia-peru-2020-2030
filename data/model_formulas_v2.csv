@@ -1,7 +1,10 @@
 formula_id,component,formula,interpretation
-M1,2025 categorical anchor,"sum_i x_i,2025 / 5 = Peru overall 2025 = 5.88",Peru category sub-pillars absent from supplied EIU summary; constrained latent calibration.
-M2,2026 election shock,"x_i,2026 = clip(x_i,2025 + e_i,s, 0, 10)",Scenario-specific one-off adjustment conditioned on post-election evidence.
-M3,2027-2030 structural path,"x_i,t = clip(x_i,t-1 + g_i,s * d_t, 0, 10); d={1.0,0.9,0.8,0.7}",Damped scenario rate avoids indefinite linear extrapolation.
-M4,Overall score,"D_t = mean_i(x_i,t)",Consistent with five-category averaging logic used by EIU; rounded for display.
-M5,Regime threshold,<=4 authoritarian; >4 to <=6 hybrid; >6 to <=8 flawed; >8 full,Classification rule retained from original project.
-M6,Sensitivity band,"10,000 Monte Carlo paths; sigma_i = clip(0.25*sd(annual category deltas 2020-24),0.04,0.20)","Sensitivity envelope p10-p90, not a forecast confidence interval."
+M1,Fixed 2025 aggregate,"mean_i(x_i,2025)=5.88",The secondary-reported aggregate is fixed while dimensional composition remains latent.
+M2,Latent anchor ensemble,"x_2025 = central_anchor + zero_sum_truncated_perturbation",Every admissible vector averages exactly 5.88 and stays within documented bounds.
+M3,2026 scenario shock,"x_i,2026=clip(x_i,2025+shock_i,s+epsilon_i,2026,0,10)",Shock is sampled from a bounded triangular judgement range; epsilon is residual sensitivity.
+M4,2027-2030 structural path,"x_i,t=clip(x_i,t-1+rate_i,s*decay_t*scale+epsilon_i,t,0,10)",Rate and scale are bounded structured assumptions with deterministic decay.
+M5,Overall score,"D_t=mean_i(x_i,t)",Simple average of the five modeled dimensions.
+M6,Regime threshold,<=4 authoritarian; >4 to <=6 hybrid; >6 to <=8 flawed; >8 full,Classification is applied to the central deterministic score only.
+M7,Residual sigma,"sigma_i=clip(0.25*sd(delta x_i,2020-2024),0.04,0.20)",Common residual law across all scenarios.
+M8,Residual correlation,"epsilon_i=sigma_i*(sqrt(rho)*z_common+sqrt(1-rho)*z_i); rho~Tri(0.0,0.3,0.6)",Sensitivity to plausible positive cross-dimensional dependence without estimating covariance from four changes.
+M9,Parameter uncertainty,"shock and rate ~ Tri(plausible_low,central,plausible_high)",Ranges come from the auditable parameter elicitation matrix and are not causal estimates.

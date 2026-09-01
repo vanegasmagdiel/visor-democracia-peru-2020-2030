@@ -1,5 +1,6 @@
-shiny>=1.4,<2
-shinywidgets>=0.7,<1
-pandas>=2.2,<3
-numpy>=2.0,<3
-plotly>=6,<7
+shiny==1.7.0
+shinywidgets==0.8.1
+pandas==2.3.3
+numpy==2.5.2
+plotly==6.9.0
+pytest==9.1.1
