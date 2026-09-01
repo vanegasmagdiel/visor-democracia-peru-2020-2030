@@ -1,14 +1,14 @@
 [project]
 name = "visor-democracia-peru"
-version = "2.0.0"
-description = "Visor integrado 2020-2030 del Democracy Index para Peru"
-requires-python = ">=3.11"
+version = "2.1.0"
+description = "Visor integrado 2020-2030 con ancla latente y sensibilidad conjunta"
+requires-python = ">=3.12,<3.13"
 dependencies = [
-  "shiny>=1.4,<2",
-  "shinywidgets>=0.7,<1",
-  "pandas>=2.2,<3",
-  "numpy>=2.0,<3",
-  "plotly>=6,<7"
+  "shiny==1.7.0",
+  "shinywidgets==0.8.1",
+  "pandas==2.3.3",
+  "numpy==2.5.2",
+  "plotly==6.9.0"
 ]
 
 [tool.pytest.ini_options]

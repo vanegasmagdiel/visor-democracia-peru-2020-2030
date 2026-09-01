@@ -4,29 +4,72 @@
     {
       "@id": "ro-crate-metadata.json",
       "@type": "CreativeWork",
-      "about": {"@id": "./"},
-      "conformsTo": {"@id": "https://w3id.org/ro/crate/1.1"}
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": {
+        "@id": "https://w3id.org/ro/crate/1.1"
+      }
     },
     {
       "@id": "./",
-      "@type": ["Dataset", "SoftwareSourceCode"],
+      "@type": [
+        "Dataset",
+        "SoftwareSourceCode"
+      ],
       "name": "Visor Integrado de Democracia del Perú 2020–2030",
       "description": "Visor reproducible de la serie democrática 2020–2025 y tres escenarios prospectivos para el Perú al 2030.",
-      "version": "2.0.0",
-      "datePublished": "2026-08-19",
-      "license": {"@id": "https://spdx.org/licenses/MIT.html"},
-      "author": {"@id": "https://orcid.org/0000-0002-7913-214X"},
-      "copyrightHolder": {"@id": "https://orcid.org/0000-0002-7913-214X"},
+      "version": "2.1.0",
+      "datePublished": "2026-08-31",
+      "identifier": "https://doi.org/10.5281/zenodo.22080540",
+      "license": {
+        "@id": "https://spdx.org/licenses/MIT.html"
+      },
+      "author": {
+        "@id": "https://orcid.org/0000-0002-7913-214X"
+      },
+      "copyrightHolder": {
+        "@id": "https://orcid.org/0000-0002-7913-214X"
+      },
       "codeRepository": "https://github.com/vanegasmagdiel/visor-democracia-peru-2020-2030",
       "url": "https://vanegasmagdiel.github.io/visor-democracia-peru-2020-2030/",
       "hasPart": [
-        {"@id": "app.py"},
-        {"@id": "docs/index.html"},
-        {"@id": "docs/METODOLOGIA.md"},
-        {"@id": "data/overall_multilevel_2020_2025.csv"},
-        {"@id": "data/scenario_trajectories_2025_2030.csv"},
-        {"@id": "data/base_integral_democracia_2020_2030_v2.xlsx"},
-        {"@id": "LICENSE_POLICY.md"}
+        {
+          "@id": "app.py"
+        },
+        {
+          "@id": "docs/index.html"
+        },
+        {
+          "@id": "docs/METODOLOGIA.md"
+        },
+        {
+          "@id": "data/overall_multilevel_2020_2025.csv"
+        },
+        {
+          "@id": "data/scenario_trajectories_2025_2030.csv"
+        },
+        {
+          "@id": "data/peru_2025_anchor_ensemble.csv"
+        },
+        {
+          "@id": "data/parameter_elicitation_matrix.csv"
+        },
+        {
+          "@id": "data/base_integral_democracia_2020_2030_v2.xlsx"
+        },
+        {
+          "@id": "docs/FASE_8_PRISMA.md"
+        },
+        {
+          "@id": "data/prisma_phase8/phase8_manifest.json"
+        },
+        {
+          "@id": "data/prisma_phase8/Bibliografia_Incluida_Visor_Democracia_Fulltext_Final_29.ris"
+        },
+        {
+          "@id": "LICENSE_POLICY.md"
+        }
       ]
     },
     {
@@ -35,8 +78,12 @@
       "name": "Magdiel Torres Vanegas",
       "url": "https://vanegas-magdiel.estudiosaxial.com/",
       "affiliation": [
-        {"@id": "#unt-epg"},
-        {"@id": "https://estudiosaxial.com/"}
+        {
+          "@id": "#unt-epg"
+        },
+        {
+          "@id": "https://estudiosaxial.com/"
+        }
       ]
     },
     {
@@ -53,40 +100,94 @@
       "@id": "app.py",
       "@type": "File",
       "encodingFormat": "text/x-python",
-      "license": {"@id": "https://spdx.org/licenses/MIT.html"}
+      "license": {
+        "@id": "https://spdx.org/licenses/MIT.html"
+      }
     },
     {
       "@id": "docs/index.html",
       "@type": "File",
       "encodingFormat": "text/html",
       "license": [
-        {"@id": "https://spdx.org/licenses/MIT.html"},
-        {"@id": "https://creativecommons.org/licenses/by/4.0/"}
+        {
+          "@id": "https://spdx.org/licenses/MIT.html"
+        },
+        {
+          "@id": "https://creativecommons.org/licenses/by/4.0/"
+        }
       ]
     },
     {
       "@id": "docs/METODOLOGIA.md",
       "@type": "File",
       "encodingFormat": "text/markdown",
-      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"}
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
     },
     {
       "@id": "data/overall_multilevel_2020_2025.csv",
       "@type": "File",
       "encodingFormat": "text/csv",
-      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"}
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "@id": "data/peru_2025_anchor_ensemble.csv",
+      "@type": "File",
+      "encodingFormat": "text/csv",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "@id": "data/parameter_elicitation_matrix.csv",
+      "@type": "File",
+      "encodingFormat": "text/csv",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
     },
     {
       "@id": "data/scenario_trajectories_2025_2030.csv",
       "@type": "File",
       "encodingFormat": "text/csv",
-      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"}
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
     },
     {
       "@id": "data/base_integral_democracia_2020_2030_v2.xlsx",
       "@type": "File",
       "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-      "license": {"@id": "https://creativecommons.org/licenses/by/4.0/"}
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "@id": "docs/FASE_8_PRISMA.md",
+      "@type": "File",
+      "encodingFormat": "text/markdown",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "@id": "data/prisma_phase8/phase8_manifest.json",
+      "@type": "File",
+      "encodingFormat": "application/json",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    },
+    {
+      "@id": "data/prisma_phase8/Bibliografia_Incluida_Visor_Democracia_Fulltext_Final_29.ris",
+      "@type": "File",
+      "encodingFormat": "application/x-research-info-systems",
+      "license": {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
     },
     {
       "@id": "LICENSE_POLICY.md",

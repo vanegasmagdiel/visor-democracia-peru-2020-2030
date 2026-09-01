@@ -1,19 +1,19 @@
-scenario_id,scenario_name,year,Proceso electoral y pluralismo,Funcionamiento del gobierno,Participación política,Cultura política,Libertades civiles,overall_score,phase,regime_type
-recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,2025,8.88,6.03,5.07,3.0,6.42,5.88,anchor_observed_overall_modeled_categories,Hybrid regime
-recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,2026,9.0,6.15,5.15,3.15,6.47,5.984,post_election_shock,Hybrid regime
-recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,2027,9.04,6.25,5.21,3.25,6.52,6.054,structural_projection,Flawed democracy
-recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,2028,9.076,6.34,5.264,3.34,6.565,6.117,structural_projection,Flawed democracy
-recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,2029,9.108,6.42,5.312,3.42,6.605,6.173,structural_projection,Flawed democracy
-recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,2030,9.136,6.49,5.354,3.49,6.64,6.222,structural_projection,Flawed democracy
-continuidad_hibrida,Continuidad híbrida y estabilización competitiva,2025,8.88,6.03,5.07,3.0,6.42,5.88,anchor_observed_overall_modeled_categories,Hybrid regime
-continuidad_hibrida,Continuidad híbrida y estabilización competitiva,2026,8.96,5.97,5.13,2.9,6.34,5.86,post_election_shock,Hybrid regime
-continuidad_hibrida,Continuidad híbrida y estabilización competitiva,2027,8.96,5.98,5.15,2.9,6.33,5.864,structural_projection,Hybrid regime
-continuidad_hibrida,Continuidad híbrida y estabilización competitiva,2028,8.96,5.989,5.168,2.9,6.321,5.868,structural_projection,Hybrid regime
-continuidad_hibrida,Continuidad híbrida y estabilización competitiva,2029,8.96,5.997,5.184,2.9,6.313,5.871,structural_projection,Hybrid regime
-continuidad_hibrida,Continuidad híbrida y estabilización competitiva,2030,8.96,6.004,5.198,2.9,6.306,5.874,structural_projection,Hybrid regime
-deriva_restrictiva,Deriva restrictiva y securitización,2025,8.88,6.03,5.07,3.0,6.42,5.88,anchor_observed_overall_modeled_categories,Hybrid regime
-deriva_restrictiva,Deriva restrictiva y securitización,2026,8.8,5.83,5.02,2.75,6.14,5.708,post_election_shock,Hybrid regime
-deriva_restrictiva,Deriva restrictiva y securitización,2027,8.76,5.7,4.95,2.62,5.98,5.602,structural_projection,Hybrid regime
-deriva_restrictiva,Deriva restrictiva y securitización,2028,8.724,5.583,4.887,2.503,5.836,5.507,structural_projection,Hybrid regime
-deriva_restrictiva,Deriva restrictiva y securitización,2029,8.692,5.479,4.831,2.399,5.708,5.422,structural_projection,Hybrid regime
-deriva_restrictiva,Deriva restrictiva y securitización,2030,8.664,5.388,4.782,2.308,5.596,5.348,structural_projection,Hybrid regime
+scenario_id,scenario_name,year,Proceso electoral y pluralismo,Funcionamiento del gobierno,Participación política,Cultura política,Libertades civiles,overall_score,phase,data_status,regime_type
+recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,2025,8.88,6.03,5.07,3.0,6.42,5.88,modeled_latent_central,modeled_latent_central,Hybrid regime
+recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,2026,9.0,6.15,5.15,3.15,6.47,5.984,post_election_shock,simulated_scenario,Hybrid regime
+recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,2027,9.04,6.25,5.21,3.25,6.52,6.054,structural_projection,simulated_scenario,Flawed democracy
+recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,2028,9.076,6.34,5.264,3.34,6.565,6.117,structural_projection,simulated_scenario,Flawed democracy
+recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,2029,9.108,6.42,5.312,3.42,6.605,6.173,structural_projection,simulated_scenario,Flawed democracy
+recuperacion_institucional,Recuperación institucional y gobernabilidad negociada,2030,9.136,6.49,5.354,3.49,6.64,6.222,structural_projection,simulated_scenario,Flawed democracy
+continuidad_hibrida,Continuidad híbrida y estabilización competitiva,2025,8.88,6.03,5.07,3.0,6.42,5.88,modeled_latent_central,modeled_latent_central,Hybrid regime
+continuidad_hibrida,Continuidad híbrida y estabilización competitiva,2026,8.96,5.97,5.13,2.9,6.34,5.86,post_election_shock,simulated_scenario,Hybrid regime
+continuidad_hibrida,Continuidad híbrida y estabilización competitiva,2027,8.96,5.98,5.15,2.9,6.33,5.864,structural_projection,simulated_scenario,Hybrid regime
+continuidad_hibrida,Continuidad híbrida y estabilización competitiva,2028,8.96,5.989,5.168,2.9,6.321,5.868,structural_projection,simulated_scenario,Hybrid regime
+continuidad_hibrida,Continuidad híbrida y estabilización competitiva,2029,8.96,5.997,5.184,2.9,6.313,5.871,structural_projection,simulated_scenario,Hybrid regime
+continuidad_hibrida,Continuidad híbrida y estabilización competitiva,2030,8.96,6.004,5.198,2.9,6.306,5.874,structural_projection,simulated_scenario,Hybrid regime
+deriva_restrictiva,Deriva restrictiva y securitización,2025,8.88,6.03,5.07,3.0,6.42,5.88,modeled_latent_central,modeled_latent_central,Hybrid regime
+deriva_restrictiva,Deriva restrictiva y securitización,2026,8.8,5.83,5.02,2.75,6.14,5.708,post_election_shock,simulated_scenario,Hybrid regime
+deriva_restrictiva,Deriva restrictiva y securitización,2027,8.76,5.7,4.95,2.62,5.98,5.602,structural_projection,simulated_scenario,Hybrid regime
+deriva_restrictiva,Deriva restrictiva y securitización,2028,8.724,5.583,4.887,2.503,5.836,5.507,structural_projection,simulated_scenario,Hybrid regime
+deriva_restrictiva,Deriva restrictiva y securitización,2029,8.692,5.479,4.831,2.399,5.708,5.422,structural_projection,simulated_scenario,Hybrid regime
+deriva_restrictiva,Deriva restrictiva y securitización,2030,8.664,5.388,4.782,2.308,5.596,5.348,structural_projection,simulated_scenario,Hybrid regime

@@ -1,29 +1,48 @@
-# Integration map: legacy viewers → v2.0.0
+# Integration map — canonical v2.1.0 architecture
 
-## Historical viewer contribution
+## Historical layer
 
-Integrated into the **2020–2025 longitudinal layer**:
-- Peru / Latin America / world overall time series.
-- Five Democracy Index categories.
-- Regime-classification logic.
-- Gap and percentage-change calculations.
-- Source/provenance fields.
+- Peru / Latin America and Caribbean / world overall time series.
+- Five Democracy Index dimensions through the last published dimensional year.
+- Regime classification, score gaps and changes.
+- Source, location and epistemic-status fields.
 
-## Prospective viewer contribution
+## Scientific correction of the 2025 anchor
 
-Integrated into the **2026–2030 scenario layer**:
-- Category-level scenario mechanics.
-- Projection-to-overall aggregation.
-- Regime-classification output.
-- Prospect-analysis narrative and scenario comparison.
+- The aggregate `5.88` remains a secondary-reported value.
+- The unpublished dimensional composition is not treated as observed.
+- One central constrained vector and 10,000 latent alternatives are published.
+- Every alternative averages exactly `5.88` and remains inside documented
+  historical-volatility bounds.
 
-## v2.0.0 redesign decisions
+## Prospective layer
 
-- Two separate applications replaced by one Shiny application with distinct historical and prospective tabs.
-- Six legacy prospective variants reduced to three scenario families to improve interpretability and auditability.
-- A one-off 2026 post-election shock is separated from 2027–2030 structural rates.
-- Projection rates are damped through 2030 instead of using indefinite linear extrapolation.
-- Evidence-conditioned coefficients are stored in `data/scenario_coefficients.csv` rather than embedded only in UI logic.
-- Monte Carlo p10–p90 envelopes are treated as sensitivity bands, not occurrence probabilities.
-- Data status fields distinguish observed EIU values, secondary replication and modeled latent anchors.
-- Repository metadata, static viewer, reproducibility script, tests, hashes and DOI-ready metadata were added.
+- Three scenario families: institutional recovery, hybrid continuity and
+  restrictive drift.
+- Separate 2026 shock and 2027–2030 structural-rate mechanisms.
+- Thirty source-linked parameter judgements with central and plausible values.
+- Common-random-number sensitivity with the same residual law in all scenarios.
+- Aggregate and dimensional p10–p90 sensitivity envelopes.
+
+## Canonical Phase 8 evidence layer
+
+```text
+767 identified
+  → 648 screened
+  → 72 reports sought
+  → 42 retrieved and assessed
+  → 13 full-text exclusions
+  → 29 documents in the support corpus
+  → 30 reports not retrieved
+```
+
+This bibliographic layer remains separate from the scenario computation. A
+full-text record can affect an interpretive claim or parameter only after human
+eligibility, appraisal and an explicit analytical decision.
+
+## Product boundary
+
+The software/repository is autonomous. Manuscript status, journal submission,
+editorial forms and article acceptance are not release gates. A scientific
+article may later cite the stable software version by version DOI, Git commit
+and release checksum.

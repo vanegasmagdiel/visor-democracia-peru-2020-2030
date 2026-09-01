@@ -1,33 +1,32 @@
-# Publicación, preservación y DOI — ruta recomendada (verificada 2026-08-19)
+# GitHub, GitHub Pages, Zenodo and OSF — v2.1.0 policy
 
-## Ruta A — recomendada: GitHub + Zenodo
+## Persistent identifiers
 
-1. Subir esta carpeta a un repositorio GitHub.
-2. Activar GitHub Pages desde la rama principal y la carpeta `/docs`; `docs/index.html` ya es el punto de entrada estático.
-3. Conectar la cuenta GitHub con Zenodo y habilitar el repositorio en la integración de software.
-4. Crear una release GitHub `v2.0.0`. Zenodo puede archivar la release habilitada y generar el registro persistente.
-5. Zenodo asigna DOI al publicar el depósito. También permite reservar el DOI antes de publicar si se desea incorporarlo a metadatos/figuras.
-6. Actualizar `CITATION.cff`, `.zenodo.json`, `datacite.json`, `codemeta.json` y README con el DOI emitido.
+- Zenodo concept DOI: https://doi.org/10.5281/zenodo.22080540
+- Historical v2.0.0 DOI: https://doi.org/10.5281/zenodo.22080541
+- Repository: https://github.com/vanegasmagdiel/visor-democracia-peru-2020-2030
+- GitHub Pages: https://vanegasmagdiel.github.io/visor-democracia-peru-2020-2030/
 
-Documentación oficial:
-- Zenodo GitHub integration: https://help.zenodo.org/docs/github/
-- Archive GitHub release: https://help.zenodo.org/docs/github/archive-software/github-upload/
-- Reserve DOI: https://help.zenodo.org/docs/deposit/describe-records/reserve-doi/
-- GitHub Pages publishing source: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+The v2.1.0 version DOI must be accepted only after a verified, published GitHub Release has been ingested by Zenodo. It is never guessed or embedded before minting.
 
-## Ruta B — OSF
+## Candidate mode
 
-Para preservación académica, subir la release y metadatos a OSF o crear una **Registration** pública. La documentación vigente de OSF indica que los registros públicos reciben DOI. Mantener sincronizados título, autores, versión, licencia y recursos relacionados.
+Candidate publication is deliberately narrow:
 
-Documentación oficial:
-- OSF Registrations: https://help.osf.io/article/330-welcome-to-registrations
-- OSF metadata: https://help.osf.io/article/571-add-metadata-to-your-osf-registration
+1. verify the ZIP sidecar;
+2. rebuild and normalize deterministic outputs;
+3. run scientific, independence, hygiene, manifest and secret controls;
+4. create/update the candidate branch and draft PR;
+5. wait for the exact-head Linux + Windows CI workflow.
 
-## Recomendación de versionado
+Candidate mode does **not** modify `main`, tags, GitHub Releases, GitHub Pages, Zenodo or OSF.
 
-- Repositorio vivo: GitHub (`main`).
-- Versión citable: GitHub Release `v2.0.0` + Zenodo DOI de versión.
-- DOI conceptual: usarlo para citar el proyecto a través de versiones cuando Zenodo lo asigne.
-- Materiales/registro de investigación: OSF, enlazando el DOI de Zenodo cuando corresponda.
+## Final mode
 
-**Regla:** no escribir ni inventar un DOI antes de que Zenodo/OSF lo emita o lo reserve formalmente.
+Final mode requires the stable v2.1.0 package and repeats the full candidate validation. Before merge it verifies that the PR head is exactly the CI-tested SHA, that `main` has not moved, and that neither tag nor Release `v2.1.0` exists. After exact human confirmation it squash-merges, verifies candidate/final Git-tree identity, executes non-mutating post-merge checks, pushes an annotated tag, creates a draft Release, verifies both assets, then publishes the Release.
+
+This sequencing prevents an incomplete draft from activating Zenodo. Optional OSF synchronization occurs only after the GitHub Release is published.
+
+## Product independence
+
+No manuscript, journal, editorial form, article DOI or acceptance decision participates in Product B release gates. Scientific articles may later cite the stable version DOI, Git commit and release checksum.

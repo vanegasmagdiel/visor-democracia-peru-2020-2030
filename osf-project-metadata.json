@@ -1,0 +1,22 @@
+{
+  "title": "Protocolo y decisiones analíticas del Visor Integrado de Democracia del Perú 2020–2030",
+  "description": "Complemento documental opcional del software de investigación preservado en Zenodo. Reúne protocolo, decisiones analíticas, trazabilidad, elicitación de parámetros y la búsqueda bibliográfica estructurada PRISMA-S cerrada a texto completo. El objeto ejecutable y sus releases citables permanecen en GitHub y Zenodo.",
+  "category": "project",
+  "public": false,
+  "creator": {
+    "name": "Magdiel Torres Vanegas",
+    "orcid": "https://orcid.org/0000-0002-7913-214X",
+    "affiliation": "Universidad Nacional de Trujillo, Escuela de Posgrado – Unidad de Posgrado en Ciencias Económicas; Estudios Axial, Perú"
+  },
+  "related_identifiers": [
+    {
+      "relation": "IsSupplementTo",
+      "identifier": "https://doi.org/10.5281/zenodo.22080540"
+    },
+    {
+      "relation": "IsSupplementTo",
+      "identifier": "https://github.com/vanegasmagdiel/visor-democracia-peru-2020-2030"
+    }
+  ],
+  "version_policy": "OSF preserves protocol and non-executable decisions; Zenodo remains the primary archived software object."
+}

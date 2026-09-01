@@ -1,8 +1,8 @@
 {
   "project": "Visor Integrado de Democracia del Perú 2020–2030",
-  "version": "2.0.0",
-  "release_date": "2026-08-19",
-  "manifest_revision_date": "2026-08-24",
+  "version": "2.1.0",
+  "release_date": "2026-08-31",
+  "manifest_revision_date": "2026-08-31",
   "author": {
     "name": "Magdiel Torres Vanegas",
     "orcid": "https://orcid.org/0000-0002-7913-214X"
@@ -12,8 +12,8 @@
     "RELEASE_MANIFEST.json",
     "SHA256SUMS.txt"
   ],
-  "file_count": 52,
-  "total_bytes": 5012854,
+  "file_count": 115,
+  "total_bytes": 8357885,
   "files": [
     {
       "path": ".gitattributes",
@@ -22,8 +22,8 @@
     },
     {
       "path": ".github/workflows/tests.yml",
-      "bytes": 480,
-      "sha256": "71fdf8c27fb0c665c93fa342a7b9e151dff419ca05c661d4b947a1791638b472"
+      "bytes": 3100,
+      "sha256": "6d05f3a69badee235866fdc4737eec4fa079adeaf114734449c467e5a05ff8e2"
     },
     {
       "path": ".gitignore",
@@ -32,13 +32,13 @@
     },
     {
       "path": ".zenodo.json",
-      "bytes": 1046,
-      "sha256": "23b93fd3eddab2e2b9820a5ee2f531a210b578fa99cdfe51bfeef8f419137c57"
+      "bytes": 1295,
+      "sha256": "098a78e6c100c0f2feda2b574f42467e2ab697ef0e4594cee30900de88a24ca1"
     },
     {
       "path": "CITATION.cff",
-      "bytes": 1229,
-      "sha256": "daf0d2d3f56f48ffec5909baaf73e7ced3bf80a59247313468bf65ec43781682"
+      "bytes": 1634,
+      "sha256": "1213b65118901a9b5f4d691644ccbf177d839e20952d503a2475a4b99c69e4e3"
     },
     {
       "path": "Dockerfile",
@@ -57,68 +57,108 @@
     },
     {
       "path": "LICENSE_POLICY.md",
-      "bytes": 1793,
-      "sha256": "df0bb716e2fe80a85c104497fc353a3fc77530634412db5751f2d9437221b17e"
+      "bytes": 2640,
+      "sha256": "05c1828972cc652048be9e4c0d59ad1b948676571e9ad9a42d93b4691cb7d9d4"
+    },
+    {
+      "path": "PUBLICAR_VISOR_V2_1_0.bat",
+      "bytes": 1522,
+      "sha256": "76035a0aac3bde9555c5063ea07f842f324bdb7cf04071ce5205d6fa9bcec119"
     },
     {
       "path": "README.md",
-      "bytes": 4501,
-      "sha256": "b92ae986ed99167882125114400a39deb34daa47de4060dd747902b6757fe892"
+      "bytes": 7273,
+      "sha256": "39509b186e6f8e08f1ad042eed0d4c8caa60007986d9fae4715e2f08420cefe7"
+    },
+    {
+      "path": "RELEASE_GATE_STATUS.json",
+      "bytes": 1420,
+      "sha256": "1fe90fa6125552f7bed594d31c695d7ff21e5c4268c68591987caf6102d59d7d"
+    },
+    {
+      "path": "RELEASE_INDEPENDENCE_POLICY.md",
+      "bytes": 1187,
+      "sha256": "eeabc82680845ecde921c34d76830d947d181446599f56474912d79d82c3899b"
     },
     {
       "path": "RELEASE_NOTES.md",
-      "bytes": 1876,
-      "sha256": "3105735e5aed7e450c9ff4237cd5608b5959b92face5b02f4e7587945ebfa5b5"
+      "bytes": 1826,
+      "sha256": "8be91252f8c09a32f87856155d9d4d284b295cad1329e085bd22df19d508e875"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 1369,
-      "sha256": "da900a5533541ccc67d77521429a488ee66c65522fe597530cecc47ae44adad4"
+      "bytes": 1772,
+      "sha256": "f76415ec1421b1fce2e8ca788cf386a36ed1aaf91dc31c44b36edaafc0c0bb8e"
     },
     {
       "path": "VALIDATION_REPORT.md",
-      "bytes": 1928,
-      "sha256": "2f7e1412eb211f7b2b2a0744135f63e4bfe4ff607e02eb50684b6372591fa70b"
+      "bytes": 4133,
+      "sha256": "04bbdff9af14a1f60ef8535f26a4078e5949f7f217371878cefab4466a7ce4e4"
     },
     {
       "path": "app.py",
-      "bytes": 11263,
-      "sha256": "42013238e49933300cbbe7de16d305058d3d00307d0bd3792b71d3b4d6662c82"
+      "bytes": 12572,
+      "sha256": "1bac21f5c2ca1e33cb05a97bb425862e4c9c3f579a63cf342bfe616c85c86193"
     },
     {
       "path": "codemeta.json",
-      "bytes": 1619,
-      "sha256": "1228a10b55b53a007862e89758bf1862961f23bbc3a81c7c789a421eaf9153ac"
+      "bytes": 1811,
+      "sha256": "bc286924802073262b9d0e76db298e6d0746cd309bb408b655978d786e9358bc"
     },
     {
       "path": "data/LICENSE.md",
-      "bytes": 992,
-      "sha256": "1765df0f17e8bc3ece7ba5a5a7e078c38359ce57cfe8ef06460cafce3028a219"
+      "bytes": 1435,
+      "sha256": "881893618a55a0a62bf69fcd7fa7f961eb4d0c962638b84b3da2586d2b6d1a85"
     },
     {
       "path": "data/base_integral_democracia_2020_2030_v2.xlsx",
-      "bytes": 29486,
-      "sha256": "f58091ebe077041b86a9c4270ba0f2bd6665fb120b0f73aa0e1c7edce3ef3cae"
+      "bytes": 99663,
+      "sha256": "48c4d57a4924b3b59c03a221615ba9ab6827a720c866c68c9680413c2c20c2ac"
     },
     {
       "path": "data/categories_multilevel_2020_2025.csv",
-      "bytes": 8950,
-      "sha256": "971b0c51958f16b4fe43d45b4f1d0a4609cd36468bb600ad74da77db66739ab0"
+      "bytes": 9125,
+      "sha256": "9c6ca2bd56edef903e4a0075f142484f827ed4923e60b57b903041f265377747"
     },
     {
       "path": "data/data_dictionary.csv",
-      "bytes": 2822,
-      "sha256": "aacea20acaf94f4060b12ced28acd3520b5eec81656b39d772421cda41e37ab5"
+      "bytes": 13558,
+      "sha256": "5ae3f83442b9cb642c41f12c2e6b3e5a78224cd15556110a46770e29cafa0863"
+    },
+    {
+      "path": "data/data_status_registry.csv",
+      "bytes": 1218,
+      "sha256": "dc60ad6ff56ac504d932900bfd66461d265607a10e1a93fd564bbbf9f0e5c1c7"
+    },
+    {
+      "path": "data/model_config_v2_1.json",
+      "bytes": 872,
+      "sha256": "0897d40f1651d979b780585e6366ddb035c1b3320cea13846cd506659c49cdac"
     },
     {
       "path": "data/model_formulas_v2.csv",
-      "bytes": 945,
-      "sha256": "73e1394bd817b8a38dc79d3bd3ba63c711f8fa4d8f6baa139d159c8e24776923"
+      "bytes": 1427,
+      "sha256": "399903d0f3ea68ad397186c25ddf29559a87597d92486b580f3cf816f6fa5e9c"
     },
     {
       "path": "data/overall_multilevel_2020_2025.csv",
-      "bytes": 1941,
-      "sha256": "f894a767e129b540891c66e35535b5ef02b8980c3f1442cf2f7ecba7ef3925b9"
+      "bytes": 1905,
+      "sha256": "d3b5a52e36a522c66dc955168db51fb4e87f10dd0d0f078b549bf2587e736ff5"
+    },
+    {
+      "path": "data/parameter_elicitation_matrix.csv",
+      "bytes": 9535,
+      "sha256": "242839e8f3888115d2b466afdee14dbf73953d8c4322b1b65d9365e20a8a54a2"
+    },
+    {
+      "path": "data/peru_2025_anchor_ensemble.csv",
+      "bytes": 1319000,
+      "sha256": "c26b4b9fd2116875894ede538b14960c1275646105f094c48293b8d6a33e1fb2"
+    },
+    {
+      "path": "data/peru_2025_anchor_summary.csv",
+      "bytes": 1182,
+      "sha256": "2a6cc1ff3721dad98bc1c020ab8976f589b56d2899773ce79ffc465be9d930dd"
     },
     {
       "path": "data/peru_2025_category_calibration_audit.csv",
@@ -127,33 +167,108 @@
     },
     {
       "path": "data/post_election_evidence_2026.csv",
-      "bytes": 3408,
-      "sha256": "aa532e86d32b8824ace0c72009eddd497579c46c1c584211f1e2cef13e13cb5b"
+      "bytes": 3627,
+      "sha256": "76edccd6b5053abd624b46b38a2ec0698dfec2deb90f3b29425004540fe6eca4"
+    },
+    {
+      "path": "data/prisma_phase8/Bibliografia_Incluida_Visor_Democracia_Fulltext_Final_29.ris",
+      "bytes": 11947,
+      "sha256": "aaff6e643f7f25868ee47fcbe7807f15943a869f4c6241eed27e5b8a786f358f"
+    },
+    {
+      "path": "data/prisma_phase8/Libro_Analisis_PRISMA_Visor_Democracia_R4_3_5_Cierre_Fulltext.xlsx",
+      "bytes": 161452,
+      "sha256": "63aff87c15afc4db110c2e802fca992859c54be4e1d6535485b33e368a40f850"
+    },
+    {
+      "path": "data/prisma_phase8/README.md",
+      "bytes": 829,
+      "sha256": "6174dc61ff73445ef8258db4ac3b91305019a1d69e93b4d85bfff1ef6bcd84e0"
+    },
+    {
+      "path": "data/prisma_phase8/evidence_integration_map_29.csv",
+      "bytes": 12699,
+      "sha256": "f84d45e35df48f935c049b9676a717917a580c34d696585c88198b86373d87a4"
+    },
+    {
+      "path": "data/prisma_phase8/exclusion_reasons_3.csv",
+      "bytes": 203,
+      "sha256": "0944aa464491790a42cf24b11394e24e57d2dcfe689663b63e0ea543e3eec8e1"
+    },
+    {
+      "path": "data/prisma_phase8/fulltext_decisions_72.csv",
+      "bytes": 52790,
+      "sha256": "61949077bafd1e4079ebe3e5f19d235ed726da6d72335d231562baeb2ea32ae4"
+    },
+    {
+      "path": "data/prisma_phase8/fulltext_excluded_13.csv",
+      "bytes": 10436,
+      "sha256": "fb7d3c98f22198b3380c1959c1e906920184d0d7b2d3a9ef416199e8bce82780"
+    },
+    {
+      "path": "data/prisma_phase8/fulltext_included_29.csv",
+      "bytes": 23004,
+      "sha256": "405068cc4aa17980cac4fd5581131854cacb945286e9381855f6314c2fa1a26f"
+    },
+    {
+      "path": "data/prisma_phase8/fulltext_not_retrieved_30.csv",
+      "bytes": 20142,
+      "sha256": "8ba551a275c066442015bafd0b4e035330728dc99b23cad9a2eabd861f14584d"
+    },
+    {
+      "path": "data/prisma_phase8/phase8_fulltext_summary.json",
+      "bytes": 926,
+      "sha256": "55983cbe3664c6b98881eff172a79434dda5f10c8fad550a66342b0f005b62f0"
+    },
+    {
+      "path": "data/prisma_phase8/phase8_manifest.json",
+      "bytes": 1189,
+      "sha256": "afc1bf5b3f87ea401b6a7c9d52b1ba6358efc5e1dff712263cf9a408e7eacacd"
+    },
+    {
+      "path": "data/prisma_phase8/search_profiles_105.csv",
+      "bytes": 26558,
+      "sha256": "43bae5de4eb61ff677dcfca3544d50284d2791f0dd35af9fd2d9e324efd89cd0"
+    },
+    {
+      "path": "data/prisma_phase8/source_performance_7.csv",
+      "bytes": 600,
+      "sha256": "9894121dcd048210bfc8fc2103a87be2687d14ec8b1397a0ea6301e5b09da845"
     },
     {
       "path": "data/scenario_coefficients.csv",
-      "bytes": 2555,
-      "sha256": "4c23080d77ea24622ce2eb61d851f33f201019765f22fe81acb842edadfb8298"
+      "bytes": 2191,
+      "sha256": "00d5db39381c29cf4106219c0e7d7bb0348bfe3712043aa61e2d4a69cb14c8f0"
+    },
+    {
+      "path": "data/scenario_parameter_samples_summary.csv",
+      "bytes": 3593,
+      "sha256": "e07cf00569c4d421813f92fa518b8555a1ee4707731dd2b849d5328d5a75fdf4"
     },
     {
       "path": "data/scenario_sensitivity_bands.csv",
-      "bytes": 3844,
-      "sha256": "d2727343d4f92996ff9be4e05d946be903aa69502772538d292b767e761226b9"
+      "bytes": 4672,
+      "sha256": "5328ed38d6ea999f765d3233d662d9066f9074aacc9a76d801f683501255b51e"
+    },
+    {
+      "path": "data/scenario_sensitivity_by_category.csv",
+      "bytes": 8891,
+      "sha256": "73e1619e0981e58dd1c60344b11cbf465dbe263ee89e6cbe01a66a00d50dcfc2"
     },
     {
       "path": "data/scenario_summary_2030.csv",
-      "bytes": 1917,
-      "sha256": "f9601bb7d5d13a987b4baf0f29092b131163dd6298ab34541db497205242c07a"
+      "bytes": 2129,
+      "sha256": "808e2004ecc0458299c5cadc5fd8d4fedeeebcd22c4e79f72607d6e98d8f95b3"
     },
     {
       "path": "data/scenario_trajectories_2025_2030.csv",
-      "bytes": 2820,
-      "sha256": "660e077c4afa936457d03932c98dba5bf34b2fbb927d63f33933b9bb40ec4383"
+      "bytes": 3126,
+      "sha256": "18f06f561995e83a4f03b912f42c84834eb07497ea68a1086e79ba0a1f83ed0d"
     },
     {
       "path": "datacite.json",
-      "bytes": 1777,
-      "sha256": "3bc51dfa0e121f44794d09ae1e651033d416ded09854a3b499a7899c1f362279"
+      "bytes": 2002,
+      "sha256": "63c207ee05b207bb9e0b346e6c33dca503d59eb45b5e9d102a97fc3ce73f0ffd"
     },
     {
       "path": "docker-compose.yml",
@@ -166,14 +281,44 @@
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "path": "docs/AUDIT_CLOSURE_PHASES_1_7.md",
+      "bytes": 1689,
+      "sha256": "f37389654a63c9578477d9dd831c3df1b352d6eb16f3b0f85c10927b225f66a7"
+    },
+    {
       "path": "docs/CHANGELOG.md",
-      "bytes": 280,
-      "sha256": "68f2b928575fc3efe41f35c9d430ee94c8517b8ec0facf7a116db5ac4f423ada"
+      "bytes": 1142,
+      "sha256": "fe43b48c28e78ce35706c95eb9cfb535686791c9a7983e77c84622202d61f737"
+    },
+    {
+      "path": "docs/DECISION_LOG.md",
+      "bytes": 2769,
+      "sha256": "d801d4dec80a568aa9833fc439044e7f24f0bebf7f6ce7321137afad9e654288"
     },
     {
       "path": "docs/DOI_GITHUB_OSF_ZENODO.md",
-      "bytes": 2105,
-      "sha256": "01d311038c97cd4ec04be846da009f7e0b1db4a72f94a31b6def3e102ca84bb2"
+      "bytes": 1830,
+      "sha256": "00efbd14e0cb299b55dc73ab089039f94a2a6613c5d2f90c50723a926409317a"
+    },
+    {
+      "path": "docs/FASE_8_GATE.md",
+      "bytes": 1119,
+      "sha256": "732369785015a700ac052069faeeed2c2c122a13ba08ed8084ab0c81c8bfda1c"
+    },
+    {
+      "path": "docs/FASE_8_PRISMA.md",
+      "bytes": 5167,
+      "sha256": "1d2338247c9978f5a8dda987d4b63d6af889e82987e13a4fef3770e055afd341"
+    },
+    {
+      "path": "docs/FINAL_RELEASE_SLOT_GUARD.md",
+      "bytes": 564,
+      "sha256": "6a4587022626079ed30a6c62187406dafb2080d4ab8e2201ffdb1d995584da3f"
+    },
+    {
+      "path": "docs/INFORME_METODOLOGICO_PRISMA_FASE_8_CIERRE_FULLTEXT.md",
+      "bytes": 5167,
+      "sha256": "1d2338247c9978f5a8dda987d4b63d6af889e82987e13a4fef3770e055afd341"
     },
     {
       "path": "docs/INPUT_PROVENANCE.md",
@@ -187,93 +332,263 @@
     },
     {
       "path": "docs/INTEGRATION_MAP.md",
-      "bytes": 1443,
-      "sha256": "c3b81b36dfc62f0e31828ec359ab4febecba81cec86be0ec3f78cd9aaeb0b029"
+      "bytes": 1812,
+      "sha256": "043df3ba5a3d7ce6d1b9a9ff9d59a3ce0afbca3bba1a4362efe60cf196e7b497"
     },
     {
       "path": "docs/METODOLOGIA.md",
-      "bytes": 3069,
-      "sha256": "b71d286314b2a0014ff7b7374df2bfc292fc0544ebaf0e7b3f9ce30f5296c133"
+      "bytes": 7611,
+      "sha256": "36898269b06d327b0562ac28f3c29e6dd17bb29a5e2fcda56b3b254946da08be"
+    },
+    {
+      "path": "docs/OSF_COMPLEMENT.md",
+      "bytes": 1737,
+      "sha256": "8cc2b8a75365012047cd55e1ad782a0e717c17951861b14c5e0d6dd82ae3e676"
     },
     {
       "path": "docs/PROVENANCE.md",
-      "bytes": 1025,
-      "sha256": "0c5fcc927e639c635b7033512e4223bc289e2e61cd7326dc6a519b3c921438ad"
+      "bytes": 3426,
+      "sha256": "129a8a6aded1de9da660ff912fb1440e3949fe89430d0c31c8528fedd652200d"
+    },
+    {
+      "path": "docs/assets/figura_1_trayectoria_2020_2025.pdf",
+      "bytes": 18740,
+      "sha256": "49be8f3e838e05b151537ecd3a186ceb49cda0cf17f8ae5abacc54288bbd604f"
+    },
+    {
+      "path": "docs/assets/figura_1_trayectoria_2020_2025.png",
+      "bytes": 157988,
+      "sha256": "de35d3fe8e3743a8fabc5ef5af59b5847f2879ec97618f750a62ac77df344ae4"
+    },
+    {
+      "path": "docs/assets/figura_1_trayectoria_2020_2025.svg",
+      "bytes": 46506,
+      "sha256": "f4eba30232586da46d6c503cc1b43c84550fd829d4d66307574e0215b66ba0c7"
+    },
+    {
+      "path": "docs/assets/figura_2_dimensiones_ancla_2025.pdf",
+      "bytes": 30391,
+      "sha256": "43c71bd269b97b71055804d5d44af35f364c6a1285b298ecc140a05d0d952668"
+    },
+    {
+      "path": "docs/assets/figura_2_dimensiones_ancla_2025.png",
+      "bytes": 204843,
+      "sha256": "70ae5b9132c9f4fe6b5f400b2da33c23ad974a9282fe0e2212f94c36dab0749d"
+    },
+    {
+      "path": "docs/assets/figura_2_dimensiones_ancla_2025.svg",
+      "bytes": 85023,
+      "sha256": "bfda5f9eebc14d4b1c9f80dc2a51f124f33dccce88cd735a28aecd8278751af9"
+    },
+    {
+      "path": "docs/assets/figura_3_escenarios_2025_2030.pdf",
+      "bytes": 19272,
+      "sha256": "cbdbee3747c174cc73c734cca869e4a8d7a116901b098f6381bd37e0586c0869"
+    },
+    {
+      "path": "docs/assets/figura_3_escenarios_2025_2030.png",
+      "bytes": 211435,
+      "sha256": "677cd269e5d9c52fcde274ca4aef9a0dec41ce99261a70be1eabc513c22c317d"
+    },
+    {
+      "path": "docs/assets/figura_3_escenarios_2025_2030.svg",
+      "bytes": 50353,
+      "sha256": "96722d4b0e7934d2704bf1a4b904880fa8b0ab05b9c743e117f7e5d8fcb4637b"
+    },
+    {
+      "path": "docs/assets/figura_s1_prisma_fulltext_final.pdf",
+      "bytes": 34138,
+      "sha256": "22904a65039c4bc1f539a21d0add99a9ae6a2670575f514bf0c024aa983c54fa"
+    },
+    {
+      "path": "docs/assets/figura_s1_prisma_fulltext_final.png",
+      "bytes": 357628,
+      "sha256": "0ae2cfb8faca60d23316096c81b65ae3b0d967e879dea1af12a4a92908d70383"
+    },
+    {
+      "path": "docs/assets/figura_s1_prisma_fulltext_final.svg",
+      "bytes": 115601,
+      "sha256": "6992eb6285064bbe9d32819e4b644ba18db8b0e65f916bcdb371449dfd4d946e"
     },
     {
       "path": "docs/data/base_integral_democracia_2020_2030_v2.xlsx",
-      "bytes": 29486,
-      "sha256": "f58091ebe077041b86a9c4270ba0f2bd6665fb120b0f73aa0e1c7edce3ef3cae"
+      "bytes": 99663,
+      "sha256": "48c4d57a4924b3b59c03a221615ba9ab6827a720c866c68c9680413c2c20c2ac"
+    },
+    {
+      "path": "docs/data/data_status_registry.csv",
+      "bytes": 1218,
+      "sha256": "dc60ad6ff56ac504d932900bfd66461d265607a10e1a93fd564bbbf9f0e5c1c7"
     },
     {
       "path": "docs/data/overall_multilevel_2020_2025.csv",
-      "bytes": 1941,
-      "sha256": "f894a767e129b540891c66e35535b5ef02b8980c3f1442cf2f7ecba7ef3925b9"
+      "bytes": 1905,
+      "sha256": "d3b5a52e36a522c66dc955168db51fb4e87f10dd0d0f078b549bf2587e736ff5"
+    },
+    {
+      "path": "docs/data/peru_2025_anchor_summary.csv",
+      "bytes": 1182,
+      "sha256": "2a6cc1ff3721dad98bc1c020ab8976f589b56d2899773ce79ffc465be9d930dd"
+    },
+    {
+      "path": "docs/data/scenario_sensitivity_bands.csv",
+      "bytes": 4672,
+      "sha256": "5328ed38d6ea999f765d3233d662d9066f9074aacc9a76d801f683501255b51e"
     },
     {
       "path": "docs/data/scenario_trajectories_2025_2030.csv",
-      "bytes": 2820,
-      "sha256": "660e077c4afa936457d03932c98dba5bf34b2fbb927d63f33933b9bb40ec4383"
+      "bytes": 3126,
+      "sha256": "18f06f561995e83a4f03b912f42c84834eb07497ea68a1086e79ba0a1f83ed0d"
     },
     {
       "path": "docs/index.html",
-      "bytes": 4859818,
-      "sha256": "7c91959c66a5863d980cd0ee023d4514cf754f535f8a1aee0db9a7304fc66784"
+      "bytes": 4882889,
+      "sha256": "d7fca8aa6d547fe17c53fb4713e639858c4a0d36dd239034c21cf5a7caf3df9f"
+    },
+    {
+      "path": "osf-project-metadata.json",
+      "bytes": 1160,
+      "sha256": "e1a3ee3a630fb83bd25505442c28b6987bf6c59dc46b4f8b1be752b87b6837dc"
     },
     {
       "path": "pyproject.toml",
-      "bytes": 327,
-      "sha256": "61c53aa6282490d0cddfe7486aa904b999adf622ec32fe24a98df84f43163a9d"
+      "bytes": 342,
+      "sha256": "4277e7ac124ad83fe710538a99d4bf00b38fe13676487c56a6ec01b87e540e89"
+    },
+    {
+      "path": "requirements-lock.txt",
+      "bytes": 1137,
+      "sha256": "f0865534ffb5976b6d747816050ab97a32c148509436377cdbe2568b1558ce2f"
     },
     {
       "path": "requirements.txt",
-      "bytes": 77,
-      "sha256": "d4a4e74ae5bd1237582022ab7725fd3a91f33380a812c1c59c17a5b3f53f4ae9"
+      "bytes": 88,
+      "sha256": "5b7905cc93450ec24abdb6594147edd5825908ac1582c49b4a29975503c40251"
     },
     {
       "path": "ro-crate-metadata.json",
-      "bytes": 3310,
-      "sha256": "1e1c11b911cb98f003a000c82b417cda6ec2752334545d155a520d299fab8ae2"
+      "bytes": 5332,
+      "sha256": "831bb8ac2afb1f4556abe91f8014a4fca65ae3349311554df32b02a15cf43c6f"
     },
     {
       "path": "run_here.bat",
-      "bytes": 192,
-      "sha256": "fcd7ee4c72ca23181dbd59f81df7c70f854b0162633430e2193319d44990cdb9"
+      "bytes": 228,
+      "sha256": "46903c41db16d47d96180eef10b497afc9bdc9086b4b5b2a6c40eb33a4456f44"
     },
     {
       "path": "run_here.ps1",
-      "bytes": 196,
-      "sha256": "abfa6f9a16951e7d906bf6314cb2d714cfdb7369d1925433c153aa1c2f84ca39"
+      "bytes": 232,
+      "sha256": "7fe5f1fa133ab473747bbad7d3f22dffa3a0afd412f4f4b4de21e3b33a3379e7"
     },
     {
       "path": "run_here.sh",
-      "bytes": 209,
-      "sha256": "25f412ce7984c02abad31468b6fc1c1a7adfba3c5dd2f148369fe80436a22138"
+      "bytes": 242,
+      "sha256": "2e59d093a45920c0945f387354d3a1ad150861d74e4b52780a40a6cf1ee9ec76"
+    },
+    {
+      "path": "runtime-lock.json",
+      "bytes": 309,
+      "sha256": "fc5922c2eb31692f95d24386466bba1bd5acb1fcb3866f906892a8708325cdc5"
+    },
+    {
+      "path": "scripts/audit_release_hygiene.py",
+      "bytes": 1997,
+      "sha256": "4fde2cf317f0bbe056d2eda6ce849346a76bddb62814e43f325058e5cb7d8934"
+    },
+    {
+      "path": "scripts/audit_release_independence.py",
+      "bytes": 2828,
+      "sha256": "b8ef0b093ea8dda7916e357b89f09d49b62cc2ab8d7a15c4e1ed944668084b1e"
+    },
+    {
+      "path": "scripts/build_data_dictionary.py",
+      "bytes": 4752,
+      "sha256": "bc38b031d94691f945179fdd8800eb0441bbb3acbbfd6dbc77f0c2a3bec55335"
+    },
+    {
+      "path": "scripts/build_prisma_fulltext_figure.py",
+      "bytes": 4356,
+      "sha256": "05425e40264cc4f45ba95c47a87e66b4017762b3433c4009d09ce4510f0fb627"
     },
     {
       "path": "scripts/build_release_manifest.py",
-      "bytes": 3063,
-      "sha256": "fb8aef8f34f1f03e1ce9bb46ed4be2192f411507ab235b91e09db199a18696d7"
+      "bytes": 4055,
+      "sha256": "2a8846766798b1baa9296bcb626d9250ddfe1f76f5eba2649961c106adc41995"
+    },
+    {
+      "path": "scripts/build_static_viewer.py",
+      "bytes": 9176,
+      "sha256": "8e7ecc0898f2520094cfb30e47919742877fca4dd52a116ef565654de7e2143e"
+    },
+    {
+      "path": "scripts/check_git_clean.py",
+      "bytes": 663,
+      "sha256": "233d213a5ab60ef3a58a9264c5ac1b448bb2957468fc4ba1148a7aa35cd14e9f"
+    },
+    {
+      "path": "scripts/check_windows_publisher.py",
+      "bytes": 7449,
+      "sha256": "a7c20ef963ed7a01930f7c6a30a88f1513cdb5a510173b4caf1348d044428b9f"
+    },
+    {
+      "path": "scripts/clean_runtime_artifacts.py",
+      "bytes": 982,
+      "sha256": "f98c262b849f465b44867a8d9dee1f438dedccee4f70572d58a396f020a4c438"
+    },
+    {
+      "path": "scripts/normalize_release_text.py",
+      "bytes": 1410,
+      "sha256": "eaae5a7db3b6bb5dcc9a968b3e70a80cbbce5789808f0ece2bb425b8a0ac37bd"
     },
     {
       "path": "scripts/preflight_check.py",
-      "bytes": 1459,
-      "sha256": "ee9c5718703418524fd69ab1f0262671e987ed03138753ceaea1f888895c6e99"
+      "bytes": 5753,
+      "sha256": "57d6b915baea41317ee8c9a373ec348600f7e74253c82ea7fe5532f55395cd8b"
+    },
+    {
+      "path": "scripts/publish_release.ps1",
+      "bytes": 43651,
+      "sha256": "bb2e5baeccb7c069600c33de07bd81f33a0f1c737bf9a55869421a734bacab30"
     },
     {
       "path": "scripts/rebuild_scenarios.py",
-      "bytes": 5603,
-      "sha256": "3bb18535245790e6439115f197709d5fdc6d262ce1c80995e83c28e65e27b938"
+      "bytes": 14761,
+      "sha256": "b8aa75b8676dd977b4da0691430361786d7c82b628c6539c022286005dc890d6"
+    },
+    {
+      "path": "scripts/resolve_ci_run.ps1",
+      "bytes": 2447,
+      "sha256": "b1d01bc26f0b65cb4debf2b99c1b6964d36ff9807603a11cffcf2127b3bc3749"
+    },
+    {
+      "path": "scripts/secret_scan.py",
+      "bytes": 1854,
+      "sha256": "c82da4a439bd63236908b3dc4cb10ee52639255ead15c21aabfee9e5e39b0660"
+    },
+    {
+      "path": "scripts/sync_public_data.py",
+      "bytes": 745,
+      "sha256": "72ee4d64649d37e1e3a1b44cd309b43662480947d73413a77da699e76f97a5f2"
+    },
+    {
+      "path": "scripts/validate_phase8.py",
+      "bytes": 2725,
+      "sha256": "23d0c46380d8c9361d0dab74b734a82b1be9960e5f097d3ca4d553b332b57caf"
     },
     {
       "path": "tests/test_model.py",
-      "bytes": 874,
-      "sha256": "a2210b72c64abeac31479e00ef7304c51354bbdf80033fcf37faabe173e3aa42"
+      "bytes": 3635,
+      "sha256": "e4aba8a8a30d6813071b6da03d2fc7bb7f2c14777448b2035baa10dce096cfe4"
+    },
+    {
+      "path": "tests/test_phase8.py",
+      "bytes": 817,
+      "sha256": "fb963fa7756b5076d7038095093d8286a384d4f951b7a5b9dd2653417d41477f"
     },
     {
       "path": "tests/test_static_integrity.py",
-      "bytes": 2406,
-      "sha256": "5c6b0caf35bb79e9a3addf8a6df899721a70e893b407619d8a730fa7378e4eb9"
+      "bytes": 15452,
+      "sha256": "c9831798693daaf0a69ec442e628debbd52d7e0903f904465841f7d9557574fb"
     }
   ]
 }
