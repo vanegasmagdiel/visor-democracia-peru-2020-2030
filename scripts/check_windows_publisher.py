@@ -72,6 +72,9 @@ def validate() -> list[str]:
         'gh" -Arguments @("auth", "setup-git", "--hostname", "github.com")',
         '$env:GIT_TERMINAL_PROMPT = "0"',
         'https://github.com/$Repo.git',
+        '@("pr", "list", "--repo", $Repo, "--head", $CandidateBranch, "--state", "open", "--json", "url")',
+        '$ParsedPrItems = $PrListJson | ConvertFrom-Json',
+        '$PrUrl = [string]$PrItems[0].url',
     ]
     for token in required_ps:
         if token not in ps:
@@ -85,6 +88,8 @@ def validate() -> list[str]:
     for token in prohibited:
         if token.lower() in ps.lower():
             errors.append(f"PowerShell publisher contains prohibited token: {token}")
+    if '.[0].url // \\"\\"' in ps or '"--state", "all", "--json", "url", "--jq"' in ps:
+        errors.append("PowerShell PR lookup contains the legacy jq/backslash quoting pattern")
     if ps.index('if ($PublishRelease)') > ps.index('gh" -Arguments @("release", "create"'):
         errors.append("GitHub release call is not located after the explicit final gate")
     release_create = ps.index('gh" -Arguments @("release", "create"')

@@ -12,8 +12,8 @@
     "RELEASE_MANIFEST.json",
     "SHA256SUMS.txt"
   ],
-  "file_count": 125,
-  "total_bytes": 11937252,
+  "file_count": 127,
+  "total_bytes": 11940218,
   "files": [
     {
       "path": ".gitattributes",
@@ -66,9 +66,19 @@
       "sha256": "21e13dd16e79cf90241826ae7abd24a06ac551fa4ea873a4addaa959e432960c"
     },
     {
+      "path": "POWERSHELL_PR_PARSER_HOTFIX_2026-08-31.md",
+      "bytes": 1034,
+      "sha256": "193cb9cd3db4ae493e9be5d4f567697f288c8672685113f3d12286d59f455661"
+    },
+    {
       "path": "PRE_RELEASE_FIXES_2026-08-31.md",
       "bytes": 820,
       "sha256": "96365b6feb49e88f1735646c521f4d2c8fef07d1331c68d1c7390218343e0ffc"
+    },
+    {
+      "path": "PR_LOOKUP_HOTFIX_2026-08-31.md",
+      "bytes": 924,
+      "sha256": "bb7cda0f37555ab1b65f20121398ddf170fd18c5064062a8a8bfa72019f88aa4"
     },
     {
       "path": "PUBLICAR_VISOR_V2_1_0.bat",
@@ -592,8 +602,8 @@
     },
     {
       "path": "scripts/check_windows_publisher.py",
-      "bytes": 4906,
-      "sha256": "1aba3f585f3f1cd3659ffb0e10c7a75d34eeeaf6e8b2170801df69327bc23c6a"
+      "bytes": 5300,
+      "sha256": "5c99b28dc0f6c9deb2a6abbcad4e562d1a8e6d66fd9834a310e3fd3449b1d911"
     },
     {
       "path": "scripts/preflight_check.py",
@@ -602,8 +612,8 @@
     },
     {
       "path": "scripts/publish_release.ps1",
-      "bytes": 27424,
-      "sha256": "193bfe2a64f6afd0216f07c8d0d2bef15ea05b5dc34cb1596295284777c9f72e"
+      "bytes": 28038,
+      "sha256": "3646c6dab7cea139870e49fd7073de4c95950d3e04a146007dcedc4168b2a937"
     },
     {
       "path": "scripts/rebuild_scenarios.py",

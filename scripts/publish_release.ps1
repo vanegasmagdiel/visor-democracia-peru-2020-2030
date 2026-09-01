@@ -428,7 +428,24 @@ This mode is intentionally local and non-destructive.
     $CommitSha = Invoke-Capture -File "git" -Arguments @("rev-parse", "HEAD") -WorkingDirectory $CloneRoot
     Write-Ok "Commit GitHub: $CommitSha"
 
-    $PrUrl = Invoke-Capture -File "gh" -Arguments @("pr", "view", $CandidateBranch, "--repo", $Repo, "--json", "url", "--jq", ".url")
+    # `gh pr view <branch>` exits non-zero when no PR exists. Under strict/native-error
+    # settings that can abort the transaction before the create path is reached.
+    # `gh pr list` is intentionally used here because "no matches" is a normal empty
+    # result with exit code 0.
+    $PrListJson = Invoke-Capture -File "gh" -Arguments @("pr", "list", "--repo", $Repo, "--head", $CandidateBranch, "--state", "open", "--json", "url")
+    $PrItems = @()
+    if ($PrListJson) {
+        $ParsedPrItems = $PrListJson | ConvertFrom-Json
+        if ($null -ne $ParsedPrItems) {
+            $PrItems = @($ParsedPrItems)
+        }
+    }
+    if ($PrItems.Count -gt 0) {
+        $PrUrl = [string]$PrItems[0].url
+    }
+    else {
+        $PrUrl = ""
+    }
     if (-not $PrUrl) {
         $PrBody = @"
 Candidate scientific-software package for v2.1.0.
