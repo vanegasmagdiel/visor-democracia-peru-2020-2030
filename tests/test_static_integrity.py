@@ -52,9 +52,9 @@ def test_identity_metadata():
     assert codemeta['author'][0]['@id'].endswith(ORCID)
     assert codemeta['codeRepository'] == REPOSITORY
     assert datacite['creators'][0]['nameIdentifiers'][0]['nameIdentifier'].endswith(ORCID)
-    assert zenodo['version'].startswith('2.1.0')
-    assert codemeta['version'].startswith('2.1.0')
-    assert datacite['version'].startswith('2.1.0')
+    assert zenodo['version'].startswith('2.1.1')
+    assert codemeta['version'].startswith('2.1.1')
+    assert datacite['version'].startswith('2.1.1')
 
 
 def test_evidence_method_metadata_is_correct():

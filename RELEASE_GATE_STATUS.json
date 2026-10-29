@@ -1,9 +1,9 @@
 {
   "schema": "visor-release-gate-2.0",
-  "evaluated_at": "2026-08-31",
+  "evaluated_at": "2026-10-28",
   "product": "research_software_and_evidence",
   "gates": {
-    "GO_RELEASE_V2.1.0_TECHNICAL": true
+    "GO_RELEASE_V2.1.1_LOCAL_VALIDATION": true
   },
   "release_gate_requires": [
     "dependency_lock_pass",
@@ -37,7 +37,7 @@
     "osf_sync_required"
   ],
   "technical_eligibility": "PASS",
-  "external_execution_state": "CANDIDATE_PR_CI_REVALIDATION_REQUIRED",
+  "external_execution_state": "AUTHORIZED_PENDING_EXACT_COMMIT_CI",
   "note": "Product B is autonomous. Final release requires exact-commit cross-platform CI, fail-closed slot verification, draft-asset SHA-256 roundtrip, exact PR head/base, and explicit human approval; OSF is optional and post-release.",
-  "release_version": "2.1.0"
+  "release_version": "2.1.1"
 }

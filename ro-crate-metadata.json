@@ -19,8 +19,8 @@
       ],
       "name": "Visor Integrado de Democracia del Perú 2020–2030",
       "description": "Visor reproducible de la serie democrática 2020–2025 y tres escenarios prospectivos para el Perú al 2030.",
-      "version": "2.1.0",
-      "datePublished": "2026-08-31",
+      "version": "2.1.1",
+      "datePublished": "2026-10-29",
       "identifier": "https://doi.org/10.5281/zenodo.22080540",
       "license": {
         "@id": "https://spdx.org/licenses/MIT.html"
