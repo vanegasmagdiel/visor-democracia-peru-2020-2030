@@ -13,7 +13,7 @@
     "SHA256SUMS.txt"
   ],
   "file_count": 162,
-  "total_bytes": 12330374,
+  "total_bytes": 12331058,
   "files": [
     {
       "path": ".gitattributes",
@@ -777,8 +777,8 @@
     },
     {
       "path": "scripts/validate_portal.py",
-      "bytes": 3319,
-      "sha256": "a2221b0bebfc5fa92561655a13484208e8786e13708210d17bbe17d5bcef6274"
+      "bytes": 3367,
+      "sha256": "65eca578e1286d2b0f2759cf5c443ba7b49bd933fc7d8a345c6ae8cd3c9f5661"
     },
     {
       "path": "templates/article_references.json",
@@ -817,8 +817,8 @@
     },
     {
       "path": "tests/test_portal_v211.py",
-      "bytes": 1574,
-      "sha256": "6661a0648e3ae2bd734734e965c04156867ffaab1de659dd7daa565dd9bf0fc5"
+      "bytes": 2210,
+      "sha256": "5ee2cc10a029c25b25ca6a69c49b6cf603de0be1cdc8ec212fd772fd6a380aee"
     },
     {
       "path": "tests/test_static_integrity.py",

@@ -29,3 +29,17 @@ def test_approved_header_and_publication_contract():
     assert "'draft':True" in publisher and "'draft':False" in publisher
     assert 'draft asset failed SHA-256 round trip' in publisher
     assert 'remove_header' in publisher
+
+
+def test_portal_validator_is_independent_of_windows_default_encoding():
+    from unittest.mock import patch
+    path=ROOT/'scripts/validate_portal.py'
+    spec=importlib.util.spec_from_file_location('portal_with_windows_default',path)
+    module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+    original=Path.read_text
+    def windows_default(self,*args,**kwargs):
+        if not args and kwargs.get('encoding') is None:
+            kwargs['encoding']='cp1252'
+        return original(self,*args,**kwargs)
+    with patch.object(Path,'read_text',windows_default):
+        assert module.run()['result']=='PASS'

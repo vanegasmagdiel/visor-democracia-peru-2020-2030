@@ -13,7 +13,7 @@ ROOT=Path(__file__).resolve().parents[1]
 DOCS=ROOT/'docs'
 
 def run():
-    manifest=json.loads((DOCS/'manifest.json').read_text())
+    manifest=json.loads((DOCS/'manifest.json').read_text(encoding='utf-8'))
     checked=[]
     for item in manifest['files']:
         p=DOCS/item['path']
@@ -29,7 +29,7 @@ def run():
             if p.is_file():
                 assert p.read_bytes()==z.read('base_cientifica_v210/'+p.relative_to(DOCS).as_posix()),str(p)
                 canonical.append(p.relative_to(DOCS).as_posix())
-    text=(DOCS/'index.html').read_text()
+    text=(DOCS/'index.html').read_text(encoding='utf-8')
     payload=json.loads(re.search(r'<script id="portal-data" type="application/json">(.*?)</script>',text,re.S)[1])
     for key,path in {'overall':'overall_multilevel_2020_2025.csv','categories':'categories_multilevel_2020_2025.csv','anchor':'peru_2025_anchor_summary.csv','bands':'scenario_sensitivity_bands.csv','bycat':'scenario_sensitivity_by_category.csv','summary':'scenario_summary_2030.csv','parameters':'parameter_elicitation_matrix.csv','evidence':'prisma_phase8/evidence_integration_map_29.csv','fulltext':'prisma_phase8/fulltext_included_29.csv'}.items():
         with (DOCS/'data'/path).open(encoding='utf-8-sig') as f:
@@ -42,7 +42,7 @@ def run():
             if 'id' in a:self.ids.append(a['id'])
     links=[]
     for p in DOCS.glob('*.html'):
-        parser=Links();parser.feed(p.read_text())
+        parser=Links();parser.feed(p.read_text(encoding='utf-8'))
         assert len(parser.ids)==len(set(parser.ids)),p.name
         for href in parser.hrefs:
             if re.match(r'^[a-z]+:',href):continue
