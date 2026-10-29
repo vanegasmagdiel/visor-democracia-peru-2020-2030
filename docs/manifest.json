@@ -1,0 +1,305 @@
+{
+  "portal_version": "2.1.1",
+  "status": "candidate_not_published",
+  "scientific_version": "2.1.0",
+  "scientific_commit": "4ee5ebfd5120528900c275a5464c01963fe67f3b",
+  "scientific_doi": "10.5281/zenodo.22223983",
+  "new_version_doi": null,
+  "created_local_date": "2026-10-28",
+  "files": [
+    {
+      "path": "FASE_8_PRISMA.md",
+      "description": "Protocolo de búsqueda y trazabilidad PRISMA-S",
+      "bytes": 5167,
+      "sha256": "1d2338247c9978f5a8dda987d4b63d6af889e82987e13a4fef3770e055afd341",
+      "type": "MD"
+    },
+    {
+      "path": "LICENSE_POLICY.md",
+      "description": "Política de licencias por capa",
+      "bytes": 2640,
+      "sha256": "05c1828972cc652048be9e4c0d59ad1b948676571e9ad9a42d93b4691cb7d9d4",
+      "type": "MD"
+    },
+    {
+      "path": "METODOLOGIA.md",
+      "description": "Metodología científica canónica v2.1.0",
+      "bytes": 7611,
+      "sha256": "36898269b06d327b0562ac28f3c29e6dd17bb29a5e2fcda56b3b254946da08be",
+      "type": "MD"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "description": "Reconocimiento de fuentes de terceros",
+      "bytes": 1772,
+      "sha256": "f76415ec1421b1fce2e8ca788cf386a36ed1aaf91dc31c44b36edaafc0c0bb8e",
+      "type": "MD"
+    },
+    {
+      "path": "assets/figura_1_trayectoria_2020_2025.pdf",
+      "description": "Figura científica: figura 1 trayectoria 2020 2025",
+      "bytes": 18740,
+      "sha256": "49be8f3e838e05b151537ecd3a186ceb49cda0cf17f8ae5abacc54288bbd604f",
+      "type": "PDF"
+    },
+    {
+      "path": "assets/figura_2_dimensiones_ancla_2025.pdf",
+      "description": "Figura científica: figura 2 dimensiones ancla 2025",
+      "bytes": 30391,
+      "sha256": "43c71bd269b97b71055804d5d44af35f364c6a1285b298ecc140a05d0d952668",
+      "type": "PDF"
+    },
+    {
+      "path": "assets/figura_3_escenarios_2025_2030.pdf",
+      "description": "Figura científica: figura 3 escenarios 2025 2030",
+      "bytes": 19272,
+      "sha256": "cbdbee3747c174cc73c734cca869e4a8d7a116901b098f6381bd37e0586c0869",
+      "type": "PDF"
+    },
+    {
+      "path": "assets/figura_s1_prisma_fulltext_final.pdf",
+      "description": "Figura científica: figura s1 prisma fulltext final",
+      "bytes": 34138,
+      "sha256": "22904a65039c4bc1f539a21d0add99a9ae6a2670575f514bf0c024aa983c54fa",
+      "type": "PDF"
+    },
+    {
+      "path": "data/LICENSE.md",
+      "description": "LICENSE",
+      "bytes": 1435,
+      "sha256": "881893618a55a0a62bf69fcd7fa7f961eb4d0c962638b84b3da2586d2b6d1a85",
+      "type": "MD"
+    },
+    {
+      "path": "data/base_integral_democracia_2020_2030_v2.xlsx",
+      "description": "Base integral de datos y resultados",
+      "bytes": 99663,
+      "sha256": "48c4d57a4924b3b59c03a221615ba9ab6827a720c866c68c9680413c2c20c2ac",
+      "type": "XLSX"
+    },
+    {
+      "path": "data/categories_multilevel_2020_2025.csv",
+      "description": "Serie dimensional: Perú, región y mundo",
+      "bytes": 9125,
+      "sha256": "9c6ca2bd56edef903e4a0075f142484f827ed4923e60b57b903041f265377747",
+      "type": "CSV"
+    },
+    {
+      "path": "data/data_dictionary.csv",
+      "description": "Diccionario de datos",
+      "bytes": 13558,
+      "sha256": "5ae3f83442b9cb642c41f12c2e6b3e5a78224cd15556110a46770e29cafa0863",
+      "type": "CSV"
+    },
+    {
+      "path": "data/data_status_registry.csv",
+      "description": "Registro de estados epistemológicos",
+      "bytes": 1218,
+      "sha256": "dc60ad6ff56ac504d932900bfd66461d265607a10e1a93fd564bbbf9f0e5c1c7",
+      "type": "CSV"
+    },
+    {
+      "path": "data/model_config_v2_1.json",
+      "description": "Configuración del modelo científico",
+      "bytes": 872,
+      "sha256": "0897d40f1651d979b780585e6366ddb035c1b3320cea13846cd506659c49cdac",
+      "type": "JSON"
+    },
+    {
+      "path": "data/model_formulas_v2.csv",
+      "description": "Fórmulas y transformaciones",
+      "bytes": 1427,
+      "sha256": "399903d0f3ea68ad397186c25ddf29559a87597d92486b580f3cf816f6fa5e9c",
+      "type": "CSV"
+    },
+    {
+      "path": "data/overall_multilevel_2020_2025.csv",
+      "description": "Serie agregada 2020–2025",
+      "bytes": 1905,
+      "sha256": "d3b5a52e36a522c66dc955168db51fb4e87f10dd0d0f078b549bf2587e736ff5",
+      "type": "CSV"
+    },
+    {
+      "path": "data/parameter_elicitation_matrix.csv",
+      "description": "Matriz de elicitación: shocks, tasas y evidencia",
+      "bytes": 9535,
+      "sha256": "242839e8f3888115d2b466afdee14dbf73953d8c4322b1b65d9365e20a8a54a2",
+      "type": "CSV"
+    },
+    {
+      "path": "data/peru_2025_anchor_ensemble.csv",
+      "description": "Ensamble completo: 10 000 anclas latentes",
+      "bytes": 1319000,
+      "sha256": "c26b4b9fd2116875894ede538b14960c1275646105f094c48293b8d6a33e1fb2",
+      "type": "CSV"
+    },
+    {
+      "path": "data/peru_2025_anchor_summary.csv",
+      "description": "Ancla latente: resumen de percentiles",
+      "bytes": 1182,
+      "sha256": "2a6cc1ff3721dad98bc1c020ab8976f589b56d2899773ce79ffc465be9d930dd",
+      "type": "CSV"
+    },
+    {
+      "path": "data/peru_2025_category_calibration_audit.csv",
+      "description": "Auditoría de calibración dimensional 2025",
+      "bytes": 1269,
+      "sha256": "126392c1b37598ae882ea25741799e06e078ca2371d24de0bd31a529af976fac",
+      "type": "CSV"
+    },
+    {
+      "path": "data/post_election_evidence_2026.csv",
+      "description": "Inventario de evidencia contextual electoral",
+      "bytes": 3627,
+      "sha256": "76edccd6b5053abd624b46b38a2ec0698dfec2deb90f3b29425004540fe6eca4",
+      "type": "CSV"
+    },
+    {
+      "path": "data/prisma_phase8/Bibliografia_Incluida_Visor_Democracia_Fulltext_Final_29.ris",
+      "description": "Bibliografía incluida en formato RIS",
+      "bytes": 11947,
+      "sha256": "aaff6e643f7f25868ee47fcbe7807f15943a869f4c6241eed27e5b8a786f358f",
+      "type": "RIS"
+    },
+    {
+      "path": "data/prisma_phase8/Libro_Analisis_PRISMA_Visor_Democracia_R4_3_5_Cierre_Fulltext.xlsx",
+      "description": "Libro de auditoría bibliográfica PRISMA",
+      "bytes": 161452,
+      "sha256": "63aff87c15afc4db110c2e802fca992859c54be4e1d6535485b33e368a40f850",
+      "type": "XLSX"
+    },
+    {
+      "path": "data/prisma_phase8/README.md",
+      "description": "README",
+      "bytes": 829,
+      "sha256": "6174dc61ff73445ef8258db4ac3b91305019a1d69e93b4d85bfff1ef6bcd84e0",
+      "type": "MD"
+    },
+    {
+      "path": "data/prisma_phase8/evidence_integration_map_29.csv",
+      "description": "Mapa de integración: fuentes y afirmaciones",
+      "bytes": 12699,
+      "sha256": "f84d45e35df48f935c049b9676a717917a580c34d696585c88198b86373d87a4",
+      "type": "CSV"
+    },
+    {
+      "path": "data/prisma_phase8/exclusion_reasons_3.csv",
+      "description": "Catálogo de razones de exclusión",
+      "bytes": 203,
+      "sha256": "0944aa464491790a42cf24b11394e24e57d2dcfe689663b63e0ea543e3eec8e1",
+      "type": "CSV"
+    },
+    {
+      "path": "data/prisma_phase8/fulltext_decisions_72.csv",
+      "description": "Decisiones de los 72 informes buscados",
+      "bytes": 52790,
+      "sha256": "61949077bafd1e4079ebe3e5f19d235ed726da6d72335d231562baeb2ea32ae4",
+      "type": "CSV"
+    },
+    {
+      "path": "data/prisma_phase8/fulltext_excluded_13.csv",
+      "description": "Textos completos excluidos: 13 decisiones",
+      "bytes": 10436,
+      "sha256": "fb7d3c98f22198b3380c1959c1e906920184d0d7b2d3a9ef416199e8bce82780",
+      "type": "CSV"
+    },
+    {
+      "path": "data/prisma_phase8/fulltext_included_29.csv",
+      "description": "Corpus incluido: 29 fuentes",
+      "bytes": 23004,
+      "sha256": "405068cc4aa17980cac4fd5581131854cacb945286e9381855f6314c2fa1a26f",
+      "type": "CSV"
+    },
+    {
+      "path": "data/prisma_phase8/fulltext_not_retrieved_30.csv",
+      "description": "Informes no recuperados: 30 registros",
+      "bytes": 20142,
+      "sha256": "8ba551a275c066442015bafd0b4e035330728dc99b23cad9a2eabd861f14584d",
+      "type": "CSV"
+    },
+    {
+      "path": "data/prisma_phase8/phase8_fulltext_summary.json",
+      "description": "Resumen del cierre a texto completo",
+      "bytes": 926,
+      "sha256": "55983cbe3664c6b98881eff172a79434dda5f10c8fad550a66342b0f005b62f0",
+      "type": "JSON"
+    },
+    {
+      "path": "data/prisma_phase8/phase8_manifest.json",
+      "description": "Manifiesto del corpus auxiliar",
+      "bytes": 1189,
+      "sha256": "afc1bf5b3f87ea401b6a7c9d52b1ba6358efc5e1dff712263cf9a408e7eacacd",
+      "type": "JSON"
+    },
+    {
+      "path": "data/prisma_phase8/search_profiles_105.csv",
+      "description": "Perfiles de búsqueda: 105 consultas",
+      "bytes": 26558,
+      "sha256": "43bae5de4eb61ff677dcfca3544d50284d2791f0dd35af9fd2d9e324efd89cd0",
+      "type": "CSV"
+    },
+    {
+      "path": "data/prisma_phase8/source_performance_7.csv",
+      "description": "Rendimiento de las siete fuentes bibliográficas",
+      "bytes": 600,
+      "sha256": "9894121dcd048210bfc8fc2103a87be2687d14ec8b1397a0ea6301e5b09da845",
+      "type": "CSV"
+    },
+    {
+      "path": "data/scenario_coefficients.csv",
+      "description": "Coeficientes centrales de escenarios",
+      "bytes": 2191,
+      "sha256": "00d5db39381c29cf4106219c0e7d7bb0348bfe3712043aa61e2d4a69cb14c8f0",
+      "type": "CSV"
+    },
+    {
+      "path": "data/scenario_parameter_samples_summary.csv",
+      "description": "Resumen de parámetros muestreados",
+      "bytes": 3593,
+      "sha256": "e07cf00569c4d421813f92fa518b8555a1ee4707731dd2b849d5328d5a75fdf4",
+      "type": "CSV"
+    },
+    {
+      "path": "data/scenario_sensitivity_bands.csv",
+      "description": "Envolventes agregadas de sensibilidad",
+      "bytes": 4672,
+      "sha256": "5328ed38d6ea999f765d3233d662d9066f9074aacc9a76d801f683501255b51e",
+      "type": "CSV"
+    },
+    {
+      "path": "data/scenario_sensitivity_by_category.csv",
+      "description": "Envolventes dimensionales de sensibilidad",
+      "bytes": 8891,
+      "sha256": "73e1619e0981e58dd1c60344b11cbf465dbe263ee89e6cbe01a66a00d50dcfc2",
+      "type": "CSV"
+    },
+    {
+      "path": "data/scenario_summary_2030.csv",
+      "description": "Resumen de escenarios al 2030",
+      "bytes": 2129,
+      "sha256": "808e2004ecc0458299c5cadc5fd8d4fedeeebcd22c4e79f72607d6e98d8f95b3",
+      "type": "CSV"
+    },
+    {
+      "path": "data/scenario_trajectories_2025_2030.csv",
+      "description": "Trayectorias centrales deterministas",
+      "bytes": 3126,
+      "sha256": "18f06f561995e83a4f03b912f42c84834eb07497ea68a1086e79ba0a1f83ed0d",
+      "type": "CSV"
+    },
+    {
+      "path": "downloads/archivo_zenodo_v210.zip",
+      "description": "Archivo preservado en Zenodo v2.1.0 (original)",
+      "bytes": 3399777,
+      "sha256": "e4487348d3a367105b44c78a30066ce9e074306c25ff6c8c42eeadd2e21fb964",
+      "type": "ZIP"
+    },
+    {
+      "path": "downloads/base_cientifica_v210.zip",
+      "description": "Fuente científica completa fijada al commit v2.1.0",
+      "bytes": 3387233,
+      "sha256": "c8a07cc4538587592e41dca75f8ad6fa12541370465748a60e80e377e5b61439",
+      "type": "ZIP"
+    }
+  ]
+}

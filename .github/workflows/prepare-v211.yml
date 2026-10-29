@@ -1,0 +1,35 @@
+name: Prepare frozen v2.1.1 source archives
+
+on:
+  push:
+    branches: [release/v2.1.1-editorial]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+          ref: release/v2.1.1-editorial
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Reconstruct and verify approved archives
+        run: python scripts/prepare_frozen_archives.py
+      - name: Verify portal integrity
+        run: python scripts/validate_portal.py
+      - name: Commit verified source archives to the preparation branch
+        shell: bash
+        run: |
+          git add docs/downloads/archivo_zenodo_v210.zip docs/downloads/base_cientifica_v210.zip
+          if git diff --cached --quiet; then
+            echo "Approved archives already committed."
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Add byte-verified frozen scientific source archives'
+          git push origin HEAD:release/v2.1.1-editorial

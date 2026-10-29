@@ -1,6 +1,8 @@
 name: tests
 
 on:
+  push:
+    branches: [main]
   pull_request:
     branches: [main]
     types: [opened, synchronize, reopened, ready_for_review]
@@ -63,6 +65,7 @@ jobs:
       - run: python scripts/build_data_dictionary.py
       - run: python scripts/sync_public_data.py
       - run: python scripts/build_static_viewer.py
+      - run: python scripts/validate_portal.py
       - run: python -m compileall -q app.py scripts tests
       - run: python scripts/clean_runtime_artifacts.py
       - run: python scripts/normalize_release_text.py
@@ -78,3 +81,22 @@ jobs:
       - run: python scripts/build_release_manifest.py --check
       - run: git diff --check
       - run: python scripts/check_git_clean.py
+
+  publish:
+    name: Publish verified v2.1.1
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main' && contains(github.event.head_commit.message, '[release v2.1.1]')
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Verify frozen portal and scientific source
+        run: python scripts/validate_portal.py
+      - name: Publish a verified draft and trigger connected Zenodo ingestion
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/publish_github_release.py

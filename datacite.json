@@ -3,7 +3,11 @@
     "resourceTypeGeneral": "Software",
     "resourceType": "Research software and data viewer"
   },
-  "titles": [{"title": "Visor Integrado de Democracia del Perú 2020–2030"}],
+  "titles": [
+    {
+      "title": "Visor Integrado de Democracia del Perú 2020–2030"
+    }
+  ],
   "creators": [
     {
       "name": "Torres Vanegas, Magdiel",
@@ -17,14 +21,18 @@
         }
       ],
       "affiliation": [
-        {"name": "Universidad Nacional de Trujillo, Escuela de Posgrado – Unidad de Posgrado en Ciencias Económicas"},
-        {"name": "Estudios Axial, Perú"}
+        {
+          "name": "Universidad Nacional de Trujillo, Escuela de Posgrado – Unidad de Posgrado en Ciencias Económicas"
+        },
+        {
+          "name": "Estudios Axial, Perú"
+        }
       ]
     }
   ],
   "publisher": "Zenodo",
   "publicationYear": 2026,
-  "version": "2.1.0",
+  "version": "2.1.1",
   "language": "es",
   "url": "https://github.com/vanegasmagdiel/visor-democracia-peru-2020-2030",
   "rightsList": [
@@ -37,15 +45,33 @@
     }
   ],
   "subjects": [
-    {"subject": "Democracy Index"},
-    {"subject": "Peru"},
-    {"subject": "democratic backsliding"},
-    {"subject": "prospective scenarios"},
-    {"subject": "reproducible research"},
-    {"subject": "research software"},
-    {"subject": "PRISMA-S"},
-    {"subject": "structured literature search"},
-    {"subject": "evidence traceability"}
+    {
+      "subject": "Democracy Index"
+    },
+    {
+      "subject": "Peru"
+    },
+    {
+      "subject": "democratic backsliding"
+    },
+    {
+      "subject": "prospective scenarios"
+    },
+    {
+      "subject": "reproducible research"
+    },
+    {
+      "subject": "research software"
+    },
+    {
+      "subject": "PRISMA-S"
+    },
+    {
+      "subject": "structured literature search"
+    },
+    {
+      "subject": "evidence traceability"
+    }
   ],
   "descriptions": [
     {

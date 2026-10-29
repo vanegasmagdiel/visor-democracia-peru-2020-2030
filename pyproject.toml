@@ -1,6 +1,6 @@
 [project]
 name = "visor-democracia-peru"
-version = "2.1.0"
+version = "2.1.1"
 description = "Visor integrado 2020-2030 con ancla latente y sensibilidad conjunta"
 requires-python = ">=3.12,<3.13"
 dependencies = [

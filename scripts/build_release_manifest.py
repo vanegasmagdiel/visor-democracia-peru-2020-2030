@@ -54,9 +54,9 @@ def expected_outputs() -> tuple[str, str]:
 
     manifest = {
         "project": "Visor Integrado de Democracia del Perú 2020–2030",
-        "version": "2.1.0",
-        "release_date": "2026-08-31",
-        "manifest_revision_date": "2026-08-31",
+        "version": "2.1.1",
+        "release_date": "2026-10-29",
+        "manifest_revision_date": "2026-10-29",
         "author": {
             "name": "Magdiel Torres Vanegas",
             "orcid": "https://orcid.org/0000-0002-7913-214X",

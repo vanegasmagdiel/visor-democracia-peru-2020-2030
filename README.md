@@ -1,3 +1,15 @@
+# Visor Integrado de Democracia del Perú 2020–2030 — v2.1.1
+
+Esta versión publica el portal editorial aprobado por el autor, con el título completo en el encabezado, edición en una sola línea, visualizaciones dinámicas, método accesible y 42 descargas verificables. GitHub Pages sirve directamente `docs/index.html`.
+
+El modelo científico, los 32 archivos canónicos de datos, sus parámetros y resultados permanecen en **v2.1.0**, DOI https://doi.org/10.5281/zenodo.22223983. El DOI conceptual es https://doi.org/10.5281/zenodo.22080540. El nuevo DOI de versión será asignado por la integración GitHub–Zenodo; no se anticipa ni se reutiliza el identificador anterior.
+
+`PUBLICATION_PROVENANCE.json` registra el SHA-256 del paquete aprobado y los hashes de todos los archivos públicos y científicos. La página conserva íntegramente los bytes aprobados, incluidos los marcadores históricos de preparación del candidato. El estado de publicación corresponde al release, no a esos metadatos históricos.
+
+La construcción pública se ejecuta mediante `python scripts/build_portal_v211.py`; `scripts/build_static_viewer.py` delega en ese constructor para compatibilidad. `python scripts/validate_portal.py` comprueba el catálogo y los datos. La publicación automatizada requiere las pruebas multiplataforma y un árbol limpio antes de generar el release.
+
+## Documentación de la base científica conservada
+
 # Visor Integrado de Democracia del Perú 2020–2030 — v2.1.0
 
 [![DOI conceptual](https://zenodo.org/badge/DOI/10.5281/zenodo.22080540.svg)](https://doi.org/10.5281/zenodo.22080540)

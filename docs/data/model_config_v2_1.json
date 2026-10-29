@@ -1,0 +1,36 @@
+{
+  "model_version": "2.1.0",
+  "release_date": "2026-08-25",
+  "evidence_cutoff": "2026-08-17",
+  "seed": 20260825,
+  "n_simulations": 10000,
+  "overall_2025": 5.88,
+  "anchor_uncertainty": {
+    "method": "zero-sum truncated Gaussian ensemble around the documented central allocation",
+    "historical_volatility_multiplier": 0.5,
+    "sigma_floor": 0.08,
+    "sigma_cap": 0.4,
+    "bound_sigma_multiplier": 2.0
+  },
+  "residual_uncertainty": {
+    "historical_volatility_multiplier": 0.25,
+    "sigma_floor": 0.04,
+    "sigma_cap": 0.2,
+    "rho_low": 0.0,
+    "rho_mode": 0.3,
+    "rho_high": 0.6
+  },
+  "structural_rate_scale": {
+    "low": 0.85,
+    "mode": 1.0,
+    "high": 1.15
+  },
+  "decay": {
+    "2027": 1.0,
+    "2028": 0.9,
+    "2029": 0.8,
+    "2030": 0.7
+  },
+  "common_random_numbers_across_scenarios": true,
+  "scenario_probabilities_estimated": false
+}
