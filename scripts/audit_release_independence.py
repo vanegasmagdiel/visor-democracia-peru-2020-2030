@@ -43,6 +43,9 @@ def audit() -> list[str]:
             text = path.read_text(encoding="utf-8-sig").lower()
         except UnicodeDecodeError:
             continue
+        # A published article DOI is a bibliographic relationship, not an editorial gate.
+        # Permit only this exact identifier; all other journal tokens remain audited.
+        text = text.replace("10.17268/sciendo.v29n3.025", "")
         if JOURNAL_TOKEN in text or JOURNAL_TOKEN_ACCENTED in text:
             errors.append(f"journal-specific token in: {rel.as_posix()}")
         if ARTICLE_GATE in text:

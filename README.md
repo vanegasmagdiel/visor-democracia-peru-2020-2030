@@ -2,11 +2,23 @@
 
 Esta versión publica el portal editorial aprobado por el autor, con el título completo en el encabezado, edición en una sola línea, visualizaciones dinámicas, método accesible y 42 descargas verificables. GitHub Pages sirve directamente `docs/index.html`.
 
-El modelo científico, los 32 archivos canónicos de datos, sus parámetros y resultados permanecen en **v2.1.0**, DOI https://doi.org/10.5281/zenodo.22223983. El DOI conceptual es https://doi.org/10.5281/zenodo.22080540. El nuevo DOI de versión será asignado por la integración GitHub–Zenodo; no se anticipa ni se reutiliza el identificador anterior.
+El modelo científico, los 32 archivos canónicos de datos, sus parámetros y resultados permanecen en **v2.1.0**, DOI https://doi.org/10.5281/zenodo.22223983. El DOI conceptual es https://doi.org/10.5281/zenodo.22080540. El DOI específico del portal v2.1.1 es https://doi.org/10.5281/zenodo.23770788.
 
 `PUBLICATION_PROVENANCE.json` registra el SHA-256 del paquete aprobado y los hashes de todos los archivos públicos y científicos. La página conserva íntegramente los bytes aprobados, incluidos los marcadores históricos de preparación del candidato. El estado de publicación corresponde al release, no a esos metadatos históricos.
 
 La construcción pública se ejecuta mediante `python scripts/build_portal_v211.py`; `scripts/build_static_viewer.py` delega en ese constructor para compatibilidad. `python scripts/validate_portal.py` comprueba el catálogo y los datos. La publicación automatizada requiere las pruebas multiplataforma y un árbol limpio antes de generar el release.
+
+## Publicación y protocolo relacionados
+
+**Artículo científico:** Torres Vanegas, M. (2026). *La erosión democrática y el funcionamiento del gobierno en el Perú: un visor reproducible con escenarios prospectivos hacia 2030*. Volumen 29, número 3, páginas 689–695. https://doi.org/10.17268/sciendo.v29n3.025
+
+**Protocolo retrospectivo y metodología:** https://doi.org/10.17605/OSF.IO/NBY3D
+
+**Software y portal v2.1.1:** https://doi.org/10.5281/zenodo.23770788  
+**Base científica v2.1.0:** https://doi.org/10.5281/zenodo.22223983  
+**Autor ORCID:** https://orcid.org/0000-0002-7913-214X
+
+El artículo, el software y el protocolo son productos relacionados con identificadores distintos. Estos enlaces documentan la publicación posterior al release y no modifican sus archivos científicos ni sus compuertas de publicación.
 
 ## Documentación de la base científica conservada
 

@@ -13,7 +13,7 @@
     "SHA256SUMS.txt"
   ],
   "file_count": 162,
-  "total_bytes": 12331058,
+  "total_bytes": 12332362,
   "files": [
     {
       "path": ".gitattributes",
@@ -37,8 +37,8 @@
     },
     {
       "path": ".zenodo.json",
-      "bytes": 1516,
-      "sha256": "5da834b23ee7fa61a451d2e2fbc1b89dc3a6244b29ef6fad86483d8cede6ba20"
+      "bytes": 1798,
+      "sha256": "198abcd5ed22f1e472392a39134ad4b138c40f5e439365b24a8f614c1555828d"
     },
     {
       "path": "CITATION.cff",
@@ -77,8 +77,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 8704,
-      "sha256": "4867b2eafc3b3055f0331ad9b496410204c3ed453914463f9532a9084f16dfd8"
+      "bytes": 9488,
+      "sha256": "f498c3140d6b854477c657848f983ce8e0591c1150e27f84d45d407d1b0816bc"
     },
     {
       "path": "RELEASE_GATE_STATUS.json",
@@ -682,8 +682,8 @@
     },
     {
       "path": "scripts/audit_release_independence.py",
-      "bytes": 2828,
-      "sha256": "b8ef0b093ea8dda7916e357b89f09d49b62cc2ab8d7a15c4e1ed944668084b1e"
+      "bytes": 3066,
+      "sha256": "1e2cc5de928f584629259940ff60e38887d155c2220a841dc9da077622555619"
     },
     {
       "path": "scripts/build_data_dictionary.py",
